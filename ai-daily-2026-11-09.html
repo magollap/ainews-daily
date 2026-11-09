@@ -1,0 +1,427 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<title>↓: AI Daily — Monday, November 9, 2026</title>
+<style>
+@page { size: Letter; margin: 0.5in 0.5in 0.6in 0.5in;
+  @bottom-center { content: "↓: AI Daily · Monday, November 9, 2026 · Page " counter(page) " of " counter(pages); font: 7.5pt "Liberation Sans", sans-serif; color:#777; }
+}
+:root { --ink:#16130f; --paper:#fbf8f1; --rule:#16130f; --accent:#a3260f; --mute:#6a6359; --pos:#1f6b3a; --neg:#a3260f; }
+* { box-sizing:border-box; }
+html { background: var(--paper); }
+body { font-family:"DejaVu Serif","FreeSerif",serif; font-size:8.4pt; line-height:1.38; color:var(--ink); margin:0; hyphens:auto; }
+.mast { text-align:center; border-bottom:3px double var(--rule); padding-bottom:6pt; margin-bottom:5pt; }
+.mast .kicker { font:700 7pt "Liberation Sans",sans-serif; letter-spacing:.22em; text-transform:uppercase; color:var(--accent); }
+.mast h1 { font:700 44pt "DejaVu Serif",serif; letter-spacing:-.02em; margin:2pt 0 0; line-height:1; }
+.mast h1 span { color:var(--accent); }
+.edition { display:flex; justify-content:space-between; border-top:1px solid var(--rule); border-bottom:1px solid var(--rule); padding:3pt 2pt; margin-bottom:9pt;
+  font:700 7.2pt "Liberation Sans",sans-serif; letter-spacing:.08em; text-transform:uppercase; }
+.top { display:grid; grid-template-columns: 1.55fr 1fr; gap:14pt; border-bottom:1px solid var(--rule); padding-bottom:10pt; margin-bottom:10pt; }
+.label { font:700 6.8pt "Liberation Sans",sans-serif; letter-spacing:.18em; text-transform:uppercase; color:var(--accent); margin-bottom:2pt; }
+.top h2 { font:700 20pt "DejaVu Serif",serif; line-height:1.08; margin:0 0 5pt; letter-spacing:-.01em; }
+.top p { margin:0 0 5pt; }
+.box { background:#16130f; color:#fbf8f1; padding:9pt 11pt; }
+.box .label { color:#f0b429; }
+.box h3 { font:700 12pt "DejaVu Serif",serif; margin:0 0 5pt; }
+.box ul { margin:0; padding-left:11pt; }
+.box li { margin-bottom:3.5pt; font-size:7.8pt; line-height:1.3; }
+.why { font:italic 7.9pt "DejaVu Serif",serif; color:#5a1a0c; background:#f3ebdb; padding:3pt 5pt; margin:3pt 0 4pt; }
+.why b { font:700 6.4pt "Liberation Sans",sans-serif; letter-spacing:.12em; text-transform:uppercase; font-style:normal; color:var(--accent); display:block; margin-bottom:1pt; }
+.ud { margin:2pt 0 3pt; font-size:8pt; }
+.ud div { margin-bottom:1.5pt; padding-left:9pt; text-indent:-9pt; }
+.ud .p::before { content:"+ "; font-weight:700; color:var(--pos); }
+.ud .n::before { content:"– "; font-weight:700; color:var(--neg); }
+section { margin-bottom:9pt; }
+section > h2 { font:700 9pt "Liberation Sans",sans-serif; letter-spacing:.2em; text-transform:uppercase; border-top:2px solid var(--rule); border-bottom:1px solid var(--rule); padding:2.5pt 0; margin:0 0 6pt; break-after:avoid; }
+.paper { column-count:2; column-gap:16pt; column-rule:1px solid #cfc7b6; }
+article { break-inside:auto; margin-bottom:9pt; display:block; orphans:3; widows:3; }
+.why, .ud, table { break-inside:avoid; }
+article h3 { font:700 10.4pt "DejaVu Serif",serif; line-height:1.14; margin:0 0 2pt; }
+article p { margin:0 0 3pt; text-align:left; }
+.tag { font:700 6.2pt "Liberation Sans",sans-serif; letter-spacing:.1em; text-transform:uppercase; color:var(--mute); }
+.quiet { font-style:italic; color:var(--mute); border-left:2px solid var(--accent); padding-left:6pt; margin:0 0 6pt; break-inside:avoid; }
+table.gh { width:100%; border-collapse:collapse; font-size:7.3pt; margin:2pt 0 6pt; }
+table.gh th { font:700 6pt "Liberation Sans",sans-serif; letter-spacing:.08em; text-transform:uppercase; text-align:left; border-bottom:1px solid var(--rule); padding:2pt 3pt; }
+table.gh td { padding:2pt 3pt; border-bottom:1px dotted #bdb5a3; vertical-align:top; }
+table.bm { width:100%; border-collapse:collapse; font-size:7.3pt; margin:2pt 0 4pt; }
+table.bm th { font:700 6pt "Liberation Sans",sans-serif; letter-spacing:.06em; text-transform:uppercase; text-align:left; border-bottom:1px solid var(--rule); padding:2pt 3pt; }
+table.bm td { padding:2pt 3pt; border-bottom:1px dotted #bdb5a3; }
+.diagram { margin:3pt 0 5pt; border:1px solid #cfc7b6; background:#fffdf8; padding:3pt; break-inside:avoid; }
+.diagram .cap { font:700 6pt "Liberation Sans",sans-serif; letter-spacing:.1em; text-transform:uppercase; color:var(--mute); margin-bottom:2pt; }
+.src { font:6.8pt "Liberation Sans",sans-serif; line-height:1.35; column-count:2; column-gap:14pt; word-break:break-all; }
+.src h4 { font:700 7pt "Liberation Sans",sans-serif; letter-spacing:.14em; text-transform:uppercase; margin:5pt 0 1pt; color:var(--accent); break-after:avoid; }
+.src div { margin:0 0 1.5pt; }
+.note { font:italic 7.2pt "DejaVu Serif",serif; color:var(--mute); margin-top:6pt; border-top:1px solid #cfc7b6; padding-top:4pt; }
+.pb { break-before:page; }
+</style></head><body>
+
+<header class="mast">
+  <div class="kicker">All the AI news that fits the last 24 hours</div>
+  <h1><span>↓:</span> AI Daily</h1>
+</header>
+<div class="edition"><span>Monday, November 9, 2026</span><span>Edition for Manohar · Last 24 hours</span><span>Window: Nov 8, 10:25 AM – Nov 9, 10:25 AM CT</span></div>
+
+<div class="top">
+  <div>
+    <div class="label">Top Story</div>
+    <h2>Anthropic's IPO roadshow kicks off as pricing expectations slide to about $1.1–1.3 trillion</h2>
+    <p>Bloomberg-sourced reports say Anthropic began marketing its Nasdaq offering today (Nov 9), with wider investor meetings possible from Tuesday and pricing targeted for the week of Nov 16. Investors are now discussing a valuation of roughly $1.1T to $1.3T, down from the $1.5T–$2T range floated earlier this month, though the raise is still described as comparable to SpaceX's record debut or larger.</p>
+    <p>The amended S-1 supplies the numbers behind the debate. Third-quarter revenue is reported at $16.96B, up from $11.56B in Q2 (about 47% sequential growth), and nine-month revenue at $33.24B. The same filing shows an operating loss of about $567M in Q3 after a $974M operating profit in Q2, which fits the spending story: a separate FT report says Anthropic is also locking up $3.4B of gas generators for data centers.</p>
+    <div class="ud">
+      <div class="p">Growth is extraordinary and the company is tapping public markets while demand for Claude outruns supply; a listing brings a deep capital pool for compute.</div>
+      <div class="n">The price talk is falling, the quarter flipped from profit to loss, and tech stocks have wobbled; timing could still slip past Thanksgiving. Figures come from press reports of the filing, not the filing itself, and outlets disagree on some loss numbers.</div>
+    </div>
+    <p class="why"><b>Why it matters to builders</b>
+    A public Anthropic will publish audited numbers and risk factors you can read before signing a contract. It also signals the labs are in a capital race, so expect aggressive pricing, new tiers and long enterprise commitments in the next 12 months. If your voice agent leans on one model vendor, a listing tends to bring more SLAs and clearer terms, but also more pressure on margins. Keep a second provider warm in your routing layer. Re-check your committed-spend discounts around the pricing date.</p>
+  </div>
+  <div class="box">
+    <div class="label">Today in 60 seconds</div>
+    <h3>The short version</h3>
+    <ul>
+      <li><b>IPO:</b> Anthropic starts marketing; valuation talk drops to ~$1.1–1.3T; Q3 revenue $16.96B.</li>
+      <li><b>OpenAI:</b> first $11B of a round closes at $1.25T, well under its original $30B / $1.4T ask.</li>
+      <li><b>Claude Code:</b> "Don't ask again" saved 2,539 secrets into public GitHub repos, says Apiiro.</li>
+      <li><b>Claude:</b> Personal Finance beta reads bank data via Plaid (US Pro/Max/Ultra).</li>
+      <li><b>Compute:</b> Anthropic buys 1.7 GW of gas generators for ~$3.4B (FT).</li>
+      <li><b>Policy:</b> Google, Microsoft, OpenAI, Anthropic back one robots.txt opt-out for AI training.</li>
+      <li><b>Models:</b> Gemini 4 Argon aimed at robot control (87% on ERQA); LG opens K-EXAONE 2.5 API free.</li>
+      <li><b>Kubernetes:</b> KubeCon NA opens; OpenShift 5 GA, Broadcom's VM API joins CNCF Sandbox.</li>
+      <li><b>GitHub:</b> anthropics/skills (190k stars) tops trending; Google's elephant-goldfish review plugin appears.</li>
+      <li><b>Voice &amp; Video:</b> no genuinely new items in the window.</li>
+    </ul>
+  </div>
+</div>
+
+<div class="paper">
+
+<section>
+  <h2>1 · New Claude features <small></small></h2>
+  <p class="quiet">Anthropic's newsroom and the API release notes show nothing newer than Nov 5 (IP allowlisting beta), so no new model or API change landed in the window.</p>
+  <article>
+    <div class="tag">Security · Nov 9 · Apiiro research</div>
+    <h3>"Yes, and don't ask again" quietly saved passwords into public repos</h3>
+    <p>Security firm Apiiro found that Claude Code's remember-this-command option writes the exact approved command into <code>.claude/settings.local.json</code>. If the command had a password, API key or SSH login typed inline, that secret sat in plain text in the file. Apiiro counted 104,185 copies of the file across 103,617 public repositories; 1,122 files held at least one real secret (1,379 distinct secrets), rising to 2,539 secrets in 1,994 repos once older versions, shared settings and transcripts are included.</p>
+    <p>Anthropic's Claude Code lead acknowledged the finding on Hacker News, said the tool historically has not scrubbed secrets, and noted the file is gitignored when Claude creates it, so people had to commit it by hand. Anthropic is looking at fixes; auto mode and host-provided secret scanning are the interim advice.</p>
+    <div class="diagram"><div class="cap">How the leak happens</div>
+    <svg viewBox="0 0 330 62" width="100%" xmlns="http://www.w3.org/2000/svg" font-family="Liberation Sans, sans-serif" font-size="6.4">
+      <defs><marker id="a1" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6z" fill="#16130f"/></marker></defs>
+      <rect x="2" y="8" width="70" height="40" fill="#f3ebdb" stroke="#16130f"/><text x="37" y="23" text-anchor="middle">Dev approves</text><text x="37" y="32" text-anchor="middle">"don't ask again"</text><text x="37" y="41" text-anchor="middle">on a command</text>
+      <rect x="92" y="8" width="72" height="40" fill="#f3ebdb" stroke="#16130f"/><text x="128" y="23" text-anchor="middle">Exact command</text><text x="128" y="32" text-anchor="middle">saved to settings</text><text x="128" y="41" text-anchor="middle" fill="#a3260f">+ inline secret</text>
+      <rect x="184" y="8" width="62" height="40" fill="#f3ebdb" stroke="#16130f"/><text x="215" y="23" text-anchor="middle">File committed</text><text x="215" y="32" text-anchor="middle">to the repo</text><text x="215" y="41" text-anchor="middle">(by hand)</text>
+      <rect x="266" y="8" width="62" height="40" fill="#a3260f" stroke="#16130f"/><text x="297" y="23" text-anchor="middle" fill="#fff">Public GitHub</text><text x="297" y="32" text-anchor="middle" fill="#fff">104,185 copies</text><text x="297" y="41" text-anchor="middle" fill="#fff">1,379 secrets</text>
+      <line x1="72" y1="28" x2="90" y2="28" stroke="#16130f" marker-end="url(#a1)"/><line x1="164" y1="28" x2="182" y2="28" stroke="#16130f" marker-end="url(#a1)"/><line x1="246" y1="28" x2="264" y2="28" stroke="#16130f" marker-end="url(#a1)"/>
+    </svg></div>
+    <div class="ud">
+      <div class="p">Mitigation is simple: rotate credentials, gitignore the file, use environment variables, approve patterns instead of literal commands.</div>
+      <div class="n">Rotation is mandatory because the secrets are already public and scraped; no scrubbing exists in the product yet.</div>
+    </div>
+    <p class="why"><b>Why it matters to builders</b>
+    Voice-agent stacks are secret-heavy: Twilio tokens, SIP credentials, STT/TTS keys and CRM logins all get pasted into shells during debugging. Audit every repo your team (and any contractor) touched with Claude Code. Add a pre-commit secret scanner and a rule that <code>.claude/settings.local.json</code> is never tracked. Use the new <code>permissions.denyInsteadOfPrompting</code> setting from the latest changelog in unattended runs. Treat any approval prompt as a place where a credential could get persisted.</p>
+  </article>
+
+  <article>
+    <div class="tag">Product · Nov 8 · US beta</div>
+    <h3>Claude can now read your bank accounts through Plaid</h3>
+    <p>Anthropic's Personal Finance feature is rolling out gradually in beta on web, desktop, iOS and Android to US Pro, Max and Ultra subscribers. Users sign in through Plaid and pick accounts; Claude never sees the bank password and the link is read-only. Claude can read account names, types, last four digits, balances, credit limits and up to 24 months of transactions, and can turn that into charts and dashboards. Disconnecting stops future reads, but anything already placed in chats, shared links or artifacts stays until deleted.</p>
+    <div class="ud">
+      <div class="p">A concrete consumer use case for connectors, with chats inside the finance hub excluded from training.</div>
+      <div class="n">Balances can lag a day or two, accounts stay linked after a plan ends, and a bank can leak a full number into a transaction description that Claude then sees.</div>
+    </div>
+    <p class="why"><b>Why it matters to builders</b>
+    This is the template for regulated-data connectors: read-only scope, an aggregator in the middle, explicit unlink semantics. Copy the pattern if your voice agent touches payments or account data: never take credentials, minimize fields, state what persists after revocation. Expect users to ask your agent the same questions ("what did I spend on…") and to compare answers. Plan for stale-data disclaimers in spoken replies. Check your data-retention copy against what you actually keep.</p>
+  </article>
+
+  <article>
+    <div class="tag">Claude Code · changelog top entries, undated</div>
+    <h3>v2.1.317–2.1.319: tighter permissions and background work</h3>
+    <p>The changelog's newest entries (the page gives no dates, so I cannot confirm they landed in the window) add a setting that denies tool calls that would otherwise wait on a prompt, make auto mode ask or deny when its classifier is unreachable behind gateways, push long MCP tasks and slow subagent shell commands into the background, and add a prompt before web or shell calls send your account email.</p>
+    <div class="ud">
+      <div class="p">Safer headless runs and fewer hung sessions.</div>
+      <div class="n">Self-hosted runner log formats changed; scripts parsing the old format need updates.</div>
+    </div>
+    <p class="why"><b>Why it matters to builders</b>
+    If you run Claude Code in CI or gateways, test the deny-instead-of-prompt flag and the new log format before upgrading. It pairs naturally with the secrets story above. Background MCP tasks suit long jobs such as batch call-transcript analysis. Pin versions in runners so a changelog surprise never hits a release day.</p>
+  </article>
+</section>
+
+<section>
+  <h2>2 · New AI tools</h2>
+  <p class="quiet">A thin day for launches: the only item found inside the window is a press release, and I could not verify it independently.</p>
+  <article>
+    <div class="tag">SiteGround · Nov 9 · press release</div>
+    <h3>Coderick AI turns Claude and Stitch designs into working web apps</h3>
+    <p>Hosting company SiteGround announced Coderick AI, which takes design output from Claude and Google's Stitch and generates a working web app. Only a snippet of the announcement was readable, so pricing, supported stacks and limits are unknown.</p>
+    <div class="ud">
+      <div class="p">Design-to-app handoffs are the next obvious step for non-engineers.</div>
+      <div class="n">Vendor-written claims only; no hands-on review exists yet.</div>
+    </div>
+    <p class="why"><b>Why it matters to builders</b>
+    Hosts bundling AI app generation lowers the cost of throwaway dashboards for call analytics and agent admin. Do not put it on a production path until someone independent has tested code quality and security. Note the dependence on two model vendors' design formats, which can change. Try it on a non-critical internal tool first.</p>
+  </article>
+</section>
+
+<section>
+  <h2>3 · LLM &amp; model updates</h2>
+  <article>
+    <div class="tag">Google · Nov 9</div>
+    <h3>Gemini 4 Argon is repositioned as a robot-control and simulation model</h3>
+    <p>Google published a robotics guide for Gemini 4 Argon (model id <code>gemini-4-argon</code>), framing it as a general physical-reasoning model rather than a single arm policy. It scores 87% on ERQA (embodied reasoning Q&amp;A) without helper tools. Demos include steering a Boston Dynamics Spot through a pedal task after practice in a MuJoCo twin, rebuilding simulator scenes from teleoperation video, labeling demonstration footage, and looping with the Gemini Omni video world model. Access is via Google AI Ultra and the paid Gemini API. A third-party guide lists the general model at $2/$10 per million tokens through Nov 30, then $4/$20 (unverified).</p>
+    <div class="ud">
+      <div class="p">One model handling perception, planning, labeling and sim-building simplifies robotics stacks.</div>
+      <div class="n">The demos depend on long task-specific prompts, coordinate grids, motion primitives and verifiers; per-demo failure rates are mostly unpublished, and sim-to-real contact fidelity is an open question.</div>
+    </div>
+    <p class="why"><b>Why it matters to builders</b>
+    The pattern, a frontier model wrapped in scaffolding with verifiers, is the same one that makes voice agents reliable. Note how much of the result comes from prompts and checks rather than weights. The price step on Nov 30 matters if you budget on the promo rate. A model that reasons over video also hints at richer call-center QA from screen recordings. Benchmark it against your current model on your own transcripts, not ERQA.</p>
+  </article>
+
+  <article>
+    <div class="tag">LG AI Research · Nov 9</div>
+    <h3>K-EXAONE 2.5 opens a free API; LG claims a 70% gain in eight weeks</h3>
+    <p>LG AI Research made K-EXAONE 2.5 available free via the EXAONE API platform for developers, startups, enterprises and researchers. Weights are not published, and context length, rate limits and post-launch pricing are not disclosed. The 70% figure is LG's own composite across 24 internal metrics versus its August model. LG's published comparison:</p>
+    <table class="bm"><tr><th>Benchmark</th><th>K-EXAONE 2.5</th><th>DeepSeek V4.1 Flash</th><th>GLM 5.3 (max)</th></tr>
+      <tr><td>AutomationBench</td><td>74.6</td><td>74.9</td><td>71.6</td></tr>
+      <tr><td>Claw-Eval</td><td>77.3</td><td>75.8</td><td>77.6</td></tr>
+      <tr><td>BrowseComp</td><td>78.0</td><td>75.8</td><td>79.0</td></tr>
+      <tr><td>SWE-Bench Pro</td><td>59.2</td><td>58.4</td><td>64.0</td></tr></table>
+    <div class="ud">
+      <div class="p">Free access to a competitive agentic model; useful for prototyping and Korean-language work.</div>
+      <div class="n">Self-reported numbers, no independent replication, API-only, and "free" has no stated end date.</div>
+    </div>
+    <p class="why"><b>Why it matters to builders</b>
+    It roughly ties DeepSeek V4.1 Flash on tool-use benchmarks, so it is a cheap candidate for the reasoning step behind a voice agent, especially Korean calls. Latency is the unknown; measure time-to-first-token yourself. Free tiers tend to end with little notice, so do not build a business plan on one. Route a small share of traffic through it and compare task success. Keep the contract terms on data handling in view.</p>
+  </article>
+
+  <article>
+    <div class="tag">Motif · Nov 9</div>
+    <h3>Nvidia invests in Korea's Motif; open-weight "Motif 4" planned for Q1 2027</h3>
+    <p>Korean lab Motif Technologies took an investment from Nvidia and began building Motif 4, the successor to the open-weight Motif 3 released last August. Reports say it will be released with downloadable weights and aims at a global top-five placement. No size, benchmarks or licence terms are public.</p>
+    <div class="ud">
+      <div class="p">More well-funded open-weight options outside the US and China.</div>
+      <div class="n">The release is roughly two quarters away and the "top five" goal is a target, not a result.</div>
+    </div>
+    <p class="why"><b>Why it matters to builders</b>
+    Open weights from a lab with Nvidia backing may come with optimized serving recipes, which matter for sub-second voice latency. Nothing to act on today beyond tracking it. If data residency is a customer requirement, more regional open models widen your options. Revisit in Q1 when licence and size are known.</p>
+  </article>
+
+  <article>
+    <div class="tag">Rumor and community · Nov 7–9</div>
+    <h3>Qwen 4 testers surface; Nous retrains Qwen into Arete-27B</h3>
+    <p>Early-access testers reportedly got Alibaba's Qwen 4 family (Max, Flash, Plus, 27B and possibly a coder variant) on Nov 7, and one outlet claims it beats DeepSeek 4.1 Flash on web tasks with half the tokens; none of this is confirmed by Alibaba. Separately, Nous Research released Arete-27B, a further-trained Qwen3.8-27B that sharply reduces official-line answers on politically sensitive Chinese topics.</p>
+    <div class="ud">
+      <div class="p">Open 27B-class models keep getting tuned for specific behaviors.</div>
+      <div class="n">Leaked specs are unreliable; Arete's evaluation comes from a secondary report.</div>
+    </div>
+    <p class="why"><b>Why it matters to builders</b>
+    A 27B model is the sweet spot for self-hosted voice agents because it fits one GPU with room for batching. Fine-tuning for tone and policy is possible, but vendors and fine-tuners also inject biases, so run your own red-team set. Wait for Alibaba's official release notes before planning a migration. Keep eval sets ready so a swap is a one-day job.</p>
+  </article>
+</section>
+
+<section>
+  <h2>4 · Big AI news</h2>
+  <article>
+    <div class="tag">OpenAI · reported Nov 6, still developing Nov 8–9</div>
+    <h3>OpenAI closes the first $11B at $1.25T, after trimming its ask</h3>
+    <p>Bloomberg reported that about $11B has been wired as the first close of a new round at a $1.25T valuation. OpenAI had sought $30B or more at about $1.4T–$1.5T; the round may total about $20B, with UAE-linked money reported among the leads. Its last round raised $122B at $852B in March. (The first report is from Nov 6, just outside the window; today's coverage adds the totals.)</p>
+    <div class="ud">
+      <div class="p">Still a roughly $400B step-up and fresh runway for compute commitments.</div>
+      <div class="n">A smaller, cheaper-than-hoped round next to Anthropic's falling IPO talk suggests investors are rationing AI risk.</div>
+    </div>
+    <p class="why"><b>Why it matters to builders</b>
+    Funding stress shows up as pricing moves and product pruning, so expect more promos and more deprecations. Keep your voice stack decoupled from any single realtime API. If OpenAI is your speech model, watch its changelog for sunsetting notices. Cheaper capital for rivals can mean better free tiers for you. Re-run your vendor risk review this quarter.</p>
+  </article>
+
+  <article>
+    <div class="tag">Anthropic · FT via Reuters · Nov 8</div>
+    <h3>Anthropic locks up 1.7 GW of gas generators for about $3.4B</h3>
+    <p>The FT reports Anthropic agreed to buy heavy-duty gas-fired generators from Texas supplier OnePWR Solutions, including engineering and construction capability, to power data centers. The deal reportedly dates to late September and sits within a plan to spend more than $500B on AI infrastructure over ten years.</p>
+    <div class="ud">
+      <div class="p">Secures scarce power, the real bottleneck for capacity.</div>
+      <div class="n">Gas dependence invites environmental and permitting scrutiny, and fixed costs raise the stakes on demand holding up.</div>
+    </div>
+    <p class="why"><b>Why it matters to builders</b>
+    Power, not chips, is the limiting factor for capacity, and capacity decides rate limits and latency at peak. Vendors that own power may offer steadier throughput for realtime workloads. Watch whether regional capacity (US data centers face permit freezes in several states) shapes where your calls get processed. Build in graceful degradation for 429s. Negotiate burst guarantees if call volume spikes.</p>
+  </article>
+
+  <article>
+    <div class="tag">Policy · TechRadar / Mezha · Nov 8</div>
+    <h3>Google and Microsoft join OpenAI and Anthropic on one robots.txt AI-training opt-out</h3>
+    <p>The four companies say they will honor a shared robots.txt group that lets sites opt out of AI training, defined in an Internet-Draft by an Anthropic author. Anthropic says it already honors it; OpenAI will implement over the coming months (for "foundational generative AI training", a narrower reading than the draft); Microsoft begins on Feb 1, 2027; Google targets 2027 and would treat the shared opt-out like Google-Extended. Per-bot rules stay in place.</p>
+    <div class="ud">
+      <div class="p">One line replaces a pile of per-crawler rules, a real win for publishers.</div>
+      <div class="n">Staggered dates, narrower scope at OpenAI, and no way to separate Google training from other uses leave gaps.</div>
+    </div>
+    <p class="why"><b>Why it matters to builders</b>
+    If you scrape documentation or call-center knowledge bases for retrieval, respect the signal now. It also shows where training-data consent is heading, so log provenance for any data you fine-tune on. Customers will start asking whether your agents honor opt-outs. Add the group to your own robots.txt if you publish content. Treat it as a draft, not law.</p>
+  </article>
+
+  <article>
+    <div class="tag">Policy · AP · Nov 8</div>
+    <h3>US AI safety center staff now report informally to the White House</h3>
+    <p>AP reports that staff at the small US government center that tests frontier models are reporting to the White House, raising independence concerns as worries grow over runaway AI agents. Related coverage says the UK restored its frontier-model testing deal with OpenAI, Anthropic and Google DeepMind on the voluntary terms that applied before a 17-day freeze that began Sept 24.</p>
+    <div class="ud">
+      <div class="p">Pre-release testing continues in both countries.</div>
+      <div class="n">Politicized oversight weakens trust in the results.</div>
+    </div>
+    <p class="why"><b>Why it matters to builders</b>
+    Third-party model tests feed the safety claims you repeat to customers. If their independence erodes, you carry more of the evaluation burden yourself. Keep your own red-team logs for agents that act on callers' behalf. Compliance teams will ask where assurance comes from. Document it.</p>
+  </article>
+</section>
+
+<section>
+  <h2>5 · GitHub &amp; X</h2>
+  <article>
+    <div class="tag">GitHub trending · today, github.com/trending</div>
+    <h3>Trending now: skills, agent browsers and design systems for agents</h3>
+    <table class="gh"><tr><th>Repo</th><th>What it does</th><th>Stars today / total</th></tr>
+    <tr><td>sherlock-project/sherlock</td><td>Finds social accounts by username</td><td>4,294 / 106k</td></tr>
+    <tr><td>meta/astryx</td><td>Open design system built for AI agents</td><td>3,324 / 19k</td></tr>
+    <tr><td>milind-soni/OpenMausBot</td><td>Open Grok-bot alternative with a VM</td><td>1,589 / 19k</td></tr>
+    <tr><td>anthropics/skills</td><td>Public Agent Skills repo</td><td>1,052 / 190k</td></tr>
+    <tr><td>vercel-labs/agent-browser</td><td>Browser-automation CLI for agents (Rust)</td><td>914 / 48k</td></tr>
+    <tr><td>google-deepmind/mujoco</td><td>Physics simulator (Argon's sim engine)</td><td>579 / 17k</td></tr>
+    <tr><td>anthropics/claude-quickstarts</td><td>Starter apps for the Claude API</td><td>560 / 20k</td></tr>
+    <tr><td>ZhuLinsen/daily_stock_analysis</td><td>LLM multi-market stock analysis</td><td>505 / 69k</td></tr>
+    <tr><td>ruvnet/RuView</td><td>WiFi-signal presence and vitals sensing</td><td>245 / 103k</td></tr>
+    <tr><td>garrytan/gbrain</td><td>Agent "brain" setup for OpenClaw/Hermes</td><td>215 / 32k</td></tr>
+    <tr><td>homeassistant-ai/ha-mcp</td><td>Home Assistant control via MCP</td><td>31 / 5.7k</td></tr></table>
+    <p>Only 11 repos appeared on the daily list. Skills, MCP and agent-browser tooling dominate, and skills now being an open standard under the Agentic AI Foundation (announced Oct 22) explains much of the interest.</p>
+    <div class="ud">
+      <div class="p">Reusable skills and agent browsers are maturing into shared infrastructure.</div>
+      <div class="n">Several entries are novelty or surveillance-adjacent (username hunting, WiFi sensing), and star counts say little about quality.</div>
+    </div>
+    <p class="why"><b>Why it matters to builders</b>
+    Skills and MCP servers are becoming the way agents get capabilities, including phone and CRM actions. Vet any skill like third-party code: it runs with your agent's permissions. agent-browser is worth testing for agents that must navigate legacy web portals during a call. Prefer repos with licences and signed releases. Pin commits.</p>
+  </article>
+
+  <article>
+    <div class="tag">Google · github.com/google/elephant-goldfish-model · Nov 9</div>
+    <h3>"Design with an elephant, review with a goldfish"</h3>
+    <p>Google published an Apache-2.0 plugin, explicitly not an officially supported product, for AI coding assistants. An "elephant" agent holds the full project context and drafts a specification; "goldfish" reviewers then read the draft and the referenced source in fresh subagent contexts with none of the earlier conversation, and the human decides trade-offs and approves. If the host cannot spawn fresh contexts, the review simply stops. The README gives no measure of how many defects the goldfish pass catches.</p>
+    <div class="diagram"><div class="cap">Review flow</div>
+    <svg viewBox="0 0 330 56" width="100%" xmlns="http://www.w3.org/2000/svg" font-family="Liberation Sans, sans-serif" font-size="6.4">
+      <defs><marker id="a2" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6z" fill="#16130f"/></marker></defs>
+      <rect x="2" y="8" width="72" height="38" fill="#f3ebdb" stroke="#16130f"/><text x="38" y="22" text-anchor="middle" font-weight="700">Elephant</text><text x="38" y="32" text-anchor="middle">full project context</text><text x="38" y="40" text-anchor="middle">drafts the spec</text>
+      <rect x="96" y="8" width="72" height="38" fill="#f3ebdb" stroke="#16130f"/><text x="132" y="22" text-anchor="middle" font-weight="700">Goldfish ×N</text><text x="132" y="32" text-anchor="middle">fresh contexts, no</text><text x="132" y="40" text-anchor="middle">chat history</text>
+      <rect x="190" y="8" width="64" height="38" fill="#f3ebdb" stroke="#16130f"/><text x="222" y="22" text-anchor="middle" font-weight="700">Findings</text><text x="222" y="32" text-anchor="middle">gaps and unclear</text><text x="222" y="40" text-anchor="middle">assumptions</text>
+      <rect x="272" y="8" width="56" height="38" fill="#16130f" stroke="#16130f"/><text x="300" y="22" text-anchor="middle" fill="#fff" font-weight="700">Human</text><text x="300" y="32" text-anchor="middle" fill="#fff">approves,</text><text x="300" y="40" text-anchor="middle" fill="#fff">implements</text>
+      <line x1="74" y1="27" x2="94" y2="27" stroke="#16130f" marker-end="url(#a2)"/><line x1="168" y1="27" x2="188" y2="27" stroke="#16130f" marker-end="url(#a2)"/><line x1="254" y1="27" x2="270" y2="27" stroke="#16130f" marker-end="url(#a2)"/>
+    </svg></div>
+    <div class="ud">
+      <div class="p">Cheap way to catch context-blind specs by reviewing as a cold reader.</div>
+      <div class="n">Unproven effectiveness; it adds token cost and does not replace tests.</div>
+    </div>
+    <p class="why"><b>Why it matters to builders</b>
+    Fresh-context review is easy to copy in your own pipeline: have a second agent grade call-flow prompts or tool schemas without seeing the design chat. It catches ambiguity a real caller would hit. Measure defect catch-rate on your own prompts before adopting it widely. Budget the extra tokens. Keep a human sign-off on anything that changes live call behavior.</p>
+  </article>
+
+  <article>
+    <div class="tag">X · Nov 8</div>
+    <h3>What people are discussing on X</h3>
+    <p>Engineer Addy Osmani's X article on Nov 8 echoes Anthropic's own best-practices guide: instructions in prompts, CLAUDE.md and skills are requests the model may decline, while hooks, deny rules and managed settings are enforced every time. Investor Philippe Laffont (Coatue) said in a clip the same day that OpenAI and Anthropic are now the "big idea" a tech wave hangs on, a role he said Nvidia held recently. Search coverage of X was thin, so treat this as a partial view.</p>
+    <p class="why"><b>Why it matters to builders</b>
+    The hooks-versus-prompts distinction is exactly what the secrets story exposes. Put safety limits (no credential reads, no outbound calls to unknown numbers) in enforced settings, not in prose. Expect investors to keep pricing the labs as infrastructure. For voice agents, compliance rules like call-recording consent belong in code paths, not prompts. Test them with adversarial callers.</p>
+  </article>
+</section>
+
+<section>
+  <h2>6 · DevOps &amp; Kubernetes</h2>
+  <p class="quiet">KubeCon + CloudNativeCon North America opened today in Salt Lake City (Nov 9–12), so vendor announcements are clustering. Upstream: v1.38.0-beta.0 was tagged Nov 6 and v1.37.2 is the current stable (Oct 28), both just outside the window.</p>
+  <article>
+    <div class="tag">Red Hat · Nov 9</div>
+    <h3>OpenShift 5 is generally available, with an agent that diagnoses clusters</h3>
+    <p>OpenShift 5 manages containers, VMs and AI workloads together and can be applied as an in-place update from OpenShift 4. OpenShift Lightspeed becomes an agent that investigates cluster events, reasons about causes and proposes fixes under administrator control; an AI upgrade planner checks app dependencies, Kubernetes APIs and operators before updates. GPU allocation is automated across inference and traditional workloads. Security adds hardened multitenancy, stronger network isolation, automated certificates and post-quantum cryptography on the control plane. RHEL 10.3 and 9.9 (due in coming weeks) add an MCP server so assistants can inspect live Linux systems; Developer Hub 2.1 gives coding agents governed access to org knowledge.</p>
+    <div class="ud">
+      <div class="p">No reinstall for upgrades, and human approval stays in the loop.</div>
+      <div class="n">Agentic troubleshooting is new, so expect false diagnoses; RHEL releases are not out yet.</div>
+    </div>
+    <p class="why"><b>Why it matters to builders</b>
+    If your voice platform runs on OpenShift, the in-place path lowers upgrade risk. Automated GPU allocation helps mixed STT/TTS/LLM pools share hardware. Read the MCP-server access controls closely before pointing an assistant at production hosts. Post-quantum TLS will eventually reach your SIP and WebRTC edges. Plan a staging upgrade first.</p>
+  </article>
+
+  <article>
+    <div class="tag">Broadcom · CNCF · Nov 9</div>
+    <h3>Broadcom open-sources a "VM API" and it enters the CNCF Sandbox</h3>
+    <p>The project gives a vendor-neutral way to provision and manage virtual machines with Kubernetes-style declarative APIs across infrastructure providers, preserving hardware isolation and specialized I/O performance. Broadcom likens it to what Cluster API did for clusters. It is early-stage.</p>
+    <div class="ud">
+      <div class="p">One declarative model for VMs and containers; reduces lock-in for VMware-era estates.</div>
+      <div class="n">Sandbox status means unstable APIs, and Broadcom's licensing reputation will make adopters cautious.</div>
+    </div>
+    <p class="why"><b>Why it matters to builders</b>
+    Telephony and media servers often still run on VMs for predictable latency and kernel tuning. A common API could let you manage them alongside Kubernetes pods. It is too early for production. Watch which providers sign on. Keep your media-plane VM images reproducible meanwhile.</p>
+  </article>
+
+  <article>
+    <div class="tag">Ecosystem · Nov 9</div>
+    <h3>Agent identity, OpenTofu observability and gateways</h3>
+    <p>Coverage of the conference opening highlights that Kubernetes cannot yet tell which AI agent took a given action, making identity a main theme. Spacelift launched Run Observability for OpenTofu (shows why a run is slow or failing), and Traefik Labs said Traefik Hub now runs on four more enterprise platforms with AI runtime governance. Groundcover's rightsizing beta, which adjusts CPU and memory requests only and leaves limits alone, is on show too (announced Nov 3).</p>
+    <div class="ud">
+      <div class="p">Identity and governance for agents are finally getting attention.</div>
+      <div class="n">Mostly vendor announcements; standards are still forming.</div>
+    </div>
+    <p class="why"><b>Why it matters to builders</b>
+    A voice agent that calls tools in your cluster needs its own identity and audit trail, or you cannot answer who changed what. Request-only rightsizing is a safe first step to cut GPU and CPU waste. Push for per-agent service accounts now. Log every tool call with the call ID. Revisit after KubeCon talk recordings appear.</p>
+  </article>
+</section>
+
+<section>
+  <h2>7 · Voice AI corner</h2>
+  <p class="quiet">Nothing genuinely new in voice AI inside the 24-hour window. The nearest items (ElevenLabs' Eleven Realtime on Nov 3, Phonic-1 funding, Convoso's voice agent going GA) are all older than a day.</p>
+</section>
+
+<section>
+  <h2>8 · Video AI generation</h2>
+  <p class="quiet">Nothing genuinely new in video generation inside the window. Google's Gemini Omni 1.2 Flash (15-second clips, lower pricing) landed Nov 5–6 and is outside it.</p>
+</section>
+</div>
+
+<div class="note">Method: searched news and primary sources on Nov 9 (about 10:25 AM CT) and kept items published from Nov 8 about 10:25 AM CT. Several primary sites (openai.com, blog.google, kubernetes.io, techcrunch.com, news.ycombinator.com, elevenlabs.io, huggingface.co) were not reachable from this environment, so many items rest on secondary reports; figures are as reported and not independently verified. Items marked as borderline are labelled. No Hugging Face or Product Hunt data was available.</div>
+
+<section class="pb" style="margin-top:8pt">
+  <h2 style="font:700 9pt 'Liberation Sans',sans-serif;letter-spacing:.2em;text-transform:uppercase;border-top:2px solid #16130f;border-bottom:1px solid #16130f;padding:2.5pt 0">Sources</h2>
+  <div class="src">
+    <h4>Top story &amp; Big AI news</h4>
+    <div>https://www.investing.com/news/stock-market-news/anthropic-ipo-targets-november-debut-as-valuation-expectations-fall-93CH-5012800</div>
+    <div>https://fourweekmba.com/ai-anthropic-said-to-start-ipo-marketing-at-a-lower-target/</div>
+    <div>https://www.pymnts.com/news/artificial-intelligence/2026/openai-valuation-hits-1-25-trillion-in-new-funding-round/</div>
+    <div>https://dataconomy.com/2026/11/09/openai-raises-11-billion-at-125-trillion-valuation/</div>
+    <div>https://www.crowdfundinsider.com/2026/11/322004-openai-closes-initial-11-billion-in-funding-at-1-25-trillion-valuation/</div>
+    <div>https://www.reuters.com/business/energy/anthropic-secures-34-billion-generator-deal-ai-data-centers-ft-reports-2026-11-08/</div>
+    <div>https://www.techradar.com/pro/google-and-microsoft-among-those-signing-up-to-openais-plan-for-a-new-website-crawling-standard-including-opting-out-of-internet-scraping</div>
+    <div>https://mezha.net/eng/news/mezha-e70ac171dc1a4e4ac7cd5351_google_and_microsoft/</div>
+    <div>https://www.bostonglobe.com/2026/11/08/nation/us-center-for-ai-safety-white-house-independence-concerns/</div>
+    <div>https://startupfortune.com/us-ai-safety-center-staff-now-report-informally-to-the-white-house-ap-says/</div>
+    <h4>1 · Claude</h4>
+    <div>https://www.itnews.com.au/news/dont-ask-again-in-anthropics-claude-code-leaks-developer-secrets-630203</div>
+    <div>https://mixed-news.com/en/claude-personal-finance-plaid-bank-data-unlink-privacy/</div>
+    <div>https://raw.githubusercontent.com/anthropics/claude-code/main/CHANGELOG.md</div>
+    <div>https://www.anthropic.com/news</div>
+    <div>https://platform.claude.com/docs/en/release-notes/overview</div>
+    <div>https://fourweekmba.com/ai-anthropic-claude-md-rules-are-requests-hooks-are-enforced/</div>
+    <h4>2 · New AI tools</h4>
+    <div>https://www.digitaljournal.com/pr/news/newsfile/coderick-ai-siteground-lets-users-1969483751.html</div>
+    <h4>3 · LLM &amp; models</h4>
+    <div>https://www.infoq.com/news/2026/11/google-gemini-argon/</div>
+    <div>https://shattered.io/lg-ai-research-k-exaone-2-5-api-free-70-percent-nvidia-2026/</div>
+    <div>https://www.mk.co.kr/en/business/12202406</div>
+    <div>https://en.fnnews.com/news/202611091912168515</div>
+    <div>https://www.chosun.com/english/industry-en/2026/11/09/74WGXTFIYZFPJB22H22KZXZ4JU/</div>
+    <div>https://www.geeky-gadgets.com/qwen-4-preview-first-look/</div>
+    <div>https://xenospectrum.com/en/nous-arete-model-evaluation/</div>
+    <div>https://tech-insider.org/best-ai-chatbot-blind-test-arena-elo-13-steps-2026/</div>
+    <h4>5 · GitHub &amp; X</h4>
+    <div>https://github.com/trending?since=daily</div>
+    <div>https://fourweekmba.com/ai-google-open-sources-elephant-goldfish-review-for-ai-agents/</div>
+    <div>https://fourweekmba.com/ai-coatues-laffont-calls-openai-and-anthropic-the-new-big-idea/</div>
+    <h4>6 · DevOps &amp; Kubernetes</h4>
+    <div>https://siliconangle.com/2026/11/09/red-hat-adds-agentic-ai-operations-stronger-security-in-openshift-5-and-rhel-updates/</div>
+    <div>https://siliconangle.com/2026/11/09/broadcom-open-sources-its-kubernetes-vm-manager/</div>
+    <div>https://www.techtimes.com/articles/330289/20261109/cncfs-kubecon-north-america-2026-opens-salt-lake-city-why-kubernetes-cannot-tell-which-ai-agent.htm</div>
+    <div>https://www.prnewswire.com/news-releases/spacelift-launches-run-observability-turning-opentofu-traces-into-valuable-insights-for-platform-teams-302933009.html</div>
+    <div>https://www.businesswire.com/news/home/20261109839644/en/Traefik-Labs-Expands-Its-Partner-Ecosystem-Bringing-AI-Runtime-Governance-and-Secure-Application-Delivery-to-the-Platforms-Enterprises-Already-Run</div>
+    <div>https://siliconangle.com/2026/11/03/groundcover-turns-its-wand-acquisition-into-a-kubernetes-right-sizing-beta/</div>
+    <div>https://github.com/kubernetes/kubernetes/releases</div>
+    <h4>7 · Voice &amp; 8 · Video (context only)</h4>
+    <div>https://www.mk.co.kr/en/it/12194700</div>
+    <div>https://blog.google/innovation-and-ai/technology/developers-tools/introducing-gemini-omni-1-2-flash/</div>
+  </div>
+</section>
+</body></html>
