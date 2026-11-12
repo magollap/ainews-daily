@@ -1,0 +1,691 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<title>↓: AI Daily — Thursday, November 12, 2026</title>
+<style>
+@page { size: Letter; margin: 0.5in 0.5in 0.6in 0.5in; }
+:root { --ink:#16130f; --paper:#fffdf8; --rule:#16130f; --accent:#a3260f; --mute:#6a6359; --good:#2f6b3a; --bad:#a3260f; --soft:#efe9dc; }
+* { box-sizing:border-box; }
+html, body { background: var(--paper); }
+body { font-family:"DejaVu Serif","FreeSerif",serif; font-size:8.5pt; line-height:1.4; color:var(--ink); margin:0; hyphens:auto; -webkit-print-color-adjust:exact; print-color-adjust:exact; }
+.mast { text-align:center; border-bottom:3px double var(--rule); padding-bottom:6pt; margin-bottom:5pt; }
+.mast .kicker { font:700 7pt "Liberation Sans",sans-serif; letter-spacing:.22em; text-transform:uppercase; color:var(--accent); }
+.mast h1 { font:700 46pt "DejaVu Serif",serif; letter-spacing:-.02em; margin:2pt 0 0; line-height:1; }
+.mast h1 span { color:var(--accent); }
+.edition { display:flex; justify-content:space-between; border-top:1px solid var(--rule); border-bottom:1px solid var(--rule); padding:3pt 2pt; margin-bottom:9pt;
+  font:700 7.2pt "Liberation Sans",sans-serif; letter-spacing:.1em; text-transform:uppercase; }
+.top { display:grid; grid-template-columns: 1.55fr 1fr; gap:14pt; border-bottom:1px solid var(--rule); padding-bottom:10pt; margin-bottom:10pt; }
+.label { font:700 6.8pt "Liberation Sans",sans-serif; letter-spacing:.18em; text-transform:uppercase; color:var(--accent); margin-bottom:2pt; }
+.top h2 { font:700 21pt "DejaVu Serif",serif; line-height:1.08; margin:0 0 5pt; letter-spacing:-.01em; }
+.top p { margin:0 0 5pt; }
+.box { background:#16130f; color:#fbf8f1; padding:9pt 11pt; }
+.box .label { color:#f0b429; }
+.box h3 { font:700 12pt "DejaVu Serif",serif; margin:0 0 5pt; }
+.box ol { margin:0; padding-left:13pt; }
+.box li { margin-bottom:3.6pt; font-size:7.9pt; line-height:1.3; }
+.box li b { color:#f0b429; }
+section { margin-bottom:8pt; }
+section > h2 { font:700 9pt "Liberation Sans",sans-serif; letter-spacing:.2em; text-transform:uppercase; border-top:2px solid var(--rule); border-bottom:1px solid var(--rule); padding:2.5pt 0; margin:0 0 6pt; break-after:avoid; display:flex; justify-content:space-between; }
+section > h2 small { font-weight:400; letter-spacing:.04em; color:var(--mute); text-transform:none; }
+.paper { column-count:2; column-gap:16pt; column-rule:1px solid #cfc7b6; }
+article:not(.lead) { break-inside:avoid; }
+article { margin-bottom:9pt; padding-bottom:7pt; border-bottom:1px dotted #bdb5a3; }
+article:last-child { border-bottom:none; }
+article h3 { font:700 11pt "DejaVu Serif",serif; line-height:1.15; margin:0 0 2pt; break-after:avoid; }
+article.lead h3 { font-size:13.5pt; }
+article p { margin:0 0 4pt; }
+.tag { font:700 6.2pt "Liberation Sans",sans-serif; letter-spacing:.1em; text-transform:uppercase; color:var(--mute); margin-bottom:3pt; }
+.specs { font:7.2pt "Liberation Sans",sans-serif; background:var(--soft); border-left:2px solid var(--ink); padding:3pt 5pt; margin:2pt 0 5pt; line-height:1.4; break-inside:avoid; }
+.specs b { font-weight:700; }
+.pn { display:grid; grid-template-columns:1fr 1fr; gap:6pt; margin:3pt 0 5pt; break-inside:avoid; }
+.pn div { font-size:7.6pt; line-height:1.33; padding:3pt 5pt; border-top:2px solid; }
+.pn .pos { border-color:var(--good); background:#eef3ea; }
+.pn .neg { border-color:var(--bad); background:#f7ebe6; }
+.pn b { display:block; font:700 6.3pt "Liberation Sans",sans-serif; letter-spacing:.14em; text-transform:uppercase; margin-bottom:1pt; }
+.pn .pos b { color:var(--good); } .pn .neg b { color:var(--bad); }
+.why { border:1px solid var(--accent); padding:3pt 6pt 3pt; break-inside:avoid; }
+.why b.h { display:block; font:700 6.3pt "Liberation Sans",sans-serif; letter-spacing:.14em; text-transform:uppercase; color:var(--accent); margin-bottom:1pt; }
+.why ol { margin:0; padding-left:11pt; font-style:italic; font-size:7.7pt; line-height:1.33; }
+.why li { margin-bottom:1pt; }
+figure { margin:3pt 0 6pt; break-inside:avoid; }
+figure svg { width:100%; height:auto; display:block; }
+figcaption { font:italic 6.8pt "DejaVu Serif",serif; color:var(--mute); margin-top:2pt; }
+.quiet { font-style:italic; color:var(--mute); border-left:2px solid var(--accent); padding-left:6pt; margin:0 0 6pt; column-span:all; }
+table.gh { width:100%; border-collapse:collapse; font-size:7.6pt; margin:2pt 0 6pt; }
+table.gh th { font:700 6.3pt "Liberation Sans",sans-serif; letter-spacing:.1em; text-transform:uppercase; text-align:left; border-bottom:1px solid var(--rule); padding:2pt 3pt; }
+table.gh td { padding:2.2pt 3pt; border-bottom:1px dotted #bdb5a3; vertical-align:top; }
+table.gh td.n { text-align:right; white-space:nowrap; font-family:"Liberation Sans",sans-serif; }
+.brief { font-size:7.9pt; margin:0 0 4pt; }
+.brief b { font-family:"Liberation Sans",sans-serif; font-size:7.4pt; }
+.src { font:6.4pt "Liberation Sans",sans-serif; line-height:1.35; column-count:2; column-gap:14pt; word-break:break-all; }
+.src h4 { font:700 7pt "Liberation Sans",sans-serif; letter-spacing:.14em; text-transform:uppercase; margin:5pt 0 1pt; color:var(--accent); break-after:avoid; }
+.src div { margin:0 0 1.4pt; }
+.note { font:italic 7.2pt "DejaVu Serif",serif; color:var(--mute); margin-top:6pt; border-top:1px solid #cfc7b6; padding-top:4pt; }
+.pb { break-before:page; }
+.tl { display:grid; grid-template-columns:repeat(4,1fr); gap:0; margin:5pt 0 6pt; border-top:2px solid var(--ink); }
+.tl div { font:7pt "Liberation Sans",sans-serif; padding:3pt 4pt 0 0; line-height:1.3; }
+.tl div b { display:block; color:var(--accent); font-size:6.6pt; letter-spacing:.08em; text-transform:uppercase; }
+.top .why { margin-top:5pt; }
+</style></head><body>
+
+<header class="mast">
+  <div class="kicker">All the AI news that fits the last 24 hours</div>
+  <h1><span>↓:</span> AI Daily</h1>
+</header>
+<div class="edition"><span>Thursday, November 12, 2026</span><span>Edition for Manohar · Last 24 hours</span><span>Window: Nov 11, 8:11 AM – Nov 12, 8:11 AM CT</span></div>
+
+<!-- ============ TOP STORY ============ -->
+<div class="top">
+  <div>
+    <div class="label">Top Story</div>
+    <h2>Nvidia's board moves toward ousting Jensen Huang</h2>
+    <p>Late Wednesday the Wall Street Journal reported that Nvidia's board was getting ready to remove Jensen Huang, the co-founder who has run the company since 1993. A Reuters source said directors met that same day to decide. The trigger was a second New York Times report that Huang had a relationship with Kimberly Powell, Nvidia's VP of healthcare and one of about 60 executives who report to him. That came three days after Huang admitted in a staff memo to an affair linked to Alice Huang, a former executive at Singapore's Megaspeed whom US officials suspect of spying for China. China calls that claim groundless, and Huang has not been accused of any crime.</p>
+    <div class="tl">
+      <div><b>Sun, Nov 8</b>Huang admits an affair in a staff memo; board opens an independent probe (Wachtell Lipton) and says it still backs him</div>
+      <div><b>Wed, Nov 11 (day)</b>NYT reports a second affair, this time with a direct report; Bloomberg says the board is working with a search firm</div>
+      <div><b>Wed, 5:27 PM ET</b>WSJ: board preparing to oust him; Bernstein downgrades and halves its target to $200</div>
+      <div><b>Thu, Nov 12</b>Shares about 7% lower in Frankfurt; after-hours price $160.95, roughly $340–350B of value gone</div>
+    </div>
+    <p>Mechanically, removal is easy. Nvidia's bylaws let a simple majority of its 11 directors remove the CEO with or without cause, and every director except Huang is independent. Strategically, it's hard: the board has no chair and no named successor, and analysts such as Dan Ives say the company is worth 25–30% less without him.</p>
+    <div class="pn">
+      <div class="pos"><b>Positive</b>The board is acting as a governance check instead of deferring to a founder, which markets usually reward over time. Nvidia's product roadmap (Vera Rubin, NVLink, CUDA) is built by large teams and won't stop because one person leaves.</div>
+      <div class="neg"><b>Negative</b>The company with near-total control of AI compute faces a leadership vacuum, a national-security cloud and no succession plan. Expect slower deal-making and supply negotiations, and a weaker hand in Washington on China exports.</div>
+    </div>
+    <div class="why"><b class="h">Why it matters for AI &amp; voice-agent builders</b><ol>
+      <li>GPU pricing and allocation depend on Nvidia's commercial posture, and a CEO change brings uncertainty to both in 2027.</li>
+      <li>Expect clouds and labs to lean harder on multi-silicon (AMD, TPU, Trainium). See today's Anthropic AMD story.</li>
+      <li>Keep inference portable: avoid hard dependencies on CUDA-only kernels in your serving stack.</li>
+      <li>A weaker AI trade means tighter funding for startups. Plan runway on conservative cost-of-compute assumptions.</li>
+      <li>Watch Nvidia's Nemotron and NIM roadmaps, which many voice stacks (including ElevenAgents) now run on.</li>
+    </ol></div>
+  </div>
+  <div class="box">
+    <div class="label">Today in 60 seconds</div>
+    <h3>The short version</h3>
+    <ol>
+      <li><b>Nvidia:</b> board reportedly preparing to remove Jensen Huang; stock down about 7%.</li>
+      <li><b>Anthropic IPO:</b> said to be several times oversubscribed; up to $90.4B raised with the private placement; TSMC approves $500M each for Anthropic and OpenAI.</li>
+      <li><b>Google:</b> Gemini Decisions API. One call answers up to 1,000 yes/no, choice or score questions in 150–250 ms, at $0.10/M input and $0 for output.</li>
+      <li><b>ElevenLabs Summit:</b> Interaction Engine (turn-taking plus LLM routing), agent Memory, Routines, ElevenAI app, custom fine-tuning, Nemotron in ElevenAgents.</li>
+      <li><b>Voice:</b> Decagon's Alto runs conversation and reasoning in parallel (~700 ms); DeepL's Aure keeps a speaker's tone in live translation; Gemini Live reaches CarPlay.</li>
+      <li><b>Claude:</b> Mythos ported Claude to AMD in 3 days instead of months; Cisco and IBM are building Mythos into their security products.</li>
+      <li><b>Agents at work:</b> Databricks ships always-on Genie; AWS Emulator (200+ services) was written entirely by AI agents.</li>
+      <li><b>KubeCon:</b> CNCF accepts agent-sandbox projects (OpenShell, gVisor); Dash0 profiling GA; HAProxy Ingress 3.4; CoreWeave and Adyen go Platinum.</li>
+      <li><b>Pushback:</b> United blocks personal AI agents from booking flights; the Fed's Bowman warns AI-linked debt could top $800B.</li>
+      <li><b>Video:</b> ByteDance's Seedance 2.5 Flash cuts 720p cost 34% (about ¥0.99/s) and runs 2× faster; ByteDance is readying a "Spell" agent.</li>
+    </ol>
+  </div>
+</div>
+
+<!-- ============ 1. CLAUDE ============ -->
+<section>
+<h2>1 · New Claude Features <small>Anthropic · Claude · Claude Code</small></h2>
+<p class="quiet">No new Claude model, API release note or Claude Code version landed inside the window. The latest Claude Code build is still 2.1.322 (Nov 10), and Fable 5.2, Sheets, Whiteboards and Meetings were all covered in earlier editions. The Claude news in the window is about infrastructure and distribution.</p>
+<div class="paper">
+
+<article class="lead">
+<h3>Claude Mythos ported Claude to AMD GPUs in three days</h3>
+<div class="tag">The Decoder · Nov 11, 14:25 UTC · statements by co-founder Tom Brown</div>
+<p>Anthropic co-founder Tom Brown said the company now trains and serves Claude on four major chip families and schedules them as one interchangeable compute pool. The headline claim: Anthropic's restricted frontier model, Claude Mythos, did most of the work of porting Claude to AMD accelerators in about three days with very little human help. Brown said that kind of port normally takes six to twelve months.</p>
+<div class="specs"><b>Claimed:</b> 4 chip families in one pool · AMD port in ~3 days vs 6–12 months typical · "compute multipliers" to get more out of each chip · a chip-leasing program to lower total cost of ownership. <b>Not disclosed:</b> which kernels were rewritten, how performance compares across chips, or whether the AMD fleet serves production traffic.</div>
+<div class="pn">
+  <div class="pos"><b>Positive</b>If it holds up, AI-written kernels weaken CUDA lock-in. More capacity and pricing leverage for Anthropic should mean steadier rate limits and lower prices for Claude customers.</div>
+  <div class="neg"><b>Negative</b>It's a single-source claim with no published benchmarks. A port that "runs" isn't one that is tuned, and mixed fleets can cause small differences in output between chip types.</div>
+</div>
+<div class="why"><b class="h">Why it matters</b><ol>
+<li>More silicon behind Claude means more headroom for high-concurrency voice and agent traffic.</li>
+<li>Plan for small numeric differences across hardware: pin seeds and evals, not exact outputs.</li>
+<li>Agent-written infrastructure code is now a real lever. Consider it for your own porting chores.</li>
+<li>This lands the same day Nvidia's leadership is in doubt, so expect "multi-silicon" in every vendor pitch.</li>
+<li>Ask providers for per-region, per-hardware latency SLOs, not averages.</li>
+</ol></div>
+</article>
+
+<article>
+<h3>Cisco and IBM bring restricted Claude Mythos into their security products</h3>
+<div class="tag">Security Boulevard, Network World · Nov 11</div>
+<p>Cisco is adding Claude Mythos to AI Defense to power AI red-teaming. Customers can run custom attack simulations against their own AI apps and agents without ever getting direct access to the model. IBM will use Mythos inside Concert Protect to find unknown vulnerabilities in application code, alongside conventional scanners. IBM expects general availability in early 2027. Mythos 5.2 is only offered to organizations that pass Anthropic's verification programs, so these partner channels are how most enterprises will reach it.</p>
+<div class="pn">
+  <div class="pos"><b>Positive</b>Frontier-grade offensive testing reaches ordinary security teams through tools they already buy, with access controls kept in place.</div>
+  <div class="neg"><b>Negative</b>You get the capability secondhand. Results depend on how each vendor wraps it, and IBM's version is months away.</div>
+</div>
+<div class="why"><b class="h">Why it matters</b><ol>
+<li>Prompt-injection and tool-abuse testing of your agents is becoming a purchasable product.</li>
+<li>Voice agents with tool access (payments, CRM writes) should be red-teamed before launch.</li>
+<li>Enterprise buyers will soon ask for these reports in procurement.</li>
+<li>Gated models delivered through partners may become the norm for dual-use capability.</li>
+<li>Budget for continuous AI red-teaming, not a one-off pen test.</li>
+</ol></div>
+</article>
+
+<article>
+<h3>Anthropic signs a binding K-12 safety standard with the AFT and UFT</h3>
+<div class="tag">GovTech · Nov 11–12</div>
+<p>Anthropic agreed to an enforceable standard drafted by the American Federation of Teachers and the United Federation of Teachers. It bans training models on student data, requires a human to review decisions that affect students, sets cybersecurity requirements, and gives school districts legal remedies if a vendor breaks the rules. For now it covers Claude for Teachers.</p>
+<div class="pn">
+  <div class="pos"><b>Positive</b>Contractual, enforceable terms are worth more than voluntary pledges and give districts a clear reason to buy.</div>
+  <div class="neg"><b>Negative</b>It covers one product so far, and every added obligation raises compliance costs for smaller edtech vendors.</div>
+</div>
+<div class="why"><b class="h">Why it matters</b><ol>
+<li>"No training on user data" plus human-in-the-loop is becoming the default ask in regulated sectors.</li>
+<li>Voice tutors and voice-based assessments will be held to the same terms.</li>
+<li>Build audit logs of AI-influenced decisions now. Retrofitting them later is expensive.</li>
+<li>Expect healthcare and finance unions or associations to copy this template.</li>
+<li>Legal remedies shift risk onto vendors, so check your own indemnities.</li>
+</ol></div>
+</article>
+</div>
+</section>
+
+<!-- ============ 2. NEW AI TOOLS ============ -->
+<section>
+<h2>2 · New AI Tools <small>launches · agent platforms · developer tools</small></h2>
+<div class="paper">
+
+<article class="lead">
+<h3>Databricks makes Genie an always-on enterprise agent</h3>
+<div class="tag">Databricks press release · Nov 11, San Francisco</div>
+<p>Second-generation Genie runs in the background, takes on long-running work, and brings decisions to people through a new priority inbox and email. Its grounding layer, <i>Genie Ontology</i>, keeps a live model of how the company actually works: metric definitions, owners, people and processes. Genie computes answers inside existing permissions and shows the sources it used. CEO Ali Ghodsi demonstrated it digging into poor employee-survey results and a lost sales deal.</p>
+<div class="specs"><b>GA now:</b> Genie, Genie Ontology · <b>Coming to preview/beta:</b> always-on Genie, Genie Search (100+ sources incl. lakehouse, Google Drive, Jira, Confluence), Ontology Manager · <b>Interop:</b> Genie MCP lets ChatGPT, Claude, Copilot Cowork and Grok Bot query the same governed context.</div>
+<div class="pn">
+  <div class="pos"><b>Positive</b>A governed semantic layer exposed over MCP lets any assistant reuse one source of business truth.</div>
+  <div class="neg"><b>Negative</b>The headline features aren't generally available yet, and an ontology that "maintains itself" can drift without close stewardship.</div>
+</div>
+<div class="why"><b class="h">Why it matters</b><ol>
+<li>Agent quality now depends more on context engineering than on model choice.</li>
+<li>MCP is becoming the standard way enterprise data reaches assistants. Expose yours that way.</li>
+<li>Proactive "inbox" agents are a good fit for outbound voice follow-ups.</li>
+<li>Permission-aware retrieval is a requirement before any enterprise rollout.</li>
+<li>Competing with Databricks on data plumbing is hard. Integrate with it instead.</li>
+</ol></div>
+</article>
+
+<article>
+<h3>AWS Emulator: 200+ services on your laptop, written entirely by agents</h3>
+<div class="tag">GeekWire, All Things Distributed · Nov 11</div>
+<p>AWS released a free local emulator, generated from 400+ API models, that covers more than 200 AWS services. AWS says autonomous coding agents wrote all of the code with no line-by-line review by engineers. The agents also maintain it: they diff its behavior against the real cloud and patch the gaps. It runs offline and is released under a public-domain dedication. It doesn't simulate throttling, regional differences or outages. AWS says more is coming at re:Invent.</p>
+<div class="pn">
+  <div class="pos"><b>Positive</b>Fast, free, offline integration tests can cut CI time and cloud bills, and you can point agents at it as a safe sandbox.</div>
+  <div class="neg"><b>Negative</b>Unreviewed code at this scale is a trust question, and missing failure modes (throttling, outages) are exactly what bites in production.</div>
+</div>
+<div class="why"><b class="h">Why it matters</b><ol>
+<li>Give coding agents an emulator so they can't touch real infrastructure while iterating.</li>
+<li>Test Lambda, SQS and DynamoDB voice back-ends locally before deploying.</li>
+<li>Keep at least one real-cloud stage for chaos and quota tests.</li>
+<li>Evidence that agent-built and agent-maintained software works at production scale.</li>
+<li>Watch re:Invent for licensing and support terms.</li>
+</ol></div>
+</article>
+</div>
+</section>
+
+<!-- ============ 3. LLM / MODEL UPDATES ============ -->
+<section>
+<h2>3 · LLM &amp; Model Updates <small>new models · pricing · benchmarks</small></h2>
+<div class="paper">
+
+<article class="lead">
+<h3>Google's Gemini Decision 1: a model that only decides</h3>
+<div class="tag">Google Keyword blog, @googledevs, MarkTechPost, InfoWorld · Nov 11</div>
+<p>Google launched the <b>Gemini Decisions API</b>, powered by a new model, <code>gemini-decision-1</code>. It doesn't generate text. It reads a shared input once and returns calibrated answers to a set of closed questions: a probability for yes/no, a pick from a list, or a score on a scale you define. It is built for routing, tool selection, safety checks and grading inside apps and agents, where waiting for and paying for generated tokens is wasted.</p>
+<div class="specs"><b>Inputs:</b> text, image, audio, video, PDF; up to 256K tokens of shared context · <b>Batch:</b> up to 1,000 independent questions per request · <b>Latency:</b> 150–250 ms, one prefill pass · <b>Price:</b> $0.10 per 1M input tokens, $0 output, free tier in AI Studio · <b>Claim:</b> ~5× cheaper than Gemini 3.5 Flash-Lite on Google's shared benchmark suite · <b>SDKs:</b> google-genai, OpenRouter, LangChain, Vercel AI SDK, LiteLLM, Pydantic AI, <b>Pipecat, LiveKit</b>, OpenCode · Vertex support "coming soon".</div>
+<figure>
+<svg viewBox="0 0 520 150" xmlns="http://www.w3.org/2000/svg" font-family="Liberation Sans, sans-serif" font-size="9">
+  <defs><marker id="a1" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0L10,5L0,10z" fill="#16130f"/></marker></defs>
+  <rect x="4" y="18" width="118" height="56" fill="#efe9dc" stroke="#16130f"/>
+  <text x="63" y="34" text-anchor="middle" font-weight="700">Shared input</text>
+  <text x="63" y="47" text-anchor="middle">transcript / image / audio</text>
+  <text x="63" y="59" text-anchor="middle">video / PDF (≤256K tok)</text>
+  <rect x="4" y="84" width="118" height="48" fill="#efe9dc" stroke="#16130f"/>
+  <text x="63" y="100" text-anchor="middle" font-weight="700">Up to 1,000 questions</text>
+  <text x="63" y="113" text-anchor="middle">bool · choice · score</text>
+  <text x="63" y="125" text-anchor="middle">+ thresholds</text>
+  <line x1="122" y1="46" x2="176" y2="70" stroke="#16130f" marker-end="url(#a1)"/>
+  <line x1="122" y1="108" x2="176" y2="84" stroke="#16130f" marker-end="url(#a1)"/>
+  <rect x="178" y="48" width="130" height="58" fill="#16130f"/>
+  <text x="243" y="68" text-anchor="middle" fill="#f0b429" font-weight="700">gemini-decision-1</text>
+  <text x="243" y="82" text-anchor="middle" fill="#fbf8f1">single prefill pass</text>
+  <text x="243" y="95" text-anchor="middle" fill="#fbf8f1">150–250 ms · $0 output</text>
+  <line x1="308" y1="77" x2="350" y2="77" stroke="#16130f" marker-end="url(#a1)"/>
+  <rect x="352" y="48" width="70" height="58" fill="#efe9dc" stroke="#16130f"/>
+  <text x="387" y="68" text-anchor="middle" font-weight="700">Per-question</text>
+  <text x="387" y="81" text-anchor="middle">value +</text>
+  <text x="387" y="94" text-anchor="middle">confidence</text>
+  <line x1="422" y1="66" x2="448" y2="30" stroke="#16130f" marker-end="url(#a1)"/>
+  <line x1="422" y1="77" x2="448" y2="77" stroke="#16130f" marker-end="url(#a1)"/>
+  <line x1="422" y1="88" x2="448" y2="124" stroke="#16130f" marker-end="url(#a1)"/>
+  <text x="452" y="33" font-weight="700" fill="#2f6b3a">act / route tool</text>
+  <text x="452" y="80" font-weight="700">escalate to LLM</text>
+  <text x="452" y="127" font-weight="700" fill="#a3260f">human review</text>
+  <text x="243" y="132" text-anchor="middle" font-style="italic" fill="#6a6359">low-confidence answers fall through to a bigger model or a person</text>
+</svg>
+<figcaption>How the Decisions API sits in an agent loop (redrawn from Google's description).</figcaption>
+</figure>
+<p>Google already uses it internally: Gemini Notebook picks a model and thinking level per query with it, and Search uses it to flag misuse. It joins a new category of "decision models": TypeSafe's Jev (September) and OpenAI's Decisions API (October) came first. Independent reviewers note Jev is still cheaper.</p>
+<div class="pn">
+  <div class="pos"><b>Positive</b>Free output tokens and sub-250 ms latency make it practical to check every conversational turn. Native Pipecat and LiveKit support means it plugs into voice stacks on day one.</div>
+  <div class="neg"><b>Negative</b>The benchmarks are Google's own. Calibration on your domain still needs checking. Vertex/enterprise support isn't here yet, and it's another vendor dependency.</div>
+</div>
+<div class="why"><b class="h">Why it matters</b><ol>
+<li>Swap slow "LLM-as-router" calls for a 200 ms decision on every voice turn: intent, escalation, end-of-call.</li>
+<li>Run dozens of policy and safety checks per turn in one request at near-zero marginal cost.</li>
+<li>Use the confidence scores to send uncertain cases to a frontier model or a human.</li>
+<li>Grade agent transcripts at scale for QA and RL reward signals.</li>
+<li>Benchmark it against OpenAI's Decisions API and Jev on your own labeled data before standardizing.</li>
+</ol></div>
+</article>
+
+<article>
+<h3>AlphaGenome 2 predicts variant effects one cell type at a time</h3>
+<div class="tag">Google DeepMind blog, Nature News, The Verge · Nov 11</div>
+<p>DeepMind's successor DNA-sequence model moves from averages across whole tissues to individual cell types and states, with a redesigned architecture. It was trained on 100M+ single-cell profiles across 68 tissues, and DeepMind says it finds nearly twice as many expression-altering variants as the first AlphaGenome. It is open for non-commercial research and is not approved for clinical diagnosis.</p>
+<div class="pn">
+  <div class="pos"><b>Positive</b>Effectively turns static cell atlases into a predictive tool for working out which cells a disease starts in.</div>
+  <div class="neg"><b>Negative</b>The results are DeepMind's own evaluations. It's too compute-heavy to run genome-wide, and the license excludes commercial use.</div>
+</div>
+<div class="why"><b class="h">Why it matters</b><ol>
+<li>Domain foundation models keep pulling away from general LLMs in science.</li>
+<li>Healthtech voice agents will increasingly sit on top of such specialist models.</li>
+<li>Check the non-commercial terms before you prototype.</li>
+<li>Expect "explain this variant" copilots for genetic counselors.</li>
+<li>Specialist model plus LLM interface is a pattern you can reuse in your own vertical.</li>
+</ol></div>
+</article>
+
+<article>
+<h3>Baidu World: new ERNIE models, a token exchange and a chip roadmap</h3>
+<div class="tag">PR Newswire, Chosun Biz · Nov 12, Beijing</div>
+<p>Robin Li presented a full-stack lineup built around the "intelligent organization": new ERNIE models, a marketplace that trades model tokens, and specialized models for inference and for video (including a micro-expression model for more natural faces and voices). On hardware, Baidu confirmed the Kunlunxin M300 for 2027, a 1,024-accelerator system the same year, and new-architecture chips in 2028.</p>
+<div class="pn">
+  <div class="pos"><b>Positive</b>A credible domestic stack lowers China's dependence on US chips and adds price competition.</div>
+  <div class="neg"><b>Negative</b>Few published benchmarks. Export controls and data residency limit its use outside China.</div>
+</div>
+<div class="why"><b class="h">Why it matters</b><ol>
+<li>If you serve APAC, ERNIE is a likely regional default.</li>
+<li>Token marketplaces hint at commoditized, swappable inference.</li>
+<li>Better facial and voice realism in video avatars sharpens deepfake risks for voice-plus-face agents.</li>
+<li>Chinese chips becoming practical by 2027–28 changes global GPU supply.</li>
+<li>Watch for ERNIE API pricing as a benchmark for low-cost tiers.</li>
+</ol></div>
+</article>
+<p class="brief"><b>Date note:</b> Alibaba's Qwen4-Max-Preview, Google's Gemini 4 Carbon and MiniMax's open-weight H3-Image all launched Nov 10 or earlier, outside this window, so they're not covered again here.</p>
+</div>
+</section>
+
+<!-- ============ 4. BIG AI NEWS ============ -->
+<section>
+<h2>4 · Big AI News <small>money · policy · industry moves</small></h2>
+<div class="paper">
+
+<article class="lead">
+<h3>Anthropic's IPO is reportedly several times oversubscribed</h3>
+<div class="tag">Bloomberg, Quartz, MarketWatch, CNBC, Forbes · Nov 11</div>
+<p>On the first full day of the roadshow, Bloomberg reported that the order book was already oversubscribed several times, driven by "anchor-size" indications of interest. The deal: Nasdaq ticker <b>ANT</b>, a $70–78 price range, and 825M shares (801.4M from Anthropic, 23.6M from existing holders). That is about $64.4B gross at the top of the range, or up to $90.4B including a concurrent private placement. Big tech and chip companies have committed about $26B alongside the offering. Separately, TSMC's board approved $500M each for Anthropic and OpenAI. Reports say about 20% of the shares are set aside for retail investors. Anthropic's disclosed Q3 shows about $17B revenue and a $567M operating loss. Critics point to nearly $900B in future compute commitments. The registration statement isn't effective yet.</p>
+<div class="pn">
+  <div class="pos"><b>Positive</b>Public-market capital and near-break-even margins point to a durable Claude supplier with money for capacity.</div>
+  <div class="neg"><b>Negative</b>Huge compute obligations and quarterly earnings pressure could push up prices or tighten free tiers. A market drop (see Nvidia) could reprice the deal.</div>
+</div>
+<div class="why"><b class="h">Why it matters</b><ol>
+<li>A well-funded Anthropic makes Claude a safer long-term dependency for production agents.</li>
+<li>Public companies optimize margin, so expect tiered pricing changes over 2027.</li>
+<li>S-1 disclosures give you real numbers for negotiating enterprise commits.</li>
+<li>TSMC investing in both labs ties chip supply closer to model makers.</li>
+<li>Diversify models anyway: one IPO doesn't remove concentration risk.</li>
+</ol></div>
+</article>
+
+<article>
+<h3>United Airlines blocks personal AI agents from booking flights</h3>
+<div class="tag">Skift, WSJ (via Air Data News), Thrifty Traveler · Nov 11</div>
+<p>United is the first US carrier to say outright that it will block unauthorized third-party agents, such as xAI's Grok Bot or Meta's Muse, from completing bookings. Agents can still show fares, but a human has to finish the purchase. United cites personal-data risk, accidental purchases and federal requirements such as passenger hazmat declarations. CEO Scott Kirby was blunter: he doesn't want "another middleman." United updated its Digital Trust Center and says it may revisit the policy.</p>
+<div class="pn">
+  <div class="pos"><b>Positive</b>It forces clear rules for agent authority, consent and liability at checkout.</div>
+  <div class="neg"><b>Negative</b>Incumbents can use "safety" to protect margins. If other airlines and retailers follow, agentic commerce stalls.</div>
+</div>
+<div class="why"><b class="h">Why it matters</b><ol>
+<li>Design for a human confirmation step at payment. Voice is good for this.</li>
+<li>Prefer sanctioned APIs and partnerships over scraping checkout flows.</li>
+<li>Store explicit, auditable user mandates for any purchase an agent makes.</li>
+<li>Expect "agent access" terms in more sites' policies and robots files.</li>
+<li>Booking assistants should hand off to the merchant gracefully.</li>
+</ol></div>
+</article>
+
+<article>
+<h3>Fed's Bowman: AI-linked debt could top $800B this year</h3>
+<div class="tag">TokenPost, Semafor (via FourWeekMBA), 24/7 Wall St · Nov 11</div>
+<p>Fed Vice Chair for Supervision Michelle Bowman warned that AI revenue still isn't covering the cost of models and data centers. AI-related debt could pass $800B this year, and lease, contract and guarantee obligations may exceed that debt by more than three times. If revenue keeps lagging, she sees possible share-price declines, tighter credit and slower growth. The same day, CoreWeave's results (revenue up 168% to $3.66B, a $709M loss, about $9B in expected customer prepayments) set off a broad AI rally.</p>
+<div class="pn">
+  <div class="pos"><b>Positive</b>Regulators naming the risk early helps prevent a disorderly unwind.</div>
+  <div class="neg"><b>Negative</b>If credit tightens, compute gets pricier and startup funding gets scarcer, quickly.</div>
+</div>
+<div class="why"><b class="h">Why it matters</b><ol>
+<li>Show unit economics per call or per minute. Investors are checking now.</li>
+<li>Prepayment terms like CoreWeave's will spread, so negotiate compute commits carefully.</li>
+<li>Route traffic to the cheapest adequate model (see Decisions API, Interaction Engine).</li>
+<li>Keep a cash cushion for inference price shocks.</li>
+<li>Products that clearly earn revenue will weather a correction best.</li>
+</ol></div>
+</article>
+
+<article>
+<h3>Funding and deals roundup</h3>
+<div class="tag">Reuters, Bloomberg, Fortune Term Sheet, EU-Startups, The AI Insider · Nov 11–12</div>
+<table class="gh">
+<tr><th>Company</th><th>Deal</th><th>Detail</th></tr>
+<tr><td><b>Fractile</b> (UK)</td><td class="n">$720M C · $7B</td><td>Inference chips; Thrive, Founders Fund, Lightspeed, Redpoint, plus the UK government</td></tr>
+<tr><td><b>Mercor</b></td><td class="n">$750M D · $20B</td><td>Expert data for AI training and evaluation; Benchmark, Felicis</td></tr>
+<tr><td><b>Torus</b> (Utah)</td><td class="n">$500M</td><td>Container-sized "Foundry" units combining batteries and AI compute; Magnetar-led</td></tr>
+<tr><td><b>Oura → Counsel Health</b></td><td class="n">$625M acq.</td><td>Wearable data plus an AI-assisted physician service</td></tr>
+<tr><td><b>Path Robotics</b></td><td class="n">$300M E</td><td>AI welding robots; Georgian-led</td></tr>
+<tr><td><b>Blue J</b></td><td class="n">$176M · $700M</td><td>AI tax-research agent; JMI Equity</td></tr>
+<tr><td><b>Rox</b></td><td class="n">$100M B · $1.3B</td><td>AI sales agents aimed at Salesforce; GC and March Capital</td></tr>
+<tr><td><b>Daylight</b></td><td class="n">$80M B</td><td>AI-run security services; Goldman Sachs Alternatives</td></tr>
+<tr><td><b>Graphon Labs</b></td><td class="n">$35M A</td><td>Memory and data infrastructure for agents; RRE</td></tr>
+</table>
+<div class="pn">
+  <div class="pos"><b>Positive</b>Money is flowing to the infrastructure layers agents need: inference silicon, memory, evaluation data.</div>
+  <div class="neg"><b>Negative</b>Rounds keep getting larger as public markets wobble, which raises the risk of down rounds.</div>
+</div>
+<div class="why"><b class="h">Why it matters</b><ol>
+<li>New inference chips (Fractile) should push per-token prices down by 2027–28.</li>
+<li>Agent memory (Graphon) is now a funded category. Consider buying it instead of building.</li>
+<li>Vertical agents (tax, sales, insurance) keep attracting capital.</li>
+<li>Evaluation data (Mercor) is a growing cost line. Budget for it.</li>
+<li>Energy-plus-compute bundles (Torus) hint at edge inference for latency-sensitive voice.</li>
+</ol></div>
+</article>
+
+<article>
+<h3>ByteDance readies "Spell," a personal agent to rival Meta's Muse</h3>
+<div class="tag">Bloomberg (via TrendForce, ET CIO) · Nov 11–12</div>
+<p>ByteDance plans to launch a personal AI agent, codenamed Spell, in the coming weeks, backed by an AI push of up to $70B centered on Seedance video. Co-founder Zhang Yiming reportedly told staff that matching the leading US labs could take until 2029–2030.</p>
+<div class="pn">
+  <div class="pos"><b>Positive</b>More competition in consumer agents, built on very strong video and voice capabilities.</div>
+  <div class="neg"><b>Negative</b>Data-governance and geopolitical concerns will limit adoption in Western markets.</div>
+</div>
+<div class="why"><b class="h">Why it matters</b><ol>
+<li>Consumer agents will be judged on multimodal (video plus voice) fluency.</li>
+<li>Expect aggressive pricing on Seedance and voice APIs.</li>
+<li>Plan for platform gatekeeping like United's.</li>
+<li>Muse-style agents will set users' expectations for your assistant.</li>
+<li>A candid 2029 timeline is a useful reality check on talk of China catching up.</li>
+</ol></div>
+</article>
+</div>
+</section>
+
+<!-- ============ 5. GITHUB & X ============ -->
+<section>
+<h2>5 · GitHub &amp; X <small>trending repos · widely shared posts</small></h2>
+<table class="gh">
+<tr><th>Repository</th><th>What it does</th><th>★ today</th><th>★ total</th></tr>
+<tr><td><b>meta/astryx</b></td><td>Open-source, fully customizable design system made to be "agent ready" (components and tokens agents can use reliably)</td><td class="n">1,789</td><td class="n">26,047</td></tr>
+<tr><td><b>addyosmani/agent-skills</b></td><td>Production-grade engineering skills packaged for AI coding agents</td><td class="n">812</td><td class="n">116,391</td></tr>
+<tr><td><b>GoogleChrome/modern-web-guidance-src</b></td><td>Source for Chrome's modern web guidance (TypeScript), increasingly used as agent context</td><td class="n">799</td><td class="n">2,338</td></tr>
+<tr><td><b>openai/codex-security</b></td><td>Codex Security CLI and TS SDK: find, validate and fix vulnerabilities (<code>@openai/codex-security</code>)</td><td class="n">663</td><td class="n">12,131</td></tr>
+<tr><td><b>Alishahryar1/free-claude-code</b></td><td>Multi-harness proxy that claims free tokens across Claude Code, Codex and others. Check provider terms before use.</td><td class="n">461</td><td class="n">68,934</td></tr>
+<tr><td><b>CopilotKit/OpenBot</b></td><td>Open-source "AI coworkers," each with its own browser, files and tools; every action approved beforehand and logged; any AG-UI agent</td><td class="n">291</td><td class="n">11,282</td></tr>
+<tr><td><b>ggml-org/llama.cpp</b></td><td>C/C++ LLM inference, still the default local runtime</td><td class="n">162</td><td class="n">134,307</td></tr>
+<tr><td><b>QwenLM/qwen-code</b></td><td>Open-source terminal coding agent from the Qwen team</td><td class="n">151</td><td class="n">29,596</td></tr>
+<tr><td><b>ashhart/TensorFold</b></td><td>New LLM inference engine in Zig for Metal, CUDA and Vulkan</td><td class="n">58</td><td class="n">1,851</td></tr>
+</table>
+<div class="paper">
+<article>
+<h3>On X: the posts builders shared</h3>
+<div class="tag">@googledevs · @GoogleDeepMind · @CloudNativeFdn · ElevenLabs Summit</div>
+<p><b>@googledevs</b>' Decisions API launch (Nov 11, ~18:26 UTC) framed it as routing, tool selection, safety checks and grading "without the latency or output-token cost" of generation. <b>@GoogleDeepMind</b>'s AlphaGenome 2 thread (~15:03 UTC) highlighted 100M+ profiles across 68 tissues. <b>@CloudNativeFdn</b> announced 12 new members joining to run agentic AI on "open, sovereign infrastructure." Clips from ElevenLabs' NYC Summit keynote circulated widely among voice-agent builders.</p>
+<div class="pn">
+  <div class="pos"><b>Positive</b>Today's trending repos are about agent infrastructure (skills, design systems, sandboxed coworkers, security scanning), not demos.</div>
+  <div class="neg"><b>Negative</b>Repos that work around terms of service (free-token proxies) trend too. They carry account-ban and security risk.</div>
+</div>
+<div class="why"><b class="h">Why it matters</b><ol>
+<li>"Agent-ready" UI systems (Astryx) make generated front-ends more consistent.</li>
+<li>Packaged skills are becoming the way to teach agents your team's practices.</li>
+<li>Add codex-security-style scanning to CI for agent-written code.</li>
+<li>Approve-then-log designs (OpenBot) are a good template for voice agents taking actions.</li>
+<li>New local runtimes (TensorFold) widen on-device options for private voice.</li>
+</ol></div>
+</article>
+</div>
+</section>
+
+<!-- ============ 6. DEVOPS & KUBERNETES ============ -->
+<section>
+<h2>6 · DevOps &amp; Kubernetes <small>KubeCon + CloudNativeCon NA, Salt Lake City (Nov 9–12)</small></h2>
+<div class="paper">
+
+<article class="lead">
+<h3>CNCF builds the fence around AI agents on Kubernetes</h3>
+<div class="tag">heise iX (Nov 12), VMblog Day-1 recap, CNCF announcements (Nov 11)</div>
+<p>This KubeCon's theme was running agents safely. CNCF accepted several projects aimed at agent isolation and efficiency. <b>Nvidia's OpenShell</b> enforces policy on what agents may do. <b>Google's gVisor</b> provides a user-space kernel sandbox for untrusted code. Both join <b>Agent Substrate</b>, Google's actor-style layer that suspends idle agent sessions and resumes them on the next message so they don't hold CPUs or GPUs. Broadcom contributed a VM API so virtual machines can be managed as Kubernetes objects, next to the newly graduated KubeVirt. CNCF now hosts 231 projects (32 new) and counts 21.2M cloud-native developers.</p>
+<figure>
+<svg viewBox="0 0 520 112" xmlns="http://www.w3.org/2000/svg" font-family="Liberation Sans, sans-serif" font-size="9">
+  <rect x="4" y="4" width="512" height="20" fill="#efe9dc" stroke="#16130f"/><text x="260" y="18" text-anchor="middle"><tspan font-weight="700">Agent sessions</tspan> — coding / voice / ops agents (kagent, any AG-UI or MCP agent)</text>
+  <rect x="4" y="28" width="512" height="20" fill="#16130f"/><text x="260" y="42" text-anchor="middle" fill="#fbf8f1"><tspan font-weight="700" fill="#f0b429">Agent Substrate</tspan> — actors decoupled from workers · suspend idle, resume on message</text>
+  <rect x="4" y="52" width="252" height="20" fill="#f7ebe6" stroke="#a3260f"/><text x="130" y="66" text-anchor="middle"><tspan font-weight="700">OpenShell</tspan> (Nvidia) — action policy</text>
+  <rect x="264" y="52" width="252" height="20" fill="#f7ebe6" stroke="#a3260f"/><text x="390" y="66" text-anchor="middle"><tspan font-weight="700">gVisor</tspan> (Google) — sandbox runtime</text>
+  <rect x="4" y="76" width="512" height="20" fill="#efe9dc" stroke="#16130f"/><text x="260" y="90" text-anchor="middle"><tspan font-weight="700">Kubernetes</tspan> — pods + VMs (KubeVirt, VM API) · GPU scheduling (Kueue, DRA)</text>
+  <text x="260" y="108" text-anchor="middle" font-style="italic" fill="#6a6359">Layered view of the agent-runtime stack described at KubeCon NA 2026 (editor's synthesis)</text>
+</svg>
+</figure>
+<div class="pn">
+  <div class="pos"><b>Positive</b>A vendor-neutral, open stack for isolating agents and using GPUs efficiently, with policy and sandboxing as first-class features.</div>
+  <div class="neg"><b>Negative</b>Many young projects stacked together means more complexity to operate. gVisor adds syscall overhead, and governance is still settling.</div>
+</div>
+<div class="why"><b class="h">Why it matters</b><ol>
+<li>Suspend-on-idle fits voice agents well: long sessions with little compute in between.</li>
+<li>Sandbox every agent that runs tools or code. gVisor is now a CNCF default.</li>
+<li>Put agent action policy in the platform, not just in prompts.</li>
+<li>Platform teams can offer "agents as a workload" on the clusters they already run.</li>
+<li>Track Agent Substrate and kagent 1.0 (GA Nov 10) for production readiness.</li>
+</ol></div>
+</article>
+
+<article>
+<h3>Dash0 makes continuous profiling GA after buying Polar Signals</h3>
+<div class="tag">Cloud Native Now · Nov 11</div>
+<p>Dash0's profiler records CPU and memory for every process in a Kubernetes cluster, or on any Linux host, VM or bare-metal server, without code changes. Profiles sit next to its OpenTelemetry traces, logs and metrics.</p>
+<div class="pn"><div class="pos"><b>Positive</b>Always-on profiles make it easy to answer "why is this pod slow" for inference and media services.</div><div class="neg"><b>Negative</b>Another agent on every node, plus data-volume costs at scale.</div></div>
+<div class="why"><b class="h">Why it matters</b><ol><li>Find CPU hot spots in audio encode/decode and VAD pipelines.</li><li>Correlate latency spikes with GC or memory pressure.</li><li>Zero-instrumentation suits polyglot agent stacks.</li><li>Feed profiles to SRE agents for root-cause analysis.</li><li>Compare against Grafana Pyroscope before committing.</li></ol></div>
+</article>
+
+<article>
+<h3>HAProxy Kubernetes Ingress Controller 3.4 ships</h3>
+<div class="tag">HAProxy blog · Nov 12</div>
+<p>Version 3.4 adds dynamic server management, which updates backend endpoints in real time as pods scale. It also moves configuration to CRDs, isolates invalid custom resources so they don't break valid configuration, and rebases on HAProxy 3.4 for performance. There are deprecations and breaking changes, so read the upgrade notes. An enterprise edition adds extra features.</p>
+<div class="pn"><div class="pos"><b>Positive</b>Smoother scale-out for long-lived WebSocket and SIP-over-WS voice traffic.</div><div class="neg"><b>Negative</b>Breaking changes, and Gateway API remains the long-term direction.</div></div>
+<div class="why"><b class="h">Why it matters</b><ol><li>Fewer reload-related dropped connections for realtime audio.</li><li>Validate CRDs in CI to use the new isolation.</li><li>Test upgrades in staging because of the breaking changes.</li><li>Weigh it against Gateway API controllers for new clusters.</li><li>Useful for regional autoscaling of voice edge pods.</li></ol></div>
+</article>
+
+<article>
+<h3>Ecosystem notes: new Platinum members, a Postgres donation, v1.38 freeze</h3>
+<div class="tag">CNCF, TokenPost, Cloud Native Now · Nov 11–12</div>
+<p><b>Adyen</b> joined CNCF as a Platinum End User. <b>CoreWeave</b> moved to Platinum, pointing to its work on Kubernetes, Kueue and CloudNativePG and its founding role in llm-d. <b>EDB</b> donated its Klio backup tool to CloudNativePG. Next: <b>Kubernetes v1.38</b> code and test freeze starts Nov 17 at 12:00 UTC, with release planned for Dec 16.</p>
+<div class="why"><b class="h">Why it matters</b><ol><li>GPU clouds funding upstream work tends to mean better scheduling features.</li><li>llm-d and Kueue are the projects to watch for inference serving.</li><li>CNPG with Klio makes Postgres-on-K8s safer for agent state.</li><li>Feature-freeze timing tells you what lands in 1.38 GA.</li><li>Fintech adoption (Adyen) suggests these patterns meet compliance bars.</li></ol></div>
+</article>
+</div>
+</section>
+
+<!-- ============ 7. VOICE AI ============ -->
+<section>
+<h2>7 · Voice AI Corner <small>speech models · realtime agents</small></h2>
+<div class="paper">
+
+<article class="lead">
+<h3>ElevenLabs pitches itself as AI's "interaction layer"</h3>
+<div class="tag">ElevenLabs blog, Mumbrella press release · NYC Summit, Nov 11</div>
+<p>At its New York Summit, ElevenLabs announced 13 products and upgrades. The most important for builders is <b>Interaction Engine</b> (preview). It handles conversational rhythm (turn-taking and barge-in) and decides which LLM handles each part of a call: a cheap model for triage, a frontier model only when needed. <b>Memory</b> lets ElevenAgents recognize authenticated returning callers and remember preferences that don't fit a CRM field. <b>Routines</b> runs multi-step work before, during and after a call (callbacks, reminders, CRM writes). The model lineup is Scribe v3 / v3 Live for STT, Eleven v4 for expressive TTS, and Eleven Realtime for speech-to-speech, plus a <b>Scribe v3 Medical</b> model and a finance model in development.</p>
+<div class="specs"><b>Also:</b> fine-tuning of open-source LLMs and ElevenLabs voice models on your own deployment data in the coming months · <b>ElevenAI</b> app for employees (dictation and meeting notes, early access open) · Partner Program (550+ partners in 44 countries) and a McKinsey alliance · Marketplace of vertical agents, purchasable from 2027 · NVIDIA: Nemotron 3.5 Super VL inside ElevenAgents, 15 MW of Vera Rubin capacity, and an on-prem landline voice agent for Poland's e-Health platform.</div>
+<figure>
+<svg viewBox="0 0 520 132" xmlns="http://www.w3.org/2000/svg" font-family="Liberation Sans, sans-serif" font-size="9">
+  <defs><marker id="a2" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0L10,5L0,10z" fill="#16130f"/></marker></defs>
+  <rect x="4" y="40" width="62" height="36" fill="#efe9dc" stroke="#16130f"/><text x="35" y="56" text-anchor="middle" font-weight="700">Caller</text><text x="35" y="68" text-anchor="middle">audio</text>
+  <line x1="66" y1="58" x2="88" y2="58" stroke="#16130f" marker-end="url(#a2)"/>
+  <rect x="90" y="40" width="86" height="36" fill="#efe9dc" stroke="#16130f"/><text x="133" y="55" text-anchor="middle" font-weight="700">Scribe v3 Live</text><text x="133" y="67" text-anchor="middle">STT · turn predict</text>
+  <line x1="176" y1="58" x2="198" y2="58" stroke="#16130f" marker-end="url(#a2)"/>
+  <rect x="200" y="30" width="118" height="56" fill="#16130f"/><text x="259" y="48" text-anchor="middle" fill="#f0b429" font-weight="700">Interaction Engine</text><text x="259" y="61" text-anchor="middle" fill="#fbf8f1">turn-taking · barge-in</text><text x="259" y="73" text-anchor="middle" fill="#fbf8f1">per-step LLM routing</text>
+  <line x1="318" y1="46" x2="344" y2="22" stroke="#16130f" marker-end="url(#a2)"/>
+  <line x1="318" y1="70" x2="344" y2="94" stroke="#16130f" marker-end="url(#a2)"/>
+  <rect x="346" y="6" width="80" height="30" fill="#eef3ea" stroke="#2f6b3a"/><text x="386" y="19" text-anchor="middle" font-weight="700">cheap LLM</text><text x="386" y="30" text-anchor="middle">triage</text>
+  <rect x="346" y="80" width="80" height="30" fill="#f7ebe6" stroke="#a3260f"/><text x="386" y="93" text-anchor="middle" font-weight="700">frontier LLM</text><text x="386" y="104" text-anchor="middle">hard turns</text>
+  <line x1="426" y1="21" x2="446" y2="50" stroke="#16130f" marker-end="url(#a2)"/>
+  <line x1="426" y1="95" x2="446" y2="66" stroke="#16130f" marker-end="url(#a2)"/>
+  <rect x="448" y="40" width="68" height="36" fill="#efe9dc" stroke="#16130f"/><text x="482" y="55" text-anchor="middle" font-weight="700">Eleven v4</text><text x="482" y="67" text-anchor="middle">/ Realtime</text>
+  <rect x="200" y="100" width="118" height="26" fill="#efe9dc" stroke="#16130f" stroke-dasharray="3,2"/><text x="259" y="111" text-anchor="middle" font-weight="700">Memory + Routines</text><text x="259" y="122" text-anchor="middle">before / during / after call</text>
+  <line x1="259" y1="86" x2="259" y2="98" stroke="#16130f" marker-end="url(#a2)"/>
+</svg>
+<figcaption>ElevenAgents call path as described at the Summit (editor's diagram).</figcaption>
+</figure>
+<div class="pn">
+  <div class="pos"><b>Positive</b>A managed answer to the hardest parts of voice-agent engineering (turn-taking and cost-aware model routing), plus memory and after-call work in one platform.</div>
+  <div class="neg"><b>Negative</b>Interaction Engine is a preview and fine-tuning is "coming months." Using all of it deepens lock-in. Memory raises consent, retention and PII questions.</div>
+</div>
+<div class="why"><b class="h">Why it matters</b><ol>
+<li>Per-turn model routing is now table stakes. Build it or buy it, but measure cost per minute.</li>
+<li>Context-based turn prediction beats fixed silence timers. Benchmark it against your VAD.</li>
+<li>Cross-call memory changes returning-caller UX, but needs explicit consent and deletion paths.</li>
+<li>Routines blur IVR, agent and workflow tools. Rethink where your orchestration lives.</li>
+<li>Domain STT (medical, finance) directly improves task success in regulated verticals.</li>
+</ol></div>
+</article>
+
+<article>
+<h3>Decagon's Alto runs conversation and reasoning in parallel</h3>
+<div class="tag">Decagon blog (via Unite.AI) · Nov 11</div>
+<p>Alto is a Decagon Labs model that controls the conversational layer of a full-duplex voice agent: when to speak, when to hold back, and what to say while a separate reasoning model works through the actual task. Decagon reports average response times around 700 ms and higher resolution rates on live calls. It trained Alto on 90M+ simulated calls weighted toward ambiguous moments. Alto works alongside its Voice 3 and Chord models.</p>
+<div class="pn"><div class="pos"><b>Positive</b>Separating "talk" from "think" removes dead air on hard turns without dumbing down the reasoning.</div><div class="neg"><b>Negative</b>The figures are vendor-reported, and filler speech can make promises the reasoning model then overturns.</div></div>
+<div class="why"><b class="h">Why it matters</b><ol><li>A dual-model (fast talker, slow thinker) design is becoming the standard.</li><li>Simulated-call training at scale is a moat. Build your own simulator.</li><li>~700 ms is the bar to beat for natural turn latency.</li><li>Guard against the conversational model committing to actions too early.</li><li>Measure resolution rate, not just latency.</li></ol></div>
+</article>
+
+<article>
+<h3>DeepL's Aure keeps tone and emotion in live speech translation</h3>
+<div class="tag">Trending Topics, The Decoder · Nov 11</div>
+<p>Aure continuously analyzes incoming speech and carries the speaker's tone, emotion, emphasis and pace, including sarcasm and mood shifts, into the translated voice. The previous system only captured those traits at the start. It launches in eight languages: EN, DE, ES, FR, IT, JA, PT and KO. No benchmarks have been published yet.</p>
+<div class="pn"><div class="pos"><b>Positive</b>Cross-lingual calls that sound human, useful for multilingual support desks.</div><div class="neg"><b>Negative</b>No public evals, a limited language list, and emotional mimicry raises consent questions.</div></div>
+<div class="why"><b class="h">Why it matters</b><ol><li>Live multilingual voice agents become realistic without separate per-language bots.</li><li>Prosody transfer affects customer satisfaction as much as word accuracy.</li><li>Check latency added per hop before putting it in a call path.</li><li>Disclose AI translation to callers.</li><li>Compare with speech-to-speech models from ElevenLabs and Google.</li></ol></div>
+</article>
+
+<article>
+<h3>Quick takes</h3>
+<p class="brief"><b>Gemini Live on CarPlay (Nov 11):</b> rolling out worldwide to iOS users in every Gemini Live language. It's voice-only with no on-screen text, you can interrupt it, and it can summarize Gmail and check Calendar. You must have used Gemini Live on the phone first. The car is now a real channel for voice agents.</p>
+<p class="brief"><b>Guava raises $12.5M seed (Nov 11):</b> Acrew-led round for an enterprise voice-agent platform. Investors are still funding vertical voice infrastructure.</p>
+<p class="brief"><b>AWS SageMaker (Nov 11):</b> usage-based pricing for bidirectional streaming endpoints, which removes the always-on cost of self-hosting real-time speech models.</p>
+<p class="brief"><b>The dark side (NPR, Nov 11):</b> swatters are using AI-cloned voices to fool 911 dispatchers. Expect pressure for voice provenance, watermarking and caller-verification rules that will affect legitimate outbound agents too.</p>
+</article>
+</div>
+</section>
+
+<!-- ============ 8. VIDEO AI ============ -->
+<section>
+<h2>8 · Video AI Generation <small>models · pricing · creator tools</small></h2>
+<div class="paper">
+
+<article class="lead">
+<h3>Seedance 2.5 Flash: near-flagship video at about a third less</h3>
+<div class="tag">Volcano Engine via AIBase · Nov 12</div>
+<p>ByteDance's Volcano Engine released a cheaper, faster version of its flagship video model for bulk production. It generates about twice as fast, and 720p costs roughly ¥0.99 per second, 34% below Seedance 2.5. It supports clips up to 30 s, 480p or 720p output, and multi-reference inputs in a single request. A draft mode makes cheap test renders, and 4K is planned.</p>
+<div class="specs"><b>Inputs per request:</b> up to 10 images, 5 video clips, 5 audio clips · <b>Length:</b> ≤30 s · <b>Res:</b> 480p / 720p (4K planned) · <b>Price:</b> ~¥0.99/s at 720p (−34% vs flagship) · <b>Speed:</b> ~2× Seedance 2.5.</div>
+<div class="pn"><div class="pos"><b>Positive</b>Short-form, ad and avatar video becomes affordable at volume, with audio references for lip-sync and pacing.</div><div class="neg"><b>Negative</b>Capped at 720p for now. Quality claims are self-reported, and China-hosted APIs bring data-residency questions.</div></div>
+<div class="why"><b class="h">Why it matters</b><ol><li>Per-second video pricing is falling fast. Revisit build-vs-buy for avatar video.</li><li>Audio-conditioned generation pairs naturally with your TTS voices.</li><li>Use draft mode for prompt iteration before paying for finals.</li><li>Agents that answer with short video clips are getting cheap enough to ship.</li><li>Watch Kling and Veo pricing for a response.</li></ol></div>
+</article>
+
+<article>
+<h3>Beeble SwitchX 3.0 relights scenes but keeps the actor</h3>
+<div class="tag">Broadcast Now · Nov 11</div>
+<p>Beeble's video-to-video model regenerates everything around a performer, guided by reference images, floor plans or storyboards. Its "Source-Locked Rendering" keeps the original performance inside the actor's alpha matte frame by frame.</p>
+<div class="pn"><div class="pos"><b>Positive</b>Keeps the real performance intact, which matters for professional VFX and union-sensitive work.</div><div class="neg"><b>Negative</b>A niche, pro-workflow tool. Matte quality limits the results.</div></div>
+<div class="why"><b class="h">Why it matters</b><ol><li>Guided, structure-aware control is replacing prompt-only video.</li><li>Locked performances reduce consent problems for real presenters.</li><li>Useful for localized avatar backdrops in sales videos.</li><li>Floor-plan conditioning hints at spatially consistent agents.</li><li>Expect similar "lock" controls in HeyGen-style tools.</li></ol></div>
+</article>
+
+<p class="brief"><b>Also:</b> Baidu showed a micro-expression video model that makes faces, emotion and voice more natural in AI video (Nov 12, see §3). ByteDance's planned $70B AI push is centered on Seedance (see §4). Kling, HeyGen, Higgsfield and Canva had no new launches in the window.</p>
+</div>
+</section>
+
+<!-- ============ SOURCES ============ -->
+<section class="pb">
+<h2>Sources <small>grouped by section · all accessed Nov 12, 2026</small></h2>
+<div class="src">
+<h4>Top Story</h4>
+<div>https://www.reuters.com/technology/nvidia-is-preparing-oust-ceo-jensen-huang-wsj-reports-2026-11-11/</div>
+<div>https://www.wsj.com/business/nvidia-is-preparing-to-oust-nvidia-ceo-jensen-huang-30f421ad</div>
+<div>https://www.cbsnews.com/news/nvidia-board-ceo-jensen-huang-china/</div>
+<div>https://www.businessinsider.com/nvidia-stock-drops-jensen-huang-second-affair-report-2026-11</div>
+<div>https://fortune.com/2026/11/11/nvidia-oust-jensen-huang-spy-affairs/</div>
+<div>https://finance.yahoo.com/markets/stocks/articles/nvidia-board-reportedly-preparing-oust-233419551.html</div>
+<div>https://www.inc.com/chris-morris/nvidias-board-may-oust-jensen-huang-5-major-consequences-could-follow/91435367</div>
+<h4>1 · Claude</h4>
+<div>https://the-decoder.com/anthropic-says-ai-is-eroding-nvidias-cuda-lead-cutting-an-amd-chip-switch-from-months-to-three-days/</div>
+<div>https://securityboulevard.com/2026/11/anthropics-claude-mythos-expands-into-cisco-and-ibm-security-platforms/</div>
+<div>https://www.networkworld.com/article/4246968/cisco-boosts-its-ai-defense-platform-with-anthropics-claude-mythos.html</div>
+<div>https://www.govtech.com/education/k-12/anthropic-joins-aft-and-ufts-binding-ai-safety-standard</div>
+<div>https://code.claude.com/docs/en/changelog</div>
+<div>https://platform.claude.com/docs/en/release-notes/overview</div>
+<div>https://www.anthropic.com/news</div>
+<h4>2 · New AI Tools</h4>
+<div>https://www.databricks.com/company/newsroom/press-releases/databricks-launches-new-always-genie-autonomous-ai-complex</div>
+<div>https://www.geekwire.com/2026/aws-gives-developers-a-free-local-stand-in-for-its-cloud-built-from-scratch-by-ai-agents/</div>
+<div>https://www.allthingsdistributed.com/2026/11/aws-emulator-and-the-engineers-job-when-agents-write-the-code.html</div>
+<h4>3 · LLM &amp; Model Updates</h4>
+<div>https://blog.google/innovation-and-ai/technology/developers-tools/gemini-decisions-api/</div>
+<div>https://x.com/googledevs/status/2120583940247552381</div>
+<div>https://www.marktechpost.com/2026/11/11/google-gemini-decisions-api-gemini-decision-1/</div>
+<div>https://www.infoworld.com/article/4247774/googles-gemini-decisions-api-to-handle-up-to-1000-questions-per-request.html</div>
+<div>https://www.gadgets360.com/ai/news/google-gemini-decisions-api-launch-features-availability-12316472</div>
+<div>https://siliconangle.com/2026/11/11/google-enters-the-decision-model-market-with-gemini-decisions-api/</div>
+<div>https://www.cio.com/article/4247450/jev-and-the-era-of-model-tetris.html</div>
+<div>https://deepmind.google/blog/alphagenome-2-deciphering-how-cells-read-dna-to-better-understand-disease/</div>
+<div>https://www.theverge.com/ai-artificial-intelligence/1031524/google-deepmind-alphagenome-2-genetic-ai-model</div>
+<div>https://x.com/GoogleDeepMind/status/2120532824465805749</div>
+<div>https://www.prnewswire.com/news-releases/baidu-unveils-latest-ernie-models-amid-broader-full-stack-ai-lineup-and-debuts-token-exchange-to-power-intelligent-organizations-302937959.html</div>
+<div>https://biz.chosun.com/en/en-international/2026/11/12/U3ZYVLUTYZEATCCAH35K7CSX3Q/</div>
+<h4>4 · Big AI News</h4>
+<div>https://www.bloomberg.com/news/articles/2026-11-11/anthropic-s-mega-ipo-is-said-to-be-multiple-times-oversubscribed</div>
+<div>https://qz.com/anthropic-ipo-oversubscribed-roadshow-demand-111126</div>
+<div>https://finance.yahoo.com/technology/ai/articles/anthropic-seeking-raise-over-90-153907895.html</div>
+<div>https://www.cnbc.com/2026/11/11/anthropic-ipo-profit-computing-commitments.html</div>
+<div>https://www.indianstartuptimes.com/news/tsmc-approves-up-to-1-billion-investment-in-anthropic-and-openai/</div>
+<div>https://skift.com/2026/11/11/united-airlines-moves-to-block-personal-ai-agents-from-booking-flights/</div>
+<div>https://www.airdatanews.com/united-airlines-blocks-ai-agents-from-booking-flights-citing-security-risks/</div>
+<div>https://thriftytraveler.com/news/airlines/united-blocks-ai-agents-booking-flights/</div>
+<div>https://www.tokenpost.com/news/regulation/54504</div>
+<div>https://www.reuters.com/business/sp-500-nasdaq-futures-rise-after-coreweave-soothes-ai-spending-fears-2026-11-11/</div>
+<div>https://www.reuters.com/legal/transactional/uk-backed-ai-chip-startup-fractile-hits-7-billion-valuation-funding-round-2026-11-11/</div>
+<div>https://www.reuters.com/business/automation-startup-rox-raises-100-million-13-billion-valuation-2026-11-11/</div>
+<div>https://fortune.com/2026/11/11/rox-series-b-100-million-funding-take-on-salesforce/</div>
+<div>https://www.bloomberg.com/news/articles/2026-11-11/utah-based-startup-raises-500-million-for-modular-ai-data-center</div>
+<div>https://ventureburn.com/mercor-raises-750-million-series-d-to-train-ai/</div>
+<div>https://theaiinsider.tech/2026/11/12/blue-j-announces-176m-in-funding-at-700m-valuation-to-scale-ai-tax-research-agent/</div>
+<div>https://www.trendforce.com/news/2026/11/12/news-bytedance-reportedly-to-launch-meta-muse-like-ai-assistant-within-weeks-eyes-up-to-us70b-in-broader-ai-push/</div>
+<h4>5 · GitHub &amp; X</h4>
+<div>https://github.com/trending?since=daily (snapshot ~14:00 UTC Nov 12)</div>
+<div>https://x.com/CloudNativeFdn/status/2120593918748250500</div>
+<h4>6 · DevOps &amp; Kubernetes</h4>
+<div>https://www.heise.de/en/news/KubeCon-2026-CNCF-aims-to-make-AI-agents-safer-and-more-efficient-11522412.html</div>
+<div>https://vmblog.com/bylines/kubecon-cloudnativecon-na-2026-day-1-agents-move-into-kubernetes-and-the-community-starts-building-the-fence/</div>
+<div>https://opensource.googleblog.com/2026/11/sandboxing-untrusted-ai-agents-at-scale.html</div>
+<div>https://itopstimes.com/kubernetes/kubecon-roundup-day-2-nov-10-2026/</div>
+<div>https://cloudnativenow.com/kubecon-cloudnativecon-north-america-2026/dash0-makes-continuous-profiling-generally-available-following-polar-signals-acquisition/</div>
+<div>https://www.haproxy.com/blog/announcing-haproxy-kubernetes-ingress-controller-3-4</div>
+<div>https://www.cncf.io/announcements/2026/11/11/cncf-welcomes-adyen-as-platinum-end-user-member-to-advance-open-source-financial-infrastructure/</div>
+<div>https://www.tokenpost.com/news/technology/55104</div>
+<div>https://cloudnativenow.com/kubecon-cloudnativecon-north-america-2026/edb-donates-klio-backup-tool-to-cloudnativepg-previews-enterprise-postgres-add-ons-for-kubernetes/</div>
+<div>https://www.kubernetes.dev/resources/release/</div>
+<h4>7 · Voice AI</h4>
+<div>https://elevenlabs.io/blog/nyc-summit</div>
+<div>https://elevenlabs.io/blog/nvidia</div>
+<div>https://mumbrella.com.au/elevenlabs-launches-13-new-products-and-upgrades-944467</div>
+<div>https://www.unite.ai/decagon-introduces-alto-to-control-voice-agent-conversations/</div>
+<div>https://www.trendingtopics.eu/deepl-aure-ai-voice-translation-emotions/</div>
+<div>https://blog.google/innovation-and-ai/products/gemini-app/gemini-on-apple-carplay/</div>
+<div>https://www.pymnts.com/news/artificial-intelligence/2026/google-brings-gemini-live-to-apple-carplay/</div>
+<div>https://americanbazaaronline.com/2026/11/11/guava-secures-12-5m-seed-funding-to-scale-its-ai-voice-agent-492040/</div>
+<div>https://aws.amazon.com/blogs/machine-learning/introducing-usage-based-pricing-for-amazon-sagemaker-ai-bidirectional-streaming/</div>
+<div>https://www.npr.org/2026/11/11/nx-s1-6034449/ai-911-calls-swatting</div>
+<h4>8 · Video AI</h4>
+<div>https://news.aibase.com/news/32277</div>
+<div>https://www.broadcastnow.co.uk/tech-innovation/beeble-launches-video-to-video-ai-model-switchx-30/5222301.article</div>
+</div>
+<p class="note">Editorial notes: The window is the 24 hours before this 8:11 AM CT run. Items published earlier (Gemini 4 Carbon, Qwen4-Max-Preview, MiniMax H3-Image, Scribe v3 as a standalone release, Claude's free usage reset, the Railway credential-theft disclosure, Agent Substrate/kagent 1.0 GA, New Relic's K8s agent, OpenAI's Q3 revenue report) were excluded or only mentioned for context. Vendor benchmark and latency figures are the companies' own unless stated otherwise. Diagrams are redrawn by the editor from the sources' descriptions. openai.com, blog.google and theneuron.ai could not be fetched directly from this environment; their content was confirmed through search snapshots and secondary coverage.</p>
+</section>
+
+</body></html>
