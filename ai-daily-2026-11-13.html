@@ -1,0 +1,480 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<title>↓: AI Daily — Friday, November 13, 2026</title>
+<style>
+@page { size: Letter; margin: 0.45in 0.45in 0.55in 0.45in; }
+:root { --ink:#16130f; --paper:#fbf8f1; --rule:#16130f; --accent:#a3260f; --mute:#6a6359; --pos:#1f6b3a; --neg:#9b2c1c; --soft:#efe9dc; }
+* { box-sizing:border-box; }
+html, body { background: var(--paper); }
+body { font-family:"DejaVu Serif","Liberation Serif",serif; font-size:8.5pt; line-height:1.4; color:var(--ink); margin:0; -webkit-print-color-adjust:exact; print-color-adjust:exact; }
+.mast { text-align:center; border-bottom:3px double var(--rule); padding-bottom:6pt; margin-bottom:5pt; }
+.mast .kicker { font:700 7pt "Liberation Sans",sans-serif; letter-spacing:.22em; text-transform:uppercase; color:var(--accent); }
+.mast h1 { font:700 46pt "DejaVu Serif",serif; letter-spacing:-.02em; margin:2pt 0 0; line-height:1; }
+.mast h1 span { color:var(--accent); }
+.edition { display:flex; justify-content:space-between; border-top:1px solid var(--rule); border-bottom:1px solid var(--rule); padding:3pt 2pt; margin-bottom:10pt;
+  font:700 7.2pt "Liberation Sans",sans-serif; letter-spacing:.1em; text-transform:uppercase; }
+.top { display:grid; grid-template-columns: 1.6fr 1fr; gap:14pt; border-bottom:1px solid var(--rule); padding-bottom:10pt; margin-bottom:10pt; }
+.label { font:700 6.8pt "Liberation Sans",sans-serif; letter-spacing:.18em; text-transform:uppercase; color:var(--accent); margin-bottom:2pt; }
+.top h2 { font:700 22pt "DejaVu Serif",serif; line-height:1.06; margin:0 0 5pt; letter-spacing:-.01em; }
+.top p { margin:0 0 5pt; }
+.box { background:#16130f; color:#fbf8f1; padding:9pt 11pt; }
+.box .label { color:#f0b429; }
+.box h3 { font:700 12pt "DejaVu Serif",serif; margin:0 0 5pt; }
+.box ol { margin:0; padding-left:13pt; }
+.box li { margin-bottom:3.6pt; font-size:7.9pt; line-height:1.3; }
+.box li b { color:#f0b429; }
+section { margin-bottom:8pt; }
+section > h2 { font:700 9.5pt "Liberation Sans",sans-serif; letter-spacing:.2em; text-transform:uppercase; border-top:2.5px solid var(--rule); border-bottom:1px solid var(--rule); padding:3pt 0; margin:0 0 7pt; break-after:avoid; display:flex; justify-content:space-between; }
+section > h2 small { font-weight:400; letter-spacing:.04em; text-transform:none; color:var(--mute); font-size:7.5pt; }
+.paper { column-count:2; column-gap:16pt; column-rule:1px solid #cfc7b6; }
+article { margin-bottom:9pt; padding-bottom:7pt; border-bottom:1px dotted #bdb5a3; }
+article:last-child { border-bottom:none; }
+article h3 { break-before:avoid; font:700 11pt "DejaVu Serif",serif; line-height:1.15; margin:0 0 2pt; break-after:avoid; }
+article p { margin:0 0 3.5pt; }
+.tag { break-after:avoid; font:700 6.2pt "Liberation Sans",sans-serif; letter-spacing:.1em; text-transform:uppercase; color:var(--mute); margin-bottom:2pt; }
+.spec { font:7.3pt "DejaVu Sans Mono",monospace; background:var(--soft); border-left:2px solid var(--ink); padding:3pt 5pt; margin:3pt 0 4pt; line-height:1.4; break-inside:avoid; }
+.pn { display:grid; grid-template-columns:1fr 1fr; gap:5pt; margin:3pt 0 4pt; break-inside:avoid; }
+.pn div { font-size:7.6pt; line-height:1.33; padding:3pt 5pt; }
+.pn .p { border-top:2px solid var(--pos); background:#e9f1e9; }
+.pn .n { border-top:2px solid var(--neg); background:#f5e6e2; }
+.pn b { font:700 6.2pt "Liberation Sans",sans-serif; letter-spacing:.12em; text-transform:uppercase; display:block; margin-bottom:1pt; }
+.pn .p b { color:var(--pos); } .pn .n b { color:var(--neg); }
+.why { border-left:2px solid var(--accent); padding-left:6pt; margin-top:3pt; break-inside:avoid; }
+.why b.h { font:700 6.4pt "Liberation Sans",sans-serif; letter-spacing:.12em; text-transform:uppercase; color:var(--accent); }
+.why ol { margin:1pt 0 0; padding-left:11pt; font:italic 7.7pt "DejaVu Serif",serif; color:#3b342b; }
+.why li { margin-bottom:1pt; }
+.flow { display:flex; align-items:stretch; gap:0; margin:4pt 0 5pt; break-inside:avoid; font:700 6.5pt "Liberation Sans",sans-serif; }
+.flow .n2 { flex:1; border:1.2px solid var(--ink); background:#fff; padding:3pt 3pt; text-align:center; line-height:1.2; }
+.flow .n2 small { display:block; font-weight:400; font-size:6pt; color:var(--mute); margin-top:1pt; }
+.flow .ar { align-self:center; padding:0 2pt; color:var(--accent); font-size:9pt; }
+.flow .hl { background:var(--ink); color:#fbf8f1; } .flow .hl small { color:#d8cfbd; }
+.figcap { font:italic 6.6pt "DejaVu Serif",serif; color:var(--mute); margin:-2pt 0 4pt; }
+.quiet { font-style:italic; color:var(--mute); border-left:2px solid var(--accent); padding-left:6pt; margin:0 0 6pt; }
+table.gh { width:100%; border-collapse:collapse; font-size:7.6pt; margin:2pt 0 6pt; }
+table.gh th { font:700 6.4pt "Liberation Sans",sans-serif; letter-spacing:.1em; text-transform:uppercase; text-align:left; border-bottom:1px solid var(--rule); padding:2pt 3pt; }
+table.gh td { padding:2.4pt 3pt; border-bottom:1px dotted #bdb5a3; vertical-align:top; }
+table.gh td.num { text-align:right; white-space:nowrap; font-family:"DejaVu Sans Mono",monospace; font-size:7pt; }
+.brief { font-size:7.9pt; }
+.brief p { margin:0 0 3pt; }
+.src { font:6.8pt "Liberation Sans",sans-serif; line-height:1.35; column-count:2; column-gap:14pt; word-break:break-all; }
+.src h4 { font:700 7pt "Liberation Sans",sans-serif; letter-spacing:.14em; text-transform:uppercase; margin:5pt 0 1pt; color:var(--accent); break-after:avoid; }
+.src div { margin:0 0 1.5pt; }
+.note { font:italic 7.1pt "DejaVu Serif",serif; color:var(--mute); margin-top:6pt; border-top:1px solid #cfc7b6; padding-top:4pt; }
+.pb { break-before:page; }
+</style></head><body>
+
+<header class="mast">
+  <div class="kicker">All the AI news that fits the last 24 hours</div>
+  <h1><span>↓:</span> AI Daily</h1>
+</header>
+<div class="edition"><span>Friday, November 13, 2026</span><span>Edition for Manohar · Last 24 hours</span><span>Window: Nov 12, 9:32 AM – Nov 13, 9:32 AM CT</span></div>
+
+<div class="top">
+  <div>
+    <div class="label">Top Story</div>
+    <h2>Jensen Huang resigns as Nvidia CEO; CFO Colette Kress steps in as interim chief</h2>
+    <p>Nvidia's board said on Thursday that Jensen Huang has left his roles as president, CEO and director, effective immediately. CFO Colette Kress, at the company since 2013, becomes interim CEO while keeping the finance job. Former Synopsys CEO Harvey C. Jones becomes the company's first board chair. The board will look at internal and external candidates for a permanent CEO, and Q3 fiscal results are still set for November 17.</p>
+    <p>This follows a board investigation into Huang's alleged relationship with an executive whom U.S. intelligence linked to Chinese recruitment. Senate Banking chair Tim Scott has asked Huang to testify on December 3 and Commerce Secretary Lutnick on December 10, and has said he will subpoena them if needed. CNBC also reports that Nvidia's August pact with Apollo, BlackRock, Blackstone, Brookfield, Goldman and KKR to raise more than $500B for AI data centers has not closed a single deal yet. Lenders had been pressing Huang to raise Nvidia's 25% residual-value backstop on GPUs used as collateral.</p>
+    <div class="pn"><div class="p"><b>Positive</b>Clean governance move: an experienced CFO takes over, there's an independent chair for the first time, and the earnings date holds. Product roadmaps (Blackwell, Rubin) are years deep and won't change overnight.</div><div class="n"><b>Negative</b>The person behind Nvidia's partner deals and GPU-backed financing is gone right before earnings. Expect Senate hearings, tougher export scrutiny and slower closing of the $500B financing program.</div></div>
+    <div class="why"><b class="h">Why it matters for builders</b><ol>
+      <li>GPU supply and pricing depend on Nvidia's partner financing, so delays there could hit inference capacity and price cuts through 2027.</li>
+      <li>Tighter China export enforcement is likely, which affects open-weight Chinese models (see the "fingerprint" analysis in Big AI News).</li>
+      <li>Neoclouds such as Nscale and CoreWeave that rely on Nvidia-backed debt are now riskier suppliers. Have a second source ready.</li>
+      <li>If your voice stack is latency-critical and runs on one GPU cloud, now is a good time to test TPU or Trainium fallbacks.</li>
+      <li>Watch the Nov 17 earnings call for guidance on Rubin timing. That timing drives next year's per-token costs.</li></ol></div>
+  </div>
+  <div class="box">
+    <div class="label">Today in 60 seconds</div>
+    <h3>The short version</h3>
+    <ol>
+      <li><b>Nvidia:</b> Jensen Huang resigns; CFO Kress is interim CEO and Harvey Jones becomes first board chair.</li>
+      <li><b>Google:</b> Gemini 4 Hydrogen ships at $1.50/$7.50 per MTok with a 1M context and a new "xhigh" thinking level.</li>
+      <li><b>Anthropic:</b> Claude Managed Agents can now be self-hosted (private beta), so sessions and credentials stay in your cloud.</li>
+      <li><b>Claude Code 2.1.323:</b> experimental Code Mode lets Claude write JavaScript that calls its tools.</li>
+      <li><b>OpenAI:</b> CNBC says OpenAI raised $15B at a $1.25T valuation. It also launched ChatGPT Wallet for agent purchases.</li>
+      <li><b>OpenAI security:</b> Daybreak Red Team and Defense Factory launch, plus a $1B defender subsidy.</li>
+      <li><b>Open weights:</b> Thinking Machines posts Inkling 2 Small (594B MoE, 17B active, Apache 2.0); Edge0 ships a 145B on-device model.</li>
+      <li><b>Voice:</b> Retell passes $100M ARR on just $4.6M raised; Zyphra open-sources ZONOS3-Mini TTS with ~80 ms to first audio.</li>
+      <li><b>Kubernetes:</b> KubeVirt graduates from CNCF; Solo.io's Agent Substrate (suspend and restore agents in under 500 ms) goes GA and is donated to CNCF.</li>
+      <li><b>Money:</b> LangChain raises $300M at $3B; Mirendil raises a $1B Series A; Agile Robots raises $500M.</li>
+    </ol>
+  </div>
+</div>
+
+<!-- ============ 1. CLAUDE ============ -->
+<section>
+<h2>1 · New Claude Features <small>Anthropic platform, Claude Code, apps</small></h2>
+<div class="paper">
+
+<article>
+<div class="tag">Platform · Nov 12 · Private beta</div>
+<h3>Claude Managed Agents can now run entirely inside your own cloud</h3>
+<p>The Claude Platform release notes for Nov 12 add a self-hosted edition of Managed Agents. Until now only the sandboxes could be self-hosted. Now the whole service can: the agent server, a PostgreSQL store for agents, sessions and history, and the workers. Only model inference leaves your network, and it goes to whichever provider you choose. Anthropic is the default, and Help Net Security reports that Bedrock, Google's agent platform, Microsoft Foundry or an internal gateway also work. Credentials never enter the sandbox: a proxy pulls secrets from your own secrets manager and adds them to MCP tool calls. Network egress can be allowlisted and every agent action is logged for SOC review. Access is through your Anthropic account team, priced by quote.</p>
+<div class="flow"><div class="n2">Your app<small>sessions API</small></div><div class="ar">→</div><div class="n2 hl">Managed Agents server<small>your VPC · Postgres</small></div><div class="ar">→</div><div class="n2">Sandbox workers<small>tools, code exec</small></div><div class="ar">→</div><div class="n2">Model provider<small>Anthropic / Bedrock / gateway</small></div></div>
+<div class="figcap">Self-hosted layout as described in the release notes and Help Net Security. Secrets are added by a proxy, never stored in the sandbox.</div>
+<div class="pn"><div class="p"><b>Positive</b>Gets past the data-residency and credential-custody objections that block regulated buyers. You keep a single harness while switching model providers.</div><div class="n"><b>Negative</b>You now run Postgres, workers and upgrades yourself. It's gated beta with quote-only pricing, and the hosted version will probably get new features first.</div></div>
+<div class="why"><b class="h">Why it matters</b><ol><li>Healthcare and finance voice agents can keep call transcripts and session state on-prem.</li><li>Routing through a gateway lets you add cost controls and failover between Bedrock and Anthropic.</li><li>The secret-injecting proxy is a pattern worth copying even if you don't use Anthropic.</li><li>Expect enterprise RFPs to start asking whether your agent layer can be self-hosted.</li><li>Plan for operations work: backups, migrations and audit log retention are now your responsibility.</li></ol></div>
+</article>
+
+<article>
+<div class="tag">Claude Code · v2.1.323 · Nov 12</div>
+<h3>Claude Code adds "Code Mode": the model writes JavaScript to call its tools</h3>
+<p>The newest Claude Code release adds Code Mode as an experimental opt-in. Instead of one tool call per turn, Claude writes a short JavaScript program that calls its tools, which can cut round trips on multi-step work. Admins can turn it off for a whole organization. Plugins get a version gate: <code>engines["claude-code"]</code> in plugin.json means out-of-range plugins won't install or load. <code>claude plugin validate</code> now type-checks TypeScript hook modules, with <code>--strict</code> to fail on warnings. Most of the changelog is security hardening: dozens of fixes to Bash permission matching (sudo/env wrappers, wildcard allow rules, <code>rm</code> checks from the wrong folder, Write/Edit ignoring Read-deny rules), a fix for auto mode starting with more permissions when unavailable, and sandbox fixes for config and checkpoint files.</p>
+<div class="spec">NEW  Code Mode (opt-in) · engines["claude-code"] gate · plugin TS type-check<br>NEW  30-s hook heartbeat in -p/SDK · .docx asset uploads · options menu when credits run out<br>FIX  ~25 permission/sandbox bypass cases · auth/profile leakage in background sessions</div>
+<div class="pn"><div class="p"><b>Positive</b>Programmatic tool calling saves tokens and latency on agent loops. Version-pinned plugins make shared team setups safer.</div><div class="n"><b>Negative</b>The long list of permission-bypass fixes shows how hard it is to secure shell agents. Code Mode is experimental and changes how tool calls look in audit logs.</div></div>
+<div class="why"><b class="h">Why it matters</b><ol><li>Upgrade now. Several fixes close cases where commands ran without a prompt.</li><li>If you ship Claude Code plugins, add the <code>engines</code> field before your users upgrade.</li><li>Code Mode is the same pattern you can use in your own agents: let the model write a script instead of chaining tool calls.</li><li>The new heartbeat stops long hooks from being killed as "hung" in SDK hosts.</li><li>Check that your security tooling can parse tool calls made from model-written JavaScript.</li></ol></div>
+</article>
+
+<article>
+<div class="tag">Vertical plugin · Nov 12 · Team &amp; Enterprise</div>
+<h3>Claude for Manufacturing: 17 skills for quoting, inspections and downtime</h3>
+<p>Anthropic released a manufacturing plugin with 17 skills covering quote drafting, failed-inspection investigations, equipment troubleshooting, production reporting, sourcing and design. It connects to Autodesk Fusion, Infor, Microsoft 365 and Oracle NetSuite, and works from records a plant already keeps. Anthropic says Claude drafts and humans decide: estimators approve quotes and technicians choose the fix. It does not control production equipment. It's available on Team and Enterprise plans.</p>
+<div class="pn"><div class="p"><b>Positive</b>Packaged skills and connectors shorten time-to-value for non-software buyers. The human-in-the-loop design suits regulated shop floors.</div><div class="n"><b>Negative</b>Results depend on how clean the ERP and inspection data is, which is the known weak spot in this industry. Vertical bundles also compete with Anthropic's own partners.</div></div>
+<div class="why"><b class="h">Why it matters</b><ol><li>"Skills plus connectors" is becoming Anthropic's standard way to package an industry.</li><li>If you sell into a vertical, expect Anthropic's bundle to set the baseline buyers compare you to.</li><li>Voice opportunity: hands-free troubleshooting on the plant floor is a natural fit.</li><li>Skills are portable, so you can fork the pattern for your own domain.</li><li>The draft-then-human-approves model is a sensible reference for agent liability.</li></ol></div>
+</article>
+
+<article>
+<div class="tag">Reliability · Nov 13, 09:58–11:58 UTC</div>
+<h3>Sign-in outage hits claude.ai, Console, Claude Code and Cowork</h3>
+<p>Anthropic's status page logged authentication failures across claude.ai, Claude Console, Claude Code and Claude Cowork starting at 09:58 UTC. A fix went out at 11:05 and the incident was marked resolved at 11:58 UTC, about two hours. Third-party trackers reported up to ~2,900 user complaints and claimed longer disruption. API traffic was reportedly unaffected. AI Weekly counts this as Anthropic's fourth reliability incident in November.</p>
+<div class="pn"><div class="p"><b>Positive</b>The API path stayed up, so production apps calling the API directly were largely unaffected. The fix took about an hour.</div><div class="n"><b>Negative</b>Repeated incidents in an IPO month. Developer tools that depend on a claude.ai login stopped working.</div></div>
+<div class="why"><b class="h">Why it matters</b><ol><li>Keep production on API keys or workload identity, not consumer logins.</li><li>Have a second model provider ready for live voice traffic.</li><li>Subscribe to status.claude.com webhooks and connect them to your incident tooling.</li><li>Cache auth tokens with refresh and backoff so a short auth outage doesn't take you down.</li><li>Track vendor uptime so you have data for SLA negotiations.</li></ol></div>
+</article>
+
+</div>
+</section>
+
+<!-- ============ 2. TOOLS ============ -->
+<section>
+<h2>2 · New AI Tools <small>launches, agent platforms, dev tools</small></h2>
+<div class="paper">
+
+<article>
+<div class="tag">OpenAI · Nov 13 · U.S. Pro users</div>
+<h3>ChatGPT Wallet lets OpenAI's "dots" agents pay for things, using tokenized cards</h3>
+<p>OpenAI launched ChatGPT Wallet, built with American Express, Mastercard and Visa. Users add a card once, ask their dot to find something, and approve each purchase with a security check. The agent never sees card details. The card network issues a single-transaction token (a scoped card number, CVV and expiry) for each purchase, and cardholders keep their usual rewards and protections. It's limited to U.S. Pro subscribers aged 18+, and OpenAI is taking no cut for now. OpenAI also published guidance for merchants on how to avoid accidentally blocking its agents. This comes a day after United Airlines said it will block agents from booking tickets.</p>
+<div class="flow"><div class="n2">User intent<small>"buy X"</small></div><div class="ar">→</div><div class="n2">Dot agent<small>finds item</small></div><div class="ar">→</div><div class="n2">User approval<small>security check</small></div><div class="ar">→</div><div class="n2 hl">Network token<small>per-transaction PAN/CVV</small></div><div class="ar">→</div><div class="n2">Merchant</div></div>
+<div class="pn"><div class="p"><b>Positive</b>Uses existing card-network tokens rather than a new payment rail, so liability and chargebacks work the way they already do. Approval on every purchase limits runaway spending.</div><div class="n"><b>Negative</b>Merchants are split: United and Amazon block agents outright. Pro-only availability keeps volume small, and OpenAI's previous Instant Checkout effort was quietly dropped.</div></div>
+<div class="why"><b class="h">Why it matters</b><ol><li>Voice-ordering agents now have a reference model for compliant payments: a token per transaction plus explicit approval.</li><li>If you run a storefront, check your bot rules so you don't block agent traffic you'd actually want.</li><li>Expect Visa and Mastercard agent-token APIs to open up to third-party agents next.</li><li>Approval steps add friction, so design voice confirmations that are fast and clear.</li><li>Agent commerce is splitting into card-token (OpenAI) and crypto (x402, below) camps.</li></ol></div>
+</article>
+
+<article>
+<div class="tag">AWS · Nov 12 · Free, local</div>
+<h3>AWS Emulator: a local copy of 200+ AWS services, written by AI agents</h3>
+<p>AWS released a free in-memory emulator that stands in for more than 200 AWS services and 438 API models, so tests can run without an AWS account. AWS says autonomous agents wrote all of the code and built the test pipelines. It passes 56.6% of fidelity tests. KMS and SQS score well and CloudFormation poorly. It doesn't evaluate IAM policies, and each instance covers a single region.</p>
+<div class="pn"><div class="p"><b>Positive</b>Fast, free CI loops without needing a cloud account. It's a first-party alternative to LocalStack, and a large proof of agent-written infrastructure software.</div><div class="n"><b>Negative</b>56.6% fidelity and no IAM checks mean a passing test can still fail in production. It's an agent-built codebase whose long-term maintenance is unproven.</div></div>
+<div class="why"><b class="h">Why it matters</b><ol><li>Coding agents can test infrastructure changes locally without real credentials, which is safer.</li><li>Use it for SQS/KMS-heavy voice pipelines, but keep a staging account for IAM.</li><li>It shows the scale of code agents can now ship when they have a test oracle.</li><li>Cheaper CI means more agent-driven test runs per pull request.</li><li>Pin versions, because agent-generated releases may change behavior quickly.</li></ol></div>
+</article>
+
+<article>
+<div class="tag">Brave · Nov 12 · x402 protocol</div>
+<h3>Brave Search API now takes per-query USDC payments from agents, no account needed</h3>
+<p>Brave enabled pay-as-you-go access through the open x402 protocol. A request without payment gets HTTP 402 back with a price quote. The client signs a USDC payment on Base and retries, and the response comes back with an on-chain receipt. AI Weekly reports $0.005 per query ($5 per 1,000) for both LLM Context and standard search. Brave is covering Base gas fees for now and recommends Stripe's Purl CLI wallet.</p>
+<div class="flow"><div class="n2">GET /search</div><div class="ar">→</div><div class="n2">402 + price</div><div class="ar">→</div><div class="n2 hl">Sign USDC<small>on Base</small></div><div class="ar">→</div><div class="n2">Retry w/ header</div><div class="ar">→</div><div class="n2">Results + receipt</div></div>
+<div class="pn"><div class="p"><b>Positive</b>No signup or API keys, so agents can buy data on demand. One of the first production uses of x402 by a mainstream provider.</div><div class="n"><b>Negative</b>Requires holding a crypto wallet and stablecoins. Gas subsidies are temporary, and finance teams will find on-chain bookkeeping awkward.</div></div>
+<div class="why"><b class="h">Why it matters</b><ol><li>Agents can get web grounding without you managing a key for every vendor.</li><li>HTTP 402 metering may become standard for tool APIs. Design your own API with that in mind.</li><li>Per-query pricing makes costs per conversation predictable.</li><li>Budget limits on the wallet become a guardrail for spending.</li><li>Compare with ChatGPT Wallet: crypto vs. card tokens for agent payments.</li></ol></div>
+</article>
+
+<article>
+<div class="tag">CopilotKit · Nov 12 · MIT</div>
+<h3>OpenBot 1.0: a self-hosted "AI coworker" that checks every action against policy</h3>
+<p>CopilotKit shipped OpenBot 1.0, an MIT-licensed, self-hostable agent workspace where you bring your own models and tools. A governance gateway checks each action against policy before it runs. It supports multiple accounts and orchestration, and the business tier adds SSO, token limits and full audit trails. Personal use is free and business plans start at $29 per active user per month. Example uses include ticket triage and expense review.</p>
+<div class="pn"><div class="p"><b>Positive</b>An open-source alternative to closed "agent coworker" products, with policy enforcement built in.</div><div class="n"><b>Negative</b>A crowded field. Self-hosting means your team owns updates and security.</div></div>
+<div class="why"><b class="h">Why it matters</b><ol><li>A ready-made governance gateway for internal agents.</li><li>Its per-action policy hook works for approving voice-agent actions too.</li><li>MIT license means you can embed it in your own product.</li><li>Audit trails help with SOC 2 evidence.</li><li>Useful as a benchmark against Managed Agents and OpenAI's agent tools.</li></ol></div>
+</article>
+
+<article>
+<div class="tag">Google · Nov 13 · Open source</div>
+<h3>TPU Sync: open-source library for fast KV-cache transfer on TPUs</h3>
+<p>Google released TPU Sync, a C++ library for moving KV caches and model weights between parts of a TPU deployment using direct asynchronous DMA, with no Python serialization. Google reports more than 90% lower KV transfer latency and faster time-to-first-token on TPU v7x, with PyTorch and JAX support. It's aimed at disaggregated inference (separate prefill and decode) and reinforcement learning. Google calls it early-stage.</p>
+<div class="pn"><div class="p"><b>Positive</b>Disaggregated serving on TPUs becomes practical, and it's open.</div><div class="n"><b>Negative</b>TPU-only and early. The 90% figure is self-reported.</div></div>
+<div class="why"><b class="h">Why it matters</b><ol><li>Faster time-to-first-token is the most important latency number for voice agents.</li><li>It strengthens the case for TPUs as a backup to GPUs.</li><li>Prefill/decode splitting is becoming the standard way to serve models.</li><li>Expect similar features in vLLM and llm-d.</li><li>Only worth tracking if you self-host inference.</li></ol></div>
+</article>
+
+</div>
+</section>
+
+<!-- ============ 3. LLM ============ -->
+<section class="pb">
+<h2>3 · LLM &amp; Model Updates <small>new models, open weights, benchmarks, prices</small></h2>
+<div class="paper">
+
+<article>
+<div class="tag">Google DeepMind · Nov 12, 18:00 UTC · GA</div>
+<h3>Gemini 4 Hydrogen: Google's fast, cheaper agent model, at $1.50/$7.50</h3>
+<p>Google released <code>gemini-4-hydrogen</code>, a closed-weights model adapted from Gemini 4 Carbon that Google calls its "daily driver for agentic workflows." It sits below Carbon and Argon. The 1,048,576-token window is shared by input, thinking and output tokens. Synchronous output is capped at 65,536 tokens and the knowledge cutoff is March 2026. Thinking levels are low, medium, high (now the default) and a new xhigh; "minimal" now returns an error. Google reports 51 on the Artificial Analysis Index at high and 54 at xhigh (Argon scores 50), 57% on Terminal-Bench 4.1 versus 18.2% for 3.8 Flash, and 2.5× faster task completion than 3.8 Flash. Google also claims more than 5× fewer fabricated claims and 2.3× better resistance to indirect prompt injection on Gray Swan's benchmark. On Agent Arena it ranks only #5.</p>
+<div class="spec">Price  $1.50 in / $7.50 out per MTok (thinking billed as output)<br>Cache  implicit only, $0.075/MTok for prompts ≥4,096 tok · no explicit cache<br>Where  Gemini API, AI Studio, Android Studio, Gemini app, Search, Sheets, Antigravity<br>Migrate  drop temperature/top_p/top_k &amp; cached_content · raise max_output_tokens to 65,536</div>
+<div class="flow"><div class="n2">Task</div><div class="ar">→</div><div class="n2 hl">Gemini 4 Carbon<small>plan · resolve ambiguity</small></div><div class="ar">⇄</div><div class="n2 hl">Gemini 4 Hydrogen<small>edit files · run tests</small></div><div class="ar">→</div><div class="n2">Result<small>−24% quota · 19% faster</small></div></div>
+<div class="figcap">Antigravity "Orchestrator" from Google's launch post. Carbon plans, Hydrogen executes and hands back to Carbon when it gets stuck. Near-Carbon success on Terminal-Bench 4.1.</div>
+<div class="pn"><div class="p"><b>Positive</b>Near-frontier agent scores at mid-tier prices. The same price across the full 1M window, and Google shows the planner/executor pattern working in production.</div><div class="n"><b>Negative</b>Twice 3.8 Flash's current promotional price. No sampling controls or explicit caching. Benchmarks are mostly self-reported, and one developer test found it slower than a GPT mini model on simple tasks.</div></div>
+<div class="why"><b class="h">Why it matters</b><ol><li>A strong candidate for the "executor" model in a two-tier agent setup.</li><li>For voice, use "low" thinking: the default "high" will add latency.</li><li>Removing temperature means you'll need prompt-level control over persona variety.</li><li>The 65K output cap and missing explicit cache affect long RAG prompts. Re-run your cost math.</li><li>3.8 Flash rises to the same price on Jan 1, so plan the switch now.</li></ol></div>
+</article>
+
+<article>
+<div class="tag">Thinking Machines Lab · Nov 12 · Apache 2.0</div>
+<h3>Inkling 2 Small weights released: 594B MoE, 17B active, image input</h3>
+<p>A week after launching Inkling 2 Small as hosted-only on Tinker, Thinking Machines published the full weights on Hugging Face under Apache 2.0, after external safety and red-team testing. It's a mixture-of-experts model with 594B total and 17B active parameters, image input and adjustable effort. The checkpoint is 393.5 GB across 36 files. The lab reports 31 on the Artificial Analysis Intelligence Index and strong agentic-coding results. Together, Fireworks, Baseten, Nebius, Modal and Cloudflare already serve it, and vLLM, SGLang and Unsloth support it.</p>
+<div class="pn"><div class="p"><b>Positive</b>A permissively licensed U.S. open-weight model that inference providers supported on day one. 17B active parameters keeps decoding cheap.</div><div class="n"><b>Negative</b>About 394 GB means multi-GPU serving. An AA Index of 31 is well below frontier closed models.</div></div>
+<div class="why"><b class="h">Why it matters</b><ol><li>A credible open model to fine-tune when compliance rules out Chinese weights.</li><li>Several hosts give you price competition and failover.</li><li>Variable effort lets you trade quality for latency per call.</li><li>Fine-tuning through Tinker makes adapting it to your domain easy.</li><li>Test on your own evals, since most published scores are the lab's own.</li></ol></div>
+</article>
+
+<article>
+<div class="tag">Edge0 · Nov 12 · Open source</div>
+<h3>Edge0-145B: a 145B open model that runs on a 48 GB laptop</h3>
+<p>Edge0 open-sourced Edge0-145B and 120B. The 145B uses a latent mixture-of-experts design that activates about 10B parameters per step. The team reports 80+ tokens/s generation, 1,100+ tokens/s prompt processing and 29 GB peak memory on a 48 GB laptop, with a 128K–256K context. It claims 86.5 on Terminal-Bench 2.1, 90.4 on GPQA-Diamond and 80.6 on IFBench.</p>
+<div class="pn"><div class="p"><b>Positive</b>Frontier-class coding runs fully offline, with no token costs and full privacy.</div><div class="n"><b>Negative</b>A new lab with unverified benchmarks, compared against older model versions. Hardware requirements are still high.</div></div>
+<div class="why"><b class="h">Why it matters</b><ol><li>On-device agents become realistic for sensitive customers.</li><li>An offline fallback for when cloud providers go down (as today's did).</li><li>Puts downward pressure on cloud coding-agent prices.</li><li>Check licensing and safety tuning before shipping it.</li><li>Run your own evals. Benchmarks against old versions can mislead.</li></ol></div>
+</article>
+
+<article>
+<div class="tag">IBM · Nov 12 · Apache 2.0 · 3B &amp; 8B</div>
+<h3>Granite 4.1 LLMON preview: tagging prompt blocks cuts prompt injection to ≤5.6%</h3>
+<p>IBM replaced the usual chat template with LLMON (LLM Object Notation). Every block (system, instructions, data, documents, tool definitions, tool results) is wrapped and tagged with an "exec" permission, and only exec-authorized blocks count as commands. IBM's own tests show indirect prompt-injection success falling from 53–100% on baseline models to 0.02–5.6%. IBM warns this behavior is learned during training, not enforced by the system, so it shouldn't be the only defense.</p>
+<div class="pn"><div class="p"><b>Positive</b>A concrete, open format for separating trusted from untrusted input, which agents need.</div><div class="n"><b>Negative</b>Small preview models. It's a learned behavior with no guarantee, and the results are internal only.</div></div>
+<div class="why"><b class="h">Why it matters</b><ol><li>Tool results such as web pages and CRM notes are the main injection path for agents.</li><li>Small models like these work well as an injection-screening layer in front of your main model.</li><li>Watch whether others adopt LLMON-style formats.</li><li>Still sandbox and allowlist actions. Don't rely on the model alone.</li><li>Voice agents that read caller-provided text benefit directly.</li></ol></div>
+</article>
+
+</div>
+</section>
+
+<!-- ============ 4. BIG NEWS ============ -->
+<section>
+<h2>4 · Big AI News <small>funding, deals, policy, legal</small></h2>
+<div class="paper">
+
+<article>
+<div class="tag">Funding · Nov 12 · per CNBC sources</div>
+<h3>OpenAI raises $15B at a $1.25T valuation, half of what it set out to raise</h3>
+<p>CNBC's David Faber reported on Thursday, citing sources, that OpenAI raised $15B at a $1.25T valuation. That is about 47% above March's $852B, and $4B more than Bloomberg reported a week earlier. Several reports say OpenAI initially sought up to $30B at a valuation of $1.4–1.5T. The round is widely seen as a bridge to a 2027 IPO. OpenAI has not confirmed it.</p>
+<div class="pn"><div class="p"><b>Positive</b>Plenty of runway for compute and products, and the valuation still went up.</div><div class="n"><b>Negative</b>Half the target amount at a lower valuation than sought suggests investors are getting cautious about AI, the same day Nvidia's leadership crisis broke.</div></div>
+<div class="why"><b class="h">Why it matters</b><ol><li>OpenAI's pricing should stay aggressive while it grows into the valuation.</li><li>Investor caution could tighten funding for smaller AI startups.</li><li>IPO preparation usually means stricter enterprise terms and less experimentation.</li><li>Keep your stack portable across vendors.</li><li>Watch for price changes on Realtime and voice APIs as monetization pressure rises.</li></ol></div>
+</article>
+
+<article>
+<div class="tag">OpenAI · Nov 12 · Security</div>
+<h3>OpenAI launches Daybreak Red Team and Defense Factory, plus a $1B defender fund</h3>
+<p>At its "Cyber at the Frontier" keynote, OpenAI launched two products. Daybreak Red Team, in early access, sends fleets of agents to pen-test web apps using source code and app context, and checks findings from scanners and bug bounties. Daybreak Defense Factory, built on GPT-6 Cyber and available as a Codex plugin in research preview, scans connected GitHub repos and opens merge-ready fix PRs with tests. Greg Brockman said companies will be only as secure as the frontier model they defend with. OpenAI also announced a $1B "Daybreak for Frontline Defenders" subsidy. The open-source <code>openai/codex-security</code> CLI was trending on GitHub today.</p>
+<div class="pn"><div class="p"><b>Positive</b>Automated fixes with tests are actually useful. The subsidy helps under-resourced defenders.</div><div class="n"><b>Negative</b>A fear-based sales pitch, and the same models raise attacker capability too. Agent-written PRs still need careful review.</div></div>
+<div class="why"><b class="h">Why it matters</b><ol><li>Try Defense Factory on a non-critical repo to see how good its fixes are.</li><li>Agent-driven red-teaming of your voice-agent web endpoints is now cheap.</li><li>Expect customers to ask whether your code was AI-audited.</li><li>Keep a human approval step for security fixes.</li><li>Compare with Anthropic's vulnerability work (see VulnCheck's tracker in sources).</li></ol></div>
+</article>
+
+<article>
+<div class="tag">Legal · filed Nov 11, reported Nov 12</div>
+<h3>Four nonprofits sue five AI labs in California to stop frontier model training</h3>
+<p>Irreplaceable Education Fund, Public Citizen, Heat Initiative and the Alliance for Secure AI sued in San Francisco Superior Court under California's Unfair Competition Law. Defendants are Anthropic, Google, Meta, OpenAI and SpaceX's AI unit. The suit asks for an emergency injunction stopping training and deployment of next-generation models until the companies show they're under human control. It cites the companies' own leaders' warnings about the risks. It also calls for federal independent evaluators, strict liability and a new AI regulator. No ruling yet.</p>
+<div class="pn"><div class="p"><b>Positive</b>Forces public, on-the-record debate about safety claims as Anthropic and OpenAI head toward IPOs.</div><div class="n"><b>Negative</b>Unlikely to win an injunction, but discovery and headlines create uncertainty for everyone building on these models.</div></div>
+<div class="why"><b class="h">Why it matters</b><ol><li>A small but real risk of an injunction affecting model releases. Diversify your providers.</li><li>Strict-liability ideas would eventually affect app builders, not just model labs.</li><li>Keep records of your safety evaluations now.</li><li>Expect labs to publish more safety disclosures in response.</li><li>Follow the case alongside the FRONTIER Act in the lame-duck Congress.</li></ol></div>
+</article>
+
+<article class="brief">
+<div class="tag">Money &amp; moves · briefs</div>
+<h3>Also in the deal flow</h3>
+<p><b>LangChain, $300M at $3B</b> (WSJ). Led by Alphabet's CapitalG with GIC, DFJ Growth, IVP and Sapphire. The money goes to LangSmith (agent monitoring, evaluation and deployment), bringing total funding to about $460M. <i>+</i> Validates the agent observability market. <i>−</i> Competes with observability built into the labs' own platforms.</p>
+<p><b>Mirendil, $1B Series A</b> led by Kleiner Perkins and Clearlake. Founded by researchers from Anthropic, OpenAI, DeepMind and xAI, it builds tools to automate AI R&amp;D (Fern 0.1 with a 10M-token context, and Lor, which orchestrates hundreds of agents). Reported post-money about $5B.</p>
+<p><b>Agile Robots, $500M Series F</b> led by SoftBank at an $8.5B valuation (SiliconANGLE). <b>Samsung is in talks to buy Modine</b>, the data-center cooling company worth $5.6B (Bloomberg); Modine's shares rose 29% after hours. <b>Nscale's</b> IPO update shows Q3 revenue of $307.5M (+1,344%) and a $1.69B net loss, with contracted capacity for Anthropic.</p>
+<p><b>Export controls:</b> an Unemployment Labs analysis claims weight "fingerprints" in six Chinese models (DeepSeek V4, Kimi K3/K3.1, MiniMax M3, Ling-3.1) point to training on banned Blackwell GPUs. Reuters separately found about $3.2B of Chinese procurement notices specifying restricted Nvidia chips. Both are unverified by the companies named.</p>
+<div class="why"><b class="h">Why it matters</b><ol><li>Agent infrastructure (observability, orchestration) is where the money is going.</li><li>Cooling and power are now strategic bottlenecks for AI capacity.</li><li>Compliance risk for Chinese open weights is rising. Document where your models come from.</li><li>Neocloud losses make long compute contracts riskier.</li><li>LangSmith's war chest will probably mean aggressive pricing for evaluation tools.</li></ol></div>
+</article>
+
+</div>
+</section>
+
+<!-- ============ 5. GITHUB & X ============ -->
+<section>
+<h2>5 · GitHub &amp; X <small>what developers are starring and arguing about</small></h2>
+<table class="gh">
+<tr><th>Repository</th><th>What it does</th><th style="text-align:right">Stars today</th><th style="text-align:right">Total</th></tr>
+<tr><td><b>GoogleChrome/modern-web-guidance-src</b></td><td>Curated guidance that moves coding agents off ~2019-era JavaScript onto modern browser APIs. Chrome released it as v1.0 this week.</td><td class="num">1,875</td><td class="num">4,391</td></tr>
+<tr><td><b>we-promise/sure</b></td><td>Community-built open-source personal finance app.</td><td class="num">944</td><td class="num">14,464</td></tr>
+<tr><td><b>openai/codex-security</b></td><td>Codex Security CLI and TypeScript SDK to find, validate and fix vulnerabilities. Pairs with the Daybreak launch.</td><td class="num">754</td><td class="num">12,908</td></tr>
+<tr><td><b>ZhuLinsen/daily_stock_analysis</b></td><td>LLM-driven multi-market stock analysis with a news dashboard and scheduled alerts.</td><td class="num">272</td><td class="num">71,361</td></tr>
+<tr><td><b>Likely7/Veyra-NRVideo</b></td><td>Windows video player with AI super-resolution and frame generation for live capture.</td><td class="num">245</td><td class="num">1,482</td></tr>
+<tr><td><b>alibaba/open-code-review</b></td><td>Hybrid code review: deterministic rule pipelines plus an LLM agent giving line-level comments (NPE, XSS, SQLi). Works with OpenAI and Anthropic.</td><td class="num">206</td><td class="num">50,306</td></tr>
+<tr><td><b>backnotprop/plannotator</b></td><td>Workspace to plan, annotate and review agent output, then send feedback to the agent in one click.</td><td class="num">100</td><td class="num">10,319</td></tr>
+<tr><td><b>block/buzz</b></td><td>Block's "hive mind" communication platform (Rust).</td><td class="num">95</td><td class="num">37,204</td></tr>
+<tr><td><b>tradermonty/claude-trading-skills</b></td><td>Claude Code skills for market analysis, charting and screeners.</td><td class="num">60</td><td class="num">3,965</td></tr>
+<tr><td><b>ChromeDevTools/chrome-devtools-mcp</b></td><td>Chrome DevTools exposed to coding agents over MCP.</td><td class="num">60</td><td class="num">55,289</td></tr>
+</table>
+<div class="paper">
+<article>
+<div class="tag">Analysis</div>
+<h3>The pattern: tools that make agents produce better code</h3>
+<p>Seven of the top ten repos are about helping or checking agents rather than about models: web-platform guidance (Chrome), security scanning (OpenAI), code review (Alibaba), plan review (Plannotator) and DevTools over MCP. Developers are now focused on reliability: making agent output current, secure and reviewable.</p>
+<div class="pn"><div class="p"><b>Positive</b>Free, high-quality guidance and review tools you can add to any agent loop today.</div><div class="n"><b>Negative</b>Star counts favor big-brand repos. Some trending repos (e.g. stock bots) are hype with little rigor.</div></div>
+<div class="why"><b class="h">Why it matters</b><ol><li>Add modern-web-guidance to your coding agent's context for front-end work.</li><li>Put an automated security pass (codex-security or open-code-review) on agent PRs.</li><li>Plan-review tools catch wrong approaches before any code gets written.</li><li>MCP is now the default way to expose dev tools to agents.</li><li>Prioritize reviewing agent output over generating more of it.</li></ol></div>
+</article>
+<article>
+<div class="tag">Hacker News / X discussion · in window</div>
+<h3>What developers are debating</h3>
+<p><b>Gemini 4 Hydrogen</b> and the <b>Nvidia CEO exit</b> were the most-covered stories of the window. On HN, <b>Atuin Threads</b> (sync agent sessions across every machine), Apple's <b>"Faster Retrieval for RAG"</b> research and Google's <b>Modern Web Guidance</b> got strong engagement. VulnCheck's <b>tracker of Anthropic-discovered vulnerabilities</b> (447 points) drew security interest. <b>Amazon's claim</b> that it saved millions by replacing Sonnet with its Strands Decider (721 points) drew skepticism about how the comparison was measured.</p>
+<p class="quiet">Note: X does not allow unauthenticated reads, so the X signal here comes from cross-posted coverage and HN, not direct timeline data.</p>
+</article>
+</div>
+</section>
+
+<!-- ============ 6. DEVOPS ============ -->
+<section class="pb">
+<h2>6 · DevOps &amp; Kubernetes <small>KubeCon NA 2026 wrap, Salt Lake City · Nov 9–12</small></h2>
+<div class="paper">
+
+<article>
+<div class="tag">CNCF · Graduation · reported Nov 12</div>
+<h3>KubeVirt graduates from CNCF: VMs, containers and AI on one control plane</h3>
+<p>Seven years after entering the CNCF sandbox, KubeVirt has graduated. It runs virtual machines as Kubernetes-native resources. Red Hat's Fabian Deutsch told theCUBE that the graduation shows Kubernetes becoming one platform for legacy VMs, containers and AI workloads, with Red Hat OpenShift as the main commercial distribution. Coming work includes better VM resource allocation. At the same event, the community started an effort to make VMs a first-class Kubernetes API.</p>
+<div class="pn"><div class="p"><b>Positive</b>One scheduler and one policy/observability stack for everything, plus a path off VMware.</div><div class="n"><b>Negative</b>Running VMs on Kubernetes is operationally complex. Live migration and storage are still areas to test carefully.</div></div>
+<div class="why"><b class="h">Why it matters</b><ol><li>Legacy telephony systems (SBCs, PBX VMs) can run next to voice-agent pods.</li><li>VM isolation is becoming the preferred sandbox for untrusted agent code.</li><li>Graduated status reassures enterprise buyers.</li><li>One cluster for GPUs and VMs makes capacity planning simpler.</li><li>Expect VMware-migration offers from every distribution vendor.</li></ol></div>
+</article>
+
+<article>
+<div class="tag">Solo.io · GA · reported Nov 13</div>
+<h3>Agent Substrate and kagent go GA; Substrate donated to CNCF</h3>
+<p>Solo.io made enterprise Agent Substrate (developed jointly with Google) and kagent generally available. Agent Substrate separates stateful agent sessions from active compute: idle agents are suspended and stored, then restored in under 500 ms. That lets clusters hold far more long-running agents than they have pods running. kagent handles building and operating agents on Kubernetes. The Substrate framework has been donated to CNCF.</p>
+<div class="flow"><div class="n2">Active agent<small>pod + session</small></div><div class="ar">→</div><div class="n2">Idle detected</div><div class="ar">→</div><div class="n2 hl">Suspend<small>state to store</small></div><div class="ar">→</div><div class="n2">Event arrives</div><div class="ar">→</div><div class="n2 hl">Restore<small>&lt;500 ms</small></div></div>
+<div class="pn"><div class="p"><b>Positive</b>Cuts the cost of idle agents, and being under CNCF reduces lock-in.</div><div class="n"><b>Negative</b>A 500 ms restore is too slow for a live voice turn. Session state now has to be stored and secured.</div></div>
+<div class="why"><b class="h">Why it matters</b><ol><li>Good fit for async agents that handle callbacks, follow-ups and tickets.</li><li>For live calls, keep warm pools. Don't suspend during a conversation.</li><li>The session/compute split mirrors the Managed Agents architecture.</li><li>Lowers cost per agent for multi-tenant SaaS.</li><li>Follow the CNCF project for its standard session API.</li></ol></div>
+</article>
+
+<article class="brief">
+<div class="tag">KubeCon wrap · briefs</div>
+<h3>Also from Salt Lake City</h3>
+<p><b>llm-d hits 1.0.</b> VMblog reports that llm-d, the Kubernetes-native distributed inference stack, reached 1.0 during the week. CNCF now hosts 231 projects. A new <b>workload-conformance working group</b> and work on <b>per-session agent identity</b> were highlights. CNCF's executive director cited up to 14× higher throughput on the same accelerators, but didn't say which workload, so treat it as a best case.</p>
+<p><b>CNCF Community Awards (Nov 12):</b> 11 contributors across four awards. Lifetime achievement went to Julius Volz (co-creator of Prometheus) and Rita Zhang (chair of Kubernetes SIG Auth).</p>
+<p><b>Kubernetes v1.38:</b> code freeze starts <b>Nov 17</b> and the release blog is scheduled for Dec 16. If you have pending KEPs, merge them this week.</p>
+<div class="why"><b class="h">Why it matters</b><ol><li>llm-d 1.0 is a supported option for self-hosting open models.</li><li>Per-session identity is the right model for agent permissions.</li><li>Conformance work makes AI workloads portable between clouds.</li><li>Plan v1.38 upgrade testing for early January.</li><li>Kubernetes is consolidating as the platform for agents.</li></ol></div>
+</article>
+
+</div>
+</section>
+
+<!-- ============ 7. VOICE ============ -->
+<section>
+<h2>7 · Voice AI Corner <small>speech models, realtime agents</small></h2>
+<div class="paper">
+
+<article>
+<div class="tag">Retell · Nov 12 · Forbes</div>
+<h3>Retell passes $100M ARR on only $4.6M of funding</h3>
+<p>Voice-agent platform Retell says its annualized revenue has passed $100M less than three years after launching in 2023. It has raised only $4.6M in total and has about 80 employees. It reports more than 100M connected calls a month and 54,000 customers, mostly contact centers. Retell plans to launch <b>Tell-1</b>, its own language model for real-time call assistance. Forbes cites market estimates of voice AI growing from $21.5B (2025) to $95B (2032).</p>
+<div class="pn"><div class="p"><b>Positive</b>Strong proof that voice agents for contact centers make money, with very efficient growth.</div><div class="n"><b>Negative</b>Building its own model is a bet against the frontier labs. Revenue per customer is small, so churn risk is spread thin.</div></div>
+<div class="why"><b class="h">Why it matters</b><ol><li>Hard evidence that voice-agent demand is real. Use it in your pitch.</li><li>Tell-1 points to specialized call models beating general-purpose LLMs on latency.</li><li>Expect Retell to cut prices aggressively.</li><li>Roughly 1.25M calls a month per employee shows how far automation can go.</li><li>Differentiate on vertical workflows, not on telephony plumbing.</li></ol></div>
+</article>
+
+<article>
+<div class="tag">Zyphra · Nov 12 · Apache 2.0</div>
+<h3>ZONOS3-Mini: open TTS with about 80 ms to first audio and voice cloning in 43 languages</h3>
+<p>Zyphra released ZONOS3-Mini, a sparse mixture-of-experts text-to-speech model with about 100M active and 800M total parameters, built on a hybrid Gated DeltaNet/attention design. It uses a new 15 Hz ZAC-1 codec that Zyphra says has about 10× lower word error rate than DAC-based open models. Reported numbers: 80 ms median time-to-first-audio and 457× real-time on an H100, and under 570 ms to first audio on a Pixel 9. It supports voice cloning, 43 languages, and control over accent, age and emotion. Training took 2.5 days on 112 H100s, and it ranks first among open-weight models on ZTTS2-Eval.</p>
+<div class="pn"><div class="p"><b>Positive</b>Latency in the range of commercial TTS, with Apache 2.0 weights you can self-host for free.</div><div class="n"><b>Negative</b>Easy voice cloning raises fraud and consent risks. The evaluation is Zyphra's own.</div></div>
+<div class="why"><b class="h">Why it matters</b><ol><li>80 ms to first audio fits within a natural conversational turn.</li><li>Self-hosting removes per-character TTS fees at scale.</li><li>Fine-grained emotion control helps brand personas.</li><li>On-device speed means TTS can run on the phone.</li><li>Add consent checks and watermarking before enabling cloning.</li></ol></div>
+</article>
+
+<article>
+<div class="tag">Liquid AI · Nov 12 · Open</div>
+<h3>LiquidCodec: a 74M streaming speech codec that encodes 361× faster than real time on one CPU thread</h3>
+<p>Liquid AI's 24 kHz streaming codec uses 12 codebooks and parallel prediction. On a single CPU thread it encodes at about 361× and decodes at about 87× real time. It beat NanoCodec, Mimi and X-Codec 2 on ViSQOL, mel distance and TTS tests. It was trained on 264,000+ hours of speech in 107 languages with quantization-aware training, and works with Hugging Face Transformers.</p>
+<div class="pn"><div class="p"><b>Positive</b>Efficient enough for edge devices, and a strong building block for speech-to-speech models.</div><div class="n"><b>Negative</b>A component, not a product. Only useful if you train or fine-tune audio models.</div></div>
+<div class="why"><b class="h">Why it matters</b><ol><li>Cheap audio tokenization makes training your own speech-to-speech model more feasible.</li><li>Fast on CPU means good codec quality on low-end devices.</li><li>Wide language coverage helps multilingual agents.</li><li>Streaming design lowers end-to-end latency.</li><li>Compare against Mimi if you're building on Moshi-style stacks.</li></ol></div>
+</article>
+<p class="quiet">Outside the window: ElevenLabs' ElevenAI desktop app (meeting notes and dictation on Scribe v3) launched Nov 11 at its NYC Summit and is excluded here.</p>
+</div>
+</section>
+
+<!-- ============ 8. VIDEO ============ -->
+<section>
+<h2>8 · Video AI Generation <small>video models, world models, live video</small></h2>
+<div class="paper">
+
+<article>
+<div class="tag">Decart · Nov 12 (US) · Live video</div>
+<h3>Decart Lucy 2.6 improves live video editing for streams and virtual try-on</h3>
+<p>Decart updated its real-time video-editing model to Lucy 2.6. It follows reference images more closely for faces, handles garment detail better and improves lip sync, and it can run several edits at once in a live stream. It targets broadcast, retail virtual try-on and creator streams, has already been used at live events, and is available with a demo and API on Decart's platform.</p>
+<div class="pn"><div class="p"><b>Positive</b>Real-time, not offline rendering, which opens up live commerce and avatar use cases.</div><div class="n"><b>Negative</b>Better lip sync and face fidelity also makes live deepfakes easier. On the same day the FBI disclosed a North Korean deepfake video-call scheme that stole over $400M.</div></div>
+<div class="why"><b class="h">Why it matters</b><ol><li>Live avatars plus a voice agent make a realistic video agent.</li><li>Lip-sync quality is the main thing that makes video agents feel natural.</li><li>Retail try-on is a near-term way to make money.</li><li>Plan for provenance and disclosure from the start.</li><li>Check latency within a full WebRTC pipeline, not only in the demo.</li></ol></div>
+</article>
+
+<article>
+<div class="tag">World Labs · Nov 12 · GA</div>
+<h3>World Labs opens its Atlas world model to everyone, with APIs</h3>
+<p>According to AI Weekly, Fei-Fei Li's World Labs made Atlas generally available on Nov 12. Users can upload photos to Viewfinder or block out a rough 3D scene in Chisel to generate new views, video and walkable scenes. Outputs export as 3D Gaussian Splats or meshes for Blender and game engines. The APIs cover scene generation, video and 3D reconstruction.</p>
+<div class="pn"><div class="p"><b>Positive</b>Consistent 3D scenes fix the drift and inconsistency problems of pure video models.</div><div class="n"><b>Negative</b>Output still needs cleanup for production use, and API pricing hasn't been confirmed in what we could check.</div></div>
+<div class="why"><b class="h">Why it matters</b><ol><li>Consistent backgrounds for avatar and video-agent scenes.</li><li>Explorable product demos from a handful of photos.</li><li>Simulated scenes for training robots and agents.</li><li>Exports work with standard tools, so no lock-in.</li><li>World models are emerging as the next layer above video generation.</li></ol></div>
+</article>
+
+<article class="brief">
+<div class="tag">Research · Nov 13</div>
+<h3>WorldDraft benchmark: video models leak source cues in up to 64% of 4D renders</h3>
+<p>A new Hugging Face paper tests 12 video models on 432 paired 4D world-rendering tasks. It finds a trade-off: more structure in the prompt preserves the world better but lowers appearance quality, and conflicting inputs cause "source leakage" in up to 64% of cases. The authors also release WorldDraft-Primer, a visual prompting method that improves both on frozen models. <i>No major new models from Kling, Seedance, HeyGen, Higgsfield or Runway were released in the window.</i></p>
+</article>
+
+</div>
+</section>
+
+<!-- ============ SOURCES ============ -->
+<section class="pb">
+<h2>Sources <small>grouped by section · all checked against the 24-hour window</small></h2>
+<div class="src">
+<h4>Top Story</h4>
+<div>https://nvidianews.nvidia.com/news/nvidia-announces-ceo-transition</div>
+<div>https://www.cnbc.com/2026/11/12/nvidia-ceo-exit-ai-financing.html</div>
+<div>https://news.bloomberglaw.com/banking-law/scott-asks-huang-lutnick-to-testify-before-senate-banking-panel</div>
+<div>https://www.nytimes.com/2026/11/12/us/politics/lutnick-nvidia-commerce-china-chips.html</div>
+<h4>1 · Claude</h4>
+<div>https://platform.claude.com/docs/en/release-notes/overview</div>
+<div>https://www.helpnetsecurity.com/2026/11/12/anthropic-self-hosted-claude-managed-agents/</div>
+<div>https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md</div>
+<div>https://www.unite.ai/anthropic-launches-claude-for-manufacturing-with-17-workflow-skills/</div>
+<div>https://status.claude.com/incidents/nn11wk485zfn</div>
+<h4>2 · AI Tools</h4>
+<div>https://www.cnbc.com/2026/11/13/openai-chatgpt-wallet-dot-purchases.html</div>
+<div>https://www.marktechpost.com/2026/11/12/aws-emulator-local-aws-api-emulator-ai-agents/</div>
+<div>https://brave.com/blog/search-api-agentic-payments/</div>
+<div>https://www.marktechpost.com/2026/11/12/copilotkit-openbot-1-0-open-source-ai-coworker/</div>
+<div>https://www.marktechpost.com/2026/11/13/google-tpu-sync-kv-cache-transfer-library/</div>
+<h4>3 · LLM &amp; Models</h4>
+<div>https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-hydrogen/</div>
+<div>https://www.marktechpost.com/2026/11/13/google-gemini-4-hydrogen/</div>
+<div>https://storage.googleapis.com/deepmind-media/Model-Cards/Gemini-4-Hydrogen-Model-Card.pdf</div>
+<div>https://thinkingmachines.ai/news/inkling-2-small/</div>
+<div>https://edge0.ai/blog/introducing-edge0-145b-frontier-ai-capabilities-on-your-own-computer</div>
+<div>https://huggingface.co/ibm-granite/granite-4.1-3b-llmon-preview</div>
+<h4>4 · Big AI News</h4>
+<div>https://www.tradingview.com/news/seekingalpha:b0ba9e182094b:0-openai-raises-15b-at-1-25t-valuation-in-latest-fundraising-round-cnbc/</div>
+<div>https://www.cnbc.com/video/2026/11/12/openai-raises-15b-at-a-1-point-25t-valuation-what-it-means-for-the-ipo.html</div>
+<div>https://www.theregister.com/security/2026/11/12/openai-launches-security-products-tells-orgs-theyre-doomed-if-they-dont-use-them/5309500</div>
+<div>https://www.aljazeera.com/news/2026/11/12/us-nonprofits-sue-tech-giants-to-halt-ai-development</div>
+<div>https://www.finsmes.com/2026/11/langchain-raises-300m-at-3-billion-valuation.html</div>
+<div>https://www.prnewswire.com/news-releases/mirendil-raises-1b-to-democratize-frontier-ai-rd-302937248.html</div>
+<div>https://siliconangle.com/2026/11/12/agile-robots-raises-500m-funding-led-by-softbank-at-8-5b-valuation/</div>
+<div>https://www.bloomberg.com/news/articles/2026-11-12/samsung-is-in-talks-to-acquire-data-center-cooling-firm-modine</div>
+<div>https://www.cnbc.com/2026/11/12/nscale-updates-ipo-prospectus-that-shows-widening-loss.html</div>
+<div>https://unemploymentlabs.com/checkpoint-forensics</div>
+<div>https://www.reuters.com/world/china/huang-exit-us-scrutiny-imperil-3-billion-chinese-ai-projects-reliant-nvidia-2026-11-13/</div>
+<div>https://aiweekly.co/ai-news-today</div>
+<h4>5 · GitHub &amp; X</h4>
+<div>https://github.com/trending?since=daily</div>
+<div>https://github.com/GoogleChrome/modern-web-guidance-src</div>
+<div>https://developer.chrome.com/blog/modern-web-guidance-v1</div>
+<div>https://github.com/openai/codex-security</div>
+<div>https://github.com/alibaba/open-code-review</div>
+<div>https://blog.atuin.sh/threads-agent-sessions/</div>
+<div>https://www.vulncheck.com/blog/anthropic-glasswing-november-update</div>
+<div>https://github.com/kouweizhu/agents-radar/issues/922</div>
+<h4>6 · DevOps &amp; Kubernetes</h4>
+<div>https://siliconangle.com/2026/11/12/kubevirt-graduates-from-cncf-kubernetes-unites-vms-ai-kubeconna/</div>
+<div>https://cloudnativenow.com/features/solo-io-extends-support-for-ai-agents-running-on-kubernetes-clusters/</div>
+<div>https://vmblog.com/bylines/kubecon-cloudnativecon-na-2026-day-1-agents-move-into-kubernetes-and-the-community-starts-building-the-fence/</div>
+<div>https://www.cncf.io/announcements/2026/11/12/cncf-recognizes-cloud-native-champions-in-2026-community-awards/</div>
+<div>https://www.kubernetes.dev/resources/release/</div>
+<h4>7 · Voice AI</h4>
+<div>https://www.forbes.com/sites/timkeary/2026/11/12/voice-ai-startup-hits-100-million--run-rate-with-46-million-funding/</div>
+<div>https://huggingface.co/blog/Zyphra/zonos3-mini</div>
+<div>https://www.marktechpost.com/2026/11/12/liquid-ai-liquidcodec-streaming-audio-codec/</div>
+<h4>8 · Video AI</h4>
+<div>https://startupfortune.com/decart-sharpens-its-live-video-model-with-lucy-26-for-broadcast-retail-and-creator-streams/</div>
+<div>https://www.worldlabs.ai/blog</div>
+<div>https://huggingface.co/papers/2611.16217</div>
+<div>https://www.nextgov.com/cybersecurity/2026/11/fbi-disrupts-intricate-north-korean-fake-call-scheme-tied-400m-crypto-theft/417200/</div>
+</div>
+<p class="note">Editor's notes: Window is Nov 12, 9:32 AM to Nov 13, 9:32 AM CT (run time 15:32 UTC). Items dated before the window (Claude Fable/Mythos 5.2 on Nov 9; Claude Whiteboards/Sheets on Nov 10; ElevenLabs ElevenAI and United's agent ban on Nov 11) are excluded or mentioned only for context. The OpenAI funding figures come from CNBC sources and are not confirmed by OpenAI. Benchmark figures are vendor-reported unless noted. All summaries are paraphrased. Flow diagrams are redrawn from the descriptions in each source.</p>
+</section>
+
+</body></html>
