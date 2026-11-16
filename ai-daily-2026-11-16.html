@@ -1,0 +1,501 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<title>↓: AI Daily — Monday, November 16, 2026</title>
+<style>
+@page { size: Letter; margin: 0.5in 0.5in 0.62in 0.5in; }
+:root { --ink:#17130e; --paper:#ffffff; --rule:#17130e; --accent:#a3260f; --mute:#6a6359; --pos:#1f6b3a; --neg:#9b1c1c; --soft:#efe9dc; }
+* { box-sizing:border-box; }
+html, body { background: var(--paper); }
+body { font-family:"Bitstream Charter","DejaVu Serif",serif; font-size:9pt; line-height:1.4; color:var(--ink); margin:0; -webkit-print-color-adjust:exact; print-color-adjust:exact; }
+.sans { font-family:"Inter","DejaVu Sans",sans-serif; }
+.mast { text-align:center; border-bottom:3px double var(--rule); padding-bottom:6pt; margin-bottom:5pt; }
+.mast .kicker { font:700 7pt "Inter",sans-serif; letter-spacing:.24em; text-transform:uppercase; color:var(--accent); }
+.mast h1 { font:700 50pt "Bitstream Charter","DejaVu Serif",serif; letter-spacing:-.02em; margin:3pt 0 0; line-height:1; }
+.mast h1 span { color:var(--accent); }
+.edition { display:flex; justify-content:space-between; border-top:1px solid var(--rule); border-bottom:1px solid var(--rule); padding:3pt 2pt; margin-bottom:10pt;
+  font:700 7.2pt "Inter",sans-serif; letter-spacing:.1em; text-transform:uppercase; }
+.top { display:grid; grid-template-columns: 1.6fr 1fr; gap:14pt; border-bottom:1.5px solid var(--rule); padding-bottom:10pt; margin-bottom:10pt; }
+.label { font:700 6.8pt "Inter",sans-serif; letter-spacing:.18em; text-transform:uppercase; color:var(--accent); margin-bottom:2pt; }
+.top h2 { font:700 22pt "Bitstream Charter",serif; line-height:1.06; margin:0 0 5pt; letter-spacing:-.01em; }
+.dek { font-style:italic; color:var(--mute); margin:0 0 6pt; font-size:9.6pt; }
+p { margin:0 0 4.5pt; }
+.box { background:var(--ink); color:#fbf8f1; padding:10pt 12pt; align-self:start; }
+.box .label { color:#f0b429; }
+.box h3 { font:700 13pt "Bitstream Charter",serif; margin:0 0 6pt; }
+.box ol { margin:0; padding-left:13pt; }
+.box li { margin-bottom:4.2pt; font-size:8.1pt; line-height:1.32; }
+.box li b { color:#f0b429; font-family:"Inter",sans-serif; font-size:7pt; letter-spacing:.06em; text-transform:uppercase; }
+section { margin-bottom:6pt; }
+section > h2 { font:800 9.5pt "Inter",sans-serif; letter-spacing:.2em; text-transform:uppercase; border-top:2.5px solid var(--rule); border-bottom:1px solid var(--rule); padding:3pt 0; margin:4pt 0 7pt; display:flex; justify-content:space-between; break-after:avoid; }
+section > h2 small { font-weight:500; letter-spacing:.04em; color:var(--mute); text-transform:none; font-size:7.6pt; }
+.paper { column-count:2; column-gap:18pt; column-rule:1px solid #cfc7b6; }
+article { margin-bottom:10pt; break-inside:avoid-column; }
+article.long { break-inside:auto; }
+article h3 { font:700 12.2pt "Bitstream Charter",serif; line-height:1.13; margin:0 0 3pt; }
+.tag { font:700 6.3pt "Inter",sans-serif; letter-spacing:.12em; text-transform:uppercase; color:var(--mute); display:block; margin-bottom:1.5pt; }
+.pn { display:grid; grid-template-columns:1fr 1fr; gap:6pt; margin:5pt 0; break-inside:avoid; }
+.pn div { padding:4pt 6pt; font-size:8pt; line-height:1.32; }
+.pn .pos { background:#e5efe6; border-left:3px solid var(--pos); }
+.pn .neg { background:#f5e3df; border-left:3px solid var(--neg); }
+.pn b { display:block; font:800 6.4pt "Inter",sans-serif; letter-spacing:.14em; text-transform:uppercase; margin-bottom:1.5pt; }
+.pn .pos b { color:var(--pos); } .pn .neg b { color:var(--neg); }
+.why { border-top:1px dotted #a99f8b; padding-top:3pt; break-inside:avoid; }
+.why > b { font:800 6.6pt "Inter",sans-serif; letter-spacing:.14em; text-transform:uppercase; color:var(--accent); }
+.why ol { margin:2pt 0 0; padding-left:12pt; font-size:8.1pt; line-height:1.33; }
+.why li { margin-bottom:1pt; }
+.quiet { font-style:italic; color:var(--mute); border-left:3px solid var(--accent); padding:2pt 0 2pt 7pt; margin:0 0 8pt; background:var(--soft); }
+.facts { font:8pt "Inter",sans-serif; background:var(--soft); padding:5pt 7pt; margin:5pt 0; line-height:1.4; break-inside:avoid; }
+.facts b { font-weight:700; }
+figure { margin:5pt 0 6pt; break-inside:avoid; }
+figure svg { width:100%; height:auto; display:block; }
+figcaption { font:italic 7pt "DejaVu Serif",serif; color:var(--mute); margin-top:2pt; }
+table.gh { width:100%; border-collapse:collapse; font:7.7pt "Inter",sans-serif; margin:2pt 0 8pt; }
+table.gh th { font:800 6.3pt "Inter",sans-serif; letter-spacing:.1em; text-transform:uppercase; text-align:left; border-bottom:1.5px solid var(--rule); padding:2.5pt 4pt; }
+table.gh td { padding:3pt 4pt; border-bottom:1px dotted #bdb5a3; vertical-align:top; }
+table.gh td.n { text-align:right; font-weight:700; white-space:nowrap; }
+.src { font:6.9pt "Inter",sans-serif; line-height:1.38; column-count:2; column-gap:16pt; word-break:break-all; }
+.src h4 { font:800 6.8pt "Inter",sans-serif; letter-spacing:.14em; text-transform:uppercase; margin:6pt 0 1.5pt; color:var(--accent); break-after:avoid; word-break:normal; }
+.src div { margin:0 0 1.6pt; }
+.note { font:italic 7.3pt "DejaVu Serif",serif; color:var(--mute); margin-top:8pt; border-top:1px solid #cfc7b6; padding-top:4pt; }
+.pb { break-before:page; }
+.span { column-span:all; }
+</style></head><body>
+
+<header class="mast">
+  <div class="kicker">All the AI news that fits the last 24 hours</div>
+  <h1><span>↓:</span> AI Daily</h1>
+</header>
+<div class="edition"><span>Monday, November 16, 2026</span><span>Edition for Manohar · Last 24 hours</span><span>Window: Nov 15, 8:13 AM – Nov 16, 8:13 AM CT</span></div>
+
+<!-- ================= TOP ================= -->
+<div class="top">
+  <div>
+    <div class="label">Top Story · Policy</div>
+    <h2>Washington plans to crown two dozen “AI national champions,” Anthropic and OpenAI among them</h2>
+    <p class="dek">A WSJ scoop on Sunday says the White House wants to package American chips and models as one export bundle to beat China abroad.</p>
+    <p>According to the Wall Street Journal (relayed by Reuters on Sunday, citing people familiar with the plans), the Trump administration intends to name more than 24 US companies as AI “national champions.” The reported list includes Nvidia, Amazon, Microsoft, OpenAI and Anthropic. Commerce Secretary Howard Lutnick is expected to unveil the program, though timing could slip.</p>
+    <p>The mechanism matters more than the label. The plan reportedly bundles US chips, frontier models and surrounding AI products into a single offer that foreign governments and enterprises can buy as one package, a direct counter to Chinese vendors who already sell integrated stacks. Still undecided, per the report: whether champions get faster export licences or priority access to EXIM Bank financing. Those two levers would decide whether this is a branding exercise or real industrial policy.</p>
+    <p>Context makes it odd. Anthropic is reportedly on the list while it fights the Pentagon in court, Nvidia is without its founding CEO, and the Commerce Secretary faces a fresh NYT report on chip-rule conflicts (see section 4). The story is single-sourced, and nothing is official yet.</p>
+    <div class="pn">
+      <div class="pos"><b>Positive</b>A government-backed “American AI stack” could open sovereign-AI deals in the Gulf, Asia and Europe that individual vendors can’t win alone, and cheap export finance would lower the cost for foreign buyers.</div>
+      <div class="neg"><b>Negative</b>Picking winners locks in incumbents, invites retaliation and antitrust scrutiny, and leaves smaller US model and tooling vendors outside the bundle. The criteria and governance are unknown.</div>
+    </div>
+    <div class="why"><b>Why it matters for builders</b>
+      <ol>
+        <li>If you sell internationally, expect government buyers to ask whether your stack is on the “champion” list.</li>
+        <li>Products built on Claude, GPT or Nvidia infrastructure may ride the export package and get an easier procurement path.</li>
+        <li>Voice-agent vendors that are model-agnostic should be able to show a clear all-US option.</li>
+        <li>Watch for export-licence fast lanes. They could change which GPUs and regions you can actually deploy to.</li>
+        <li>This is single-sourced: plan for it, but don’t rewrite a roadmap until Commerce publishes the criteria.</li>
+      </ol>
+    </div>
+  </div>
+  <div class="box">
+    <div class="label">Today in 60 seconds</div>
+    <h3>The short version</h3>
+    <ol>
+      <li><b>Policy</b> WSJ: 24+ US firms incl. Nvidia, OpenAI, Anthropic to be named AI “national champions.”</li>
+      <li><b>Models</b> Alibaba ships Qwen4-Max: 2.4T-param MoE, 71B active, 1M context, $1.50/$4.50 per M tokens, closed weights.</li>
+      <li><b>IPO</b> Anthropic’s IPO week: price set Wed Nov 18 ($70–78 range), Nasdaq “ANT” trading Thu; reported ~6× oversubscribed.</li>
+      <li><b>Nvidia</b> Calls for Jensen Huang’s return grow: petition near 180k, major holders want his return kept on the table.</li>
+      <li><b>Chips</b> NYT: Lutnick pushed to weaken chip rules that overlap his family’s business interests.</li>
+      <li><b>Funding</b> Dreamteam raises $53M for an AI-native CRM built on a “company brain” of four agents.</li>
+      <li><b>Voice</b> Numa raises $45M Series C at a $500M valuation for AI agents that answer dealership phones.</li>
+      <li><b>Tools</b> Detectify launches Agentic Tooling: AI agents verify vulns against live apps, via MCP or CLI.</li>
+      <li><b>GitHub</b> Univer +1,878★ today; NVIDIA SkillEvaluator +953★; Alibaba open-code-review +946★.</li>
+      <li><b>K8s</b> Kubernetes v1.38 hits Code &amp; Test Freeze today; rc.0 Dec 3, GA Dec 16. Microsoft Ignite opens tomorrow.</li>
+    </ol>
+  </div>
+</div>
+
+<!-- ================= 1. CLAUDE ================= -->
+<section>
+  <h2>1 · New Claude Features <small>Anthropic · Claude · Claude Code</small></h2>
+  <p class="quiet">Nothing new shipped in the window. Claude Code’s newest release is still v2.1.325 (Nov 13: zstd decoding security fix, Code Mode fixes, a gap closed in Bash permission checks), and no new Anthropic product or API post appeared Nov 15–16. Anthropic’s big week is financial, not product: see the IPO story in section 4.</p>
+</section>
+
+<!-- ================= 2. TOOLS ================= -->
+<section>
+  <h2>2 · New AI Tools <small>Launches · Agent platforms · Dev tools</small></h2>
+  <div class="paper">
+    <article>
+      <span class="tag">Security · Agents · SC Media, Nov 16</span>
+      <h3>Detectify’s Agentic Tooling makes AI agents prove their vulnerability claims</h3>
+      <p>Detectify launched a suite that lets AI agents verify suspected vulnerabilities against <b>live applications</b> instead of trusting static guesses. It plugs into existing agents over <b>MCP or a CLI</b>, uses “loop engineering” to turn code-scan or bug-bounty leads into automated tests, and records the evidence for each test in a <b>Security Ledger</b>. Detectify says about 80% of findings from AI static-analysis tools aren’t credible, which is the noise this targets. CEO Rickard Carlsson pitched it as a way to trust automated output.</p>
+      <div class="pn">
+        <div class="pos"><b>Positive</b>Evidence-backed findings cut the time teams spend triaging false positives, and an auditable ledger suits compliance.</div>
+        <div class="neg"><b>Negative</b>Letting agents actively probe live apps raises its own risks. The 80% figure is the vendor’s own, and pricing wasn’t disclosed.</div>
+      </div>
+      <div class="why"><b>Why it matters for builders</b>
+        <ol>
+          <li>The pattern applies broadly: have agents prove claims with executed checks.</li>
+          <li>MCP keeps showing up as the standard way to attach tools to agents.</li>
+          <li>Wire it into CI if coding agents ship much of your code.</li>
+          <li>Voice-agent backends (webhooks, tool APIs) are attack surface too, so test them.</li>
+          <li>An evidence ledger is a good model for logging any agent’s actions.</li>
+        </ol>
+      </div>
+    </article>
+    <article>
+      <span class="tag">Marketing · Agents · Nov 15</span>
+      <h3>OrdoAI opens a private beta of an influencer-outreach agent</h3>
+      <p>OrdoAI’s <b>Ordo Brand</b> agent searches a database of <b>30M+ creator profiles across 100+ countries</b>, drafts and translates outreach, pulls quoted rates out of replies, and tracks partnerships with content-review suggestions. The beta is invitation-only, public availability is planned for Q1 2027, and no pricing has been given.</p>
+      <div class="pn">
+        <div class="pos"><b>Positive</b>It automates a repetitive, multilingual workflow from start to finish.</div>
+        <div class="neg"><b>Negative</b>Automated outreach at scale risks spam and platform terms-of-service limits, and the beta is closed.</div>
+      </div>
+      <div class="why"><b>Why it matters for builders</b>
+        <ol>
+          <li>Vertical agents with proprietary data moats keep getting funded.</li>
+          <li>Pulling prices out of replies (structured data from messy text) is a reusable skill.</li>
+          <li>Translation inside the agent loop is now expected.</li>
+          <li>Human approval gates still matter for anything sent outbound.</li>
+          <li>Watch how it handles consent and rate limits. The same applies to outbound voice.</li>
+        </ol>
+      </div>
+    </article>
+  </div>
+</section>
+
+<!-- ================= 3. LLM (placed early for layout) ================= -->
+<section>
+  <h2>3 · LLM &amp; Model Updates <small>Ranked by importance</small></h2>
+  <div class="paper">
+    <article class="long">
+      <span class="tag">Alibaba · Qwen · Nov 16</span>
+      <h3>Qwen4-Max goes GA: same 2.4T size, a quarter fewer active params, about 60% cheaper per task</h3>
+      <p>Alibaba moved Qwen4-Max from the limited preview that began Nov 11 to general release on QwenCloud. It is a sparse mixture-of-experts model with <b>2.4 trillion total parameters</b>, of which <b>71B are active per token</b>, down from 95B in Qwen3.8-Max at the same total size. It has native vision (text, image and video in; text out) and a <b>1M-token context</b>. Alibaba’s launch post says it changed attention, residual connections and embeddings inside the MoE.</p>
+      <div class="facts"><b>Price:</b> $1.50 / M input · $4.50 / M output · cached input $0.075 / M &nbsp;|&nbsp; <b>Access:</b> QwenCloud API &amp; Token Plan, QwenWork, QwenStudio, Qoder &nbsp;|&nbsp; <b>Weights:</b> closed. Smaller Qwen4 models are promised as open weights, with no date.</div>
+      <figure>
+        <svg viewBox="0 0 360 132" xmlns="http://www.w3.org/2000/svg" font-family="Inter, sans-serif">
+          <rect x="0" y="0" width="360" height="132" fill="#f3eee2"/>
+          <text x="10" y="15" font-size="8.5" font-weight="700" fill="#17130e">Qwen3.8-Max → Qwen4-Max (Alibaba-reported)</text>
+          <text x="10" y="38" font-size="7.5" fill="#17130e">Active params / token</text>
+          <rect x="120" y="29" width="200" height="10" fill="#b9b09c"/><text x="324" y="37" font-size="7.5" fill="#17130e">95B</text>
+          <rect x="120" y="41" width="150" height="10" fill="#a3260f"/><text x="274" y="49" font-size="7.5" font-weight="700" fill="#a3260f">71B (−25%)</text>
+          <text x="10" y="72" font-size="7.5" fill="#17130e">Cost per task (Work360)</text>
+          <rect x="120" y="63" width="200" height="10" fill="#b9b09c"/><text x="324" y="71" font-size="7.5" fill="#17130e">$4.43</text>
+          <rect x="120" y="75" width="75" height="10" fill="#a3260f"/><text x="199" y="83" font-size="7.5" font-weight="700" fill="#a3260f">$1.67 (≈−60%)</text>
+          <text x="10" y="106" font-size="7.5" fill="#17130e">Tokens used (High effort)</text>
+          <rect x="120" y="97" width="200" height="10" fill="#b9b09c"/><text x="324" y="105" font-size="7.5" fill="#17130e">100</text>
+          <rect x="120" y="109" width="130" height="10" fill="#a3260f"/><text x="254" y="117" font-size="7.5" font-weight="700" fill="#a3260f">65 (−35%)</text>
+          <rect x="230" y="4" width="10" height="7" fill="#b9b09c"/><text x="243" y="11" font-size="6.5" fill="#17130e">Qwen3.8-Max</text>
+          <rect x="295" y="4" width="10" height="7" fill="#a3260f"/><text x="308" y="11" font-size="6.5" fill="#17130e">Qwen4-Max</text>
+        </svg>
+        <figcaption>Chart drawn by AI Daily from Alibaba’s figures. The $4.43→$1.67 per-task numbers come from The Next Web’s report; Alibaba’s own post says only “around 60%.”</figcaption>
+      </figure>
+      <p>On safety, Alibaba says it filtered offensive-cyber skills out of the training data while keeping defensive ones such as vulnerability detection, ran security checks alongside coding RL to cut injection and memory-safety bugs, and added CBRN post-training. It reports no significant high-risk capabilities in internal testing, which nobody outside has verified. Alibaba also places it sixth on Code Arena (its own ranking), and some outlets relay a claim that it beats Claude Opus 5.5 on Alibaba’s coding benchmarks.</p>
+      <div class="pn">
+        <div class="pos"><b>Positive</b>Frontier-scale vision plus 1M context at $1.50/$4.50 undercuts most Western flagships on list price. Fewer active parameters and fewer tokens per task cut cost twice over, and the cache price makes long-context agents cheap.</div>
+        <div class="neg"><b>Negative</b>The flagship weights are closed, a reversal from the open Qwen3.8-Max. Every benchmark and cost figure is Alibaba’s own, Work360 is an in-house test, and data-residency questions make it hard for many US enterprises to adopt.</div>
+      </div>
+      <div class="why"><b>Why it matters for builders</b>
+        <ol>
+          <li>A new price anchor for agent workloads: re-run your cost-per-resolved-task evals, not just per-token prices.</li>
+          <li>“Fewer tokens per task” is the metric to copy. Track it in your own model routing.</li>
+          <li>1M context with cheap cache hits suits long call transcripts and CRM histories.</li>
+          <li>For voice agents, a text-only output means you still need a separate TTS. Latency is unpublished, so test it before using it in real time.</li>
+          <li>Wait for the open-weight Qwen4 small models if you need self-hosting or on-prem compliance.</li>
+        </ol>
+      </div>
+    </article>
+    <p class="quiet" style="margin-top:4pt">Nothing else from OpenAI, Google, Meta, xAI, Mistral or DeepSeek landed in the window. Grok 4.8’s promised soft launch to Bot users (announced Nov 10) has not been confirmed as shipped. Gemini 4 Hydrogen (Nov 12–13) falls outside today’s window.</p>
+  </div>
+</section>
+
+<!-- ================= 4. BIG NEWS ================= -->
+<section>
+  <h2>4 · Big AI News <small>Funding · IPOs · Policy · Industry</small></h2>
+  <div class="paper">
+    <article class="long">
+      <span class="tag">Anthropic · IPO · Semafor, Nov 15</span>
+      <h3>Anthropic’s IPO week begins: the AI trade gets its first real price test</h3>
+      <p>Semafor framed Thursday’s listing as the defining test for an AI trade already shaken by market turbulence, political backlash and Nvidia’s leadership crisis. The terms from the latest prospectus: <b>825M Class A shares at $70–78</b>, raising up to <b>$64.4B</b> at the top of the range, plus a concurrent <b>~$26B private placement</b> at the IPO price with Alphabet, Nvidia, Microsoft and TSMC named as buyers. Reported fully diluted valuation is <b>$1.26–1.41T</b>. Bloomberg reported the book at roughly <b>6× oversubscribed</b>, and some later reports say close to 7×. Existing backers are reportedly prioritized, so retail allocations may be small.</p>
+      <figure>
+        <svg viewBox="0 0 360 66" xmlns="http://www.w3.org/2000/svg" font-family="Inter, sans-serif">
+          <rect width="360" height="66" fill="#f3eee2"/>
+          <line x1="20" y1="34" x2="340" y2="34" stroke="#17130e" stroke-width="1.5"/>
+          <g font-size="7" fill="#17130e" text-anchor="middle">
+            <circle cx="40" cy="34" r="4" fill="#6a6359"/><text x="40" y="24">Nov 10</text><text x="40" y="50">Roadshow</text>
+            <circle cx="120" cy="34" r="4" fill="#6a6359"/><text x="120" y="24">Nov 12</text><text x="120" y="50">~6× book</text>
+            <circle cx="200" cy="34" r="5" fill="#a3260f"/><text x="200" y="24" font-weight="700" fill="#a3260f">Nov 16 · today</text><text x="200" y="50">Final week</text>
+            <circle cx="270" cy="34" r="4" fill="#17130e"/><text x="270" y="24">Wed Nov 18</text><text x="270" y="50">Pricing</text>
+            <circle cx="330" cy="34" r="4" fill="#17130e"/><text x="330" y="24">Thu Nov 19</text><text x="330" y="50">Nasdaq: ANT</text>
+          </g>
+        </svg>
+        <figcaption>Timeline drawn by AI Daily from prospectus and press reports. Dates are subject to regulatory clearance.</figcaption>
+      </figure>
+      <div class="pn">
+        <div class="pos"><b>Positive</b>Public-market capital and quarterly disclosure give Claude customers more visibility into Anthropic’s finances, and a strong debut would pull more capital into the agent ecosystem.</div>
+        <div class="neg"><b>Negative</b>A $1.4T entry price leaves little room for error, and quarterly pressure can push pricing and roadmap changes. A weak debut would hit funding for everyone building on top.</div>
+      </div>
+      <div class="why"><b>Why it matters for builders</b>
+        <ol>
+          <li>Expect the S-1 numbers (revenue mix, API vs. apps) to shape how investors value your Claude-based startup.</li>
+          <li>Public companies tend to tighten pricing and enterprise terms: lock contract rates early.</li>
+          <li>Keep a second model provider wired in. IPO-quarter outages or rate-limit changes do happen.</li>
+          <li>A hot listing re-opens the window for AI-agent and voice-AI fundraises this quarter.</li>
+          <li>Watch the stock as a live read on how much the market believes in agents.</li>
+        </ol>
+      </div>
+    </article>
+
+    <article class="long">
+      <span class="tag">Nvidia · Leadership · CNBC, Nov 16</span>
+      <h3>Pressure builds to bring Jensen Huang back to Nvidia</h3>
+      <p>Days after Huang resigned over revealed extramarital affairs, one reportedly involving a suspected Chinese intelligence asset, calls for his reinstatement are growing. Interim CEO <b>Colette Kress</b> (CFO for 13 years) is running the company. A “Stand With Jensen” petition is near <b>180,000 signatures</b>, with backers including Elon Musk, Tim Sweeney and Replit’s Amjad Masad. Altimeter’s Brad Gerstner and Atreides’ Gavin Baker have written to the board asking for a deliberate CEO search that keeps a Huang return possible, though they did not ask for his immediate reinstatement. Pushing the other way, Treasury Secretary Scott Bessent has urged an outside hire, and an internal investigation into his conduct is still open. Nvidia’s earnings are approaching.</p>
+      <div class="pn">
+        <div class="pos"><b>Positive</b>The product roadmap, CUDA and supply contracts are institutional. Kress is a steady operator, and customer GPU deliveries are unaffected so far.</div>
+        <div class="neg"><b>Negative</b>A leadership vacuum during export-control fights and the national-champion push is risky. Musk warns that “critical deals” could be lost, and AMD (helped by Claude’s reported port to MI355) has an opening.</div>
+      </div>
+      <div class="why"><b>Why it matters for builders</b>
+        <ol>
+          <li>GPU allocation decisions are often made at the top. Watch for delays in big capacity deals.</li>
+          <li>It strengthens the case for writing inference code that runs on more than one hardware vendor (AMD, TPU, Trainium).</li>
+          <li>Expect cloud GPU prices to swing on headlines this week.</li>
+          <li>For latency-critical voice agents, confirm your provider’s regional capacity commitments in writing.</li>
+          <li>Governance risk at a single supplier is now a real line in AI risk registers.</li>
+        </ol>
+      </div>
+    </article>
+
+    <article>
+      <span class="tag">Policy · Chips · NYT, Nov 15</span>
+      <h3>NYT: Lutnick pushed to loosen chip rules that overlap with his family’s business</h3>
+      <p>The New York Times reported Sunday that Commerce Secretary Howard Lutnick pressed to weaken semiconductor rules in areas that overlap with business interests tied to his family. The story was among the top posts on Hacker News Sunday (500+ points). We could not access the full NYT text, so the details here are limited. It follows Axios’ Nov 11 scoop that Lutnick resisted curbs on firms suspected of diverting Nvidia chips to China, warning that they could start a trade war. Lutnick is also the official expected to run the national-champions program.</p>
+      <div class="pn">
+        <div class="pos"><b>Positive</b>Scrutiny may force more transparent, rules-based export policy that builders can plan around.</div>
+        <div class="neg"><b>Negative</b>Conflict-of-interest questions could freeze or reverse chip rules and champion designations, adding policy whiplash.</div>
+      </div>
+      <div class="why"><b>Why it matters for builders</b>
+        <ol>
+          <li>Export rules decide where you can host models and serve customers.</li>
+          <li>Policy instability argues for keeping deployment regions flexible.</li>
+          <li>Watch for congressional or inspector-general probes that pause Commerce actions.</li>
+          <li>China-facing products face the most uncertainty this quarter.</li>
+          <li>Track Commerce announcements during Ignite and IPO week.</li>
+        </ol>
+      </div>
+    </article>
+
+    <article>
+      <span class="tag">Funding · Sales AI · SiliconANGLE, Nov 16</span>
+      <h3>Dreamteam raises $53M to replace the CRM with a “company brain”</h3>
+      <p>Dreamteam AI, founded by former Freshworks executives, raised $53M across seed and Series A, reportedly led by Accel with Together Fund and Premji Invest. The valuation was not disclosed. Its design is a continuously updated “company brain” that ingests calls, emails and meetings, with <b>four specialized AI assistants</b> working on top of it so reps don’t have to enter data by hand. Co-founder Anand Venkatraman argues that legacy CRMs like Salesforce create more work than they save. The company plans to expand from sales into the full customer lifecycle.</p>
+      <div class="pn">
+        <div class="pos"><b>Positive</b>It captures the unstructured signal (call nuance, objections) that legacy CRMs drop, which gives agents better context.</div>
+        <div class="neg"><b>Negative</b>It is crowded (Attio, Lightfield, Salesforce Agentforce), and migrating off an existing CRM is a heavy lift for buyers.</div>
+      </div>
+      <div class="why"><b>Why it matters for builders</b>
+        <ol>
+          <li>The pattern is a shared memory layer feeding several narrow agents. Copy it.</li>
+          <li>Voice-call transcripts become first-class CRM data, so your voice agent should export rich structured summaries.</li>
+          <li>Integration partners: AI-native CRMs need voice and meeting inputs.</li>
+          <li>Investors are still funding vertical “system of record” replacements.</li>
+          <li>Design agent output for machine consumption, not just human-readable notes.</li>
+        </ol>
+      </div>
+    </article>
+  </div>
+</section>
+
+<!-- ================= 5. GITHUB & X ================= -->
+<section>
+  <h2>5 · GitHub &amp; X <small>Trending repos · Most-discussed</small></h2>
+  <table class="gh">
+    <tr><th>Repo</th><th>What it does</th><th>Total ★</th><th>★ today</th></tr>
+    <tr><td><b>dream-num/univer</b></td><td>Open-source office SDK (sheets/docs/slides) with Web, Server and AI SDKs so people <i>and agents</i> can edit, calculate and collaborate</td><td class="n">27.5k</td><td class="n">+1,878</td></tr>
+    <tr><td><b>NVIDIA/SkillEvaluator</b></td><td>3-tier evaluator for agent skills: validation &amp; safety gates, semantic de-duplication, live agent evals measuring behavior change</td><td class="n">2.3k</td><td class="n">+953</td></tr>
+    <tr><td><b>alibaba/open-code-review</b></td><td>Hybrid code review: deterministic pipelines + LLM agent, line-level comments, rules for NPE, thread-safety, XSS, SQLi; OpenAI/Anthropic compatible</td><td class="n">52.7k</td><td class="n">+946</td></tr>
+    <tr><td><b>tradermonty/claude-trading-skills</b></td><td>Claude Code skills for market analysis, charting, screeners, strategy development</td><td class="n">6.0k</td><td class="n">+841</td></tr>
+    <tr><td><b>ChromeDevTools/chrome-devtools-mcp</b></td><td>Chrome DevTools exposed to coding agents over MCP</td><td class="n">57.5k</td><td class="n">+837</td></tr>
+    <tr><td><b>ag-ui-protocol/ag-ui</b></td><td>Agent-User Interaction protocol for bringing agents into front-end apps</td><td class="n">18.5k</td><td class="n">+790</td></tr>
+    <tr><td><b>backnotprop/plannotator</b></td><td>Workspace to plan, annotate and review agent work, then send feedback back to agents in one click</td><td class="n">12.3k</td><td class="n">+689</td></tr>
+    <tr><td><b>google-labs-code/stitch-skills</b></td><td>Agent Skills for the Stitch MCP server, usable from Gemini CLI, Claude Code, Cursor</td><td class="n">9.6k</td><td class="n">+540</td></tr>
+    <tr><td><b>kajisho5/ffmpeg-skill</b></td><td>Local video editor for coding agents: 42 FFmpeg tools + MCP server, no cloud</td><td class="n">6.2k</td><td class="n">+331</td></tr>
+  </table>
+  <figure>
+    <svg viewBox="0 0 720 70" xmlns="http://www.w3.org/2000/svg" font-family="Inter, sans-serif">
+      <rect width="720" height="70" fill="#f3eee2"/>
+      <text x="8" y="12" font-size="8" font-weight="700" fill="#17130e">Stars gained today (GitHub Trending, Nov 16 snapshot)</text>
+      <g font-size="7" fill="#17130e">
+        <rect x="8"   y="20" width="9" height="46" fill="#a3260f"/><text x="20" y="64">univer 1,878</text>
+        <rect x="88"  y="43" width="9" height="23" fill="#17130e"/><text x="100" y="64">SkillEval 953</text>
+        <rect x="170" y="43" width="9" height="23" fill="#17130e"/><text x="182" y="64">open-code-review 946</text>
+        <rect x="282" y="45" width="9" height="21" fill="#6a6359"/><text x="294" y="64">trading-skills 841</text>
+        <rect x="382" y="46" width="9" height="20" fill="#6a6359"/><text x="394" y="64">devtools-mcp 837</text>
+        <rect x="478" y="47" width="9" height="19" fill="#6a6359"/><text x="490" y="64">ag-ui 790</text>
+        <rect x="540" y="49" width="9" height="17" fill="#6a6359"/><text x="552" y="64">plannotator 689</text>
+        <rect x="628" y="53" width="9" height="13" fill="#6a6359"/><text x="640" y="64">stitch 540</text>
+      </g>
+    </svg>
+    <figcaption>Bar heights are proportional to stars gained today. Drawn by AI Daily from github.com/trending.</figcaption>
+  </figure>
+  <div class="paper">
+    <article>
+      <span class="tag">Hacker News · Debate · 1,179 pts / 625 comments</span>
+      <h3>“All AI-generated code should be open source” tops HN</h3>
+      <p>Developer Jakub Jankiewicz argues that code written with AI should be released as open source or under CC0. His reasoning: the models were trained on open-source code without attribution (“license laundering”); purely machine-generated work likely can’t be copyrighted in the US (he cites the monkey-selfie case); and copyright rules for computer-generated works differ by country. The thread was Sunday’s most-discussed post. Also climbing: a video of Claude Code and Codex reverse-engineering a 1994 Jeep ECU over a $3 Arduino.</p>
+      <div class="pn">
+        <div class="pos"><b>Positive</b>It forces a needed conversation about provenance, attribution and what you actually own in AI-written code.</div>
+        <div class="neg"><b>Negative</b>It is an opinion, not law. Mixed human and AI authorship is the norm, and legal positions vary by country.</div>
+      </div>
+      <div class="why"><b>Why it matters for builders</b>
+        <ol>
+          <li>Talk to counsel about IP ownership of agent-written code before fundraising diligence.</li>
+          <li>Keep a record of human authorship and review in commits (co-author trailers help).</li>
+          <li>Enterprise buyers increasingly ask contract questions about AI code provenance.</li>
+          <li>Open-sourcing non-core code can turn the risk into goodwill.</li>
+          <li>Run license scanners over generated code, not just dependencies.</li>
+        </ol>
+      </div>
+    </article>
+    <article>
+      <span class="tag">Trend read · Agent skills &amp; evals</span>
+      <h3>Today’s trending repos center on agent skills and their evaluation</h3>
+      <p>Five of the top trending repos are about <b>agent skills or agent-facing tooling</b>: NVIDIA’s SkillEvaluator (checking that a skill actually changes agent behavior and doesn’t duplicate another), Google’s Stitch skills, a trading-skills pack, an FFmpeg skill and DevTools-over-MCP. Univer’s surge shows demand for document and spreadsheet surfaces that agents can edit directly. The emerging stack: <b>skills + MCP servers + eval gates</b>.</p>
+      <div class="pn">
+        <div class="pos"><b>Positive</b>Skills are portable across Claude Code, Gemini CLI and Cursor, so the packaging work is reusable.</div>
+        <div class="neg"><b>Negative</b>A sprawl of overlapping skills degrades agent behavior. That is exactly why SkillEvaluator exists.</div>
+      </div>
+      <div class="why"><b>Why it matters for builders</b>
+        <ol>
+          <li>Package domain know-how (e.g. call-handling playbooks) as skills.</li>
+          <li>Run evals before adding any skill to production agents.</li>
+          <li>Look for semantic overlap between skills, a common cause of agent confusion.</li>
+          <li>AG-UI is worth a look for streaming agent state into front-end UIs.</li>
+          <li>Local, MCP-based tools (ffmpeg-skill) avoid cloud costs and data exposure.</li>
+        </ol>
+      </div>
+    </article>
+  </div>
+</section>
+
+<!-- ================= 6. DEVOPS ================= -->
+<section>
+  <h2>6 · DevOps &amp; Kubernetes <small>Releases · Features · Ecosystem</small></h2>
+  <div class="paper">
+    <article class="long">
+      <span class="tag">Kubernetes · Release cycle · Nov 16</span>
+      <h3>Kubernetes v1.38 hits Code and Test Freeze today</h3>
+      <p>Per the v1.38 release-team schedule, <b>Code Freeze and Test Freeze</b> land Monday Nov 16 (AoE), which is 12:00 UTC Tuesday Nov 17. Feature PRs that haven’t merged by then miss 1.38. Earlier in the cycle, 102 enhancements opted in and about 86 stayed tracked after the September enhancements freeze. This cycle also lengthened the gap between enhancements freeze and code freeze to give KEP owners more time. Current stable is 1.37 (latest patch 1.37.2), and 1.35 reaches end of life Feb 28, 2027. GKE’s Rapid channel already offers 1.37.2 and a 1.38 alpha for alpha clusters.</p>
+      <figure>
+        <svg viewBox="0 0 360 60" xmlns="http://www.w3.org/2000/svg" font-family="Inter, sans-serif">
+          <rect width="360" height="60" fill="#f3eee2"/>
+          <line x1="15" y1="30" x2="345" y2="30" stroke="#326ce5" stroke-width="2"/>
+          <g font-size="6.6" fill="#17130e" text-anchor="middle">
+            <circle cx="30" cy="30" r="5" fill="#a3260f"/><text x="30" y="20" font-weight="700" fill="#a3260f">Nov 16–17</text><text x="30" y="46">Code/Test</text><text x="30" y="54">Freeze</text>
+            <circle cx="95" cy="30" r="3.5" fill="#326ce5"/><text x="95" y="20">Nov 24</text><text x="95" y="46">Docs PRs</text>
+            <circle cx="160" cy="30" r="3.5" fill="#326ce5"/><text x="160" y="20">Dec 3</text><text x="160" y="46">rc.0 · branch</text>
+            <circle cx="220" cy="30" r="3.5" fill="#326ce5"/><text x="220" y="20">Dec 4</text><text x="220" y="46">Docs Freeze</text>
+            <circle cx="275" cy="30" r="3.5" fill="#326ce5"/><text x="275" y="20">Dec 9</text><text x="275" y="46">rc.1</text>
+            <circle cx="330" cy="30" r="5" fill="#17130e"/><text x="330" y="20" font-weight="700">Dec 16</text><text x="330" y="46">v1.38.0 GA</text>
+          </g>
+        </svg>
+        <figcaption>Kubernetes v1.38 milestones, drawn by AI Daily from kubernetes.dev/resources/release.</figcaption>
+      </figure>
+      <div class="pn">
+        <div class="pos"><b>Positive</b>The scope is now fixed, so platform teams can start reading the 1.38 changes and testing rc builds from Dec 3.</div>
+        <div class="neg"><b>Negative</b>Late-cycle reverts are common after freeze. Don’t lock upgrade plans until rc.1, and managed providers will lag GA by weeks.</div>
+      </div>
+      <div class="why"><b>Why it matters for builders</b>
+        <ol>
+          <li>Schedule 1.35-cluster upgrades now. EOL is Feb 2027.</li>
+          <li>Test GPU and inference workloads (DRA, scheduling) against rc.0 in early December.</li>
+          <li>KubeCon NA’s agent-security projects (last week) will start to show up in 1.38-era tooling.</li>
+          <li>For voice-agent backends, check autoscaling and pod-startup changes that affect cold-start latency.</li>
+          <li>Pin your managed-K8s channel (GKE Rapid vs Regular) deliberately.</li>
+        </ol>
+      </div>
+    </article>
+  </div>
+  <p class="quiet">No new Helm, Argo CD, EKS or AKS releases appeared in the window. Microsoft Ignite (Nov 17–20, San Francisco) opens tomorrow with an agent-governance focus (Agent 365, Entra agent identity), so expect Azure and AKS news in Tuesday’s edition.</p>
+</section>
+
+<!-- ================= 7. VOICE ================= -->
+<section>
+  <h2>7 · Voice AI Corner <small>Speech · Realtime · Voice agents</small></h2>
+  <div class="paper">
+    <article>
+      <span class="tag">Funding · Voice agents · Fortune, Nov 16</span>
+      <h3>Numa raises $45M at a $500M valuation for AI agents that answer car-dealer phones</h3>
+      <p>Oakland-based Numa, founded by alumni of Location Labs, closed a <b>$45M Series C led by Blue Cloud Ventures</b>, bringing total funding to <b>$91M</b> at a <b>$500M</b> valuation. Its AI agents answer service-department calls, book appointments and update customers for <b>1,500+ North American dealerships</b>, working on top of the dealers’ legacy software.</p>
+      <div class="pn">
+        <div class="pos"><b>Positive</b>Proof that vertical voice agents with deep system-of-record integrations can reach real scale and revenue.</div>
+        <div class="neg"><b>Negative</b>Dealer IT is fragmented, so integrations are costly. Horizontal platforms (Vapi, Retell) and dealer-software vendors could squeeze margins.</div>
+      </div>
+      <div class="why"><b>Why it matters for builders</b>
+        <ol>
+          <li>Vertical depth beats horizontal breadth in voice AI: pick an industry and own its integrations.</li>
+          <li>Scheduling and status updates are the high-volume calls to automate first.</li>
+          <li>Legacy-system connectors are the moat, more than the speech model.</li>
+          <li>Investors value voice agents at about $500M at this scale. That is useful for benchmarking.</li>
+          <li>Measure containment rate and booked appointments, not just call minutes.</li>
+        </ol>
+      </div>
+    </article>
+    <p class="quiet">No new speech-model or platform releases from ElevenLabs, OpenAI Realtime, Twilio, Vapi or Retell in the window. ElevenLabs’ ElevenAI app and Scribe v3 (Nov 11–13) and Vapi’s Nov 9 update (Reson8, Soniox stt-rt-v6 with assistant context) are older than 24 hours.</p>
+  </div>
+</section>
+
+<!-- ================= 8. VIDEO ================= -->
+<section>
+  <h2>8 · Video AI Generation <small>Models · Tools · Realtime video agents</small></h2>
+  <p class="quiet">Nothing genuinely new in the window. The closest item, A2E AI’s 151-video-model aggregator app (GlobeNewswire, Nov 15, about 4 hours before the window opened), is not a new model. There were no new Kling, Seedance, HeyGen, Higgsfield, Veo or Canva releases Nov 15–16.</p>
+</section>
+
+<!-- ================= SOURCES ================= -->
+<section class="pb">
+  <h2>Sources <small>Grouped by section · all accessed Nov 16, 2026</small></h2>
+  <div class="src">
+    <h4>Top Story · National champions</h4>
+    <div>https://finance.yahoo.com/news/trump-administration-name-nvidia-other-041705933.html</div>
+    <div>https://www.aichatdaily.com/ai-business/trump-administration-name-nvidia-openai-anthropic-ai-national</div>
+    <h4>1 · Claude</h4>
+    <div>https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md</div>
+    <div>https://www.anthropic.com/news</div>
+    <h4>2 · LLM &amp; models</h4>
+    <div>https://www.alibabacloud.com/blog/alibaba-unveils-qwen4-max-new-ai-teammate-for-work-creativity-and-discovery_603783</div>
+    <div>https://www.qwencloud.com/models/qwen4-max</div>
+    <div>https://ultrathink.ai/news/alibaba-qwen4-max-2-4t-closed-weights</div>
+    <div>https://www.technology.org/2026/11/16/alibaba-qwen4-max-flagship-ai-model-safety-cost/</div>
+    <div>https://thenextweb.com/news/alibaba-launches-qwen4-max-flagship-ai-model-without-open-weights</div>
+    <div>https://www.scmp.com/tech/big-tech/article/3374540/alibaba-says-new-flagship-ai-model-cuts-task-costs-60-while-tightening-cyber-guardrails</div>
+    <div>https://llmgateway.io/timeline</div>
+    <div>https://www.tokenpost.com/news/technology/53847</div>
+    <h4>3 · Big AI news</h4>
+    <div>https://www.semafor.com/article/11/15/2026/anthropic-ipo-set-to-define-ai-trade</div>
+    <div>https://www.bloomberg.com/news/articles/2026-11-12/anthropic-s-ipo-is-said-to-be-about-six-times-oversubscribed</div>
+    <div>https://dealroom.co/news/172403-anthropic-ipo-six-times-oversubscribed-as-it-targets-64-4b-raise/</div>
+    <div>https://www.cnbc.com/2026/11/16/nvidia-jensen-huang-return-tech.html</div>
+    <div>https://www.cnbc.com/2026/11/14/nvidia-investors-jensen-huang-return-board-letter.html</div>
+    <div>https://www.nytimes.com/2026/11/15/us/politics/lutnick-pushed-to-weaken-chip-rules-that-overlap-with-his-family-business.html</div>
+    <div>https://axios.com/2026/11/11/trump-lutnick-nvidia-china-chip-export-controls</div>
+    <div>https://siliconangle.com/2026/11/16/goodbye-manual-work-ai-native-crm-startup-dreamteam-raises-53m-to-autonomously-push-deals-forward/</div>
+    <div>https://specterworks.substack.com/p/the-morning-brief-2026-11-16</div>
+    <h4>4 · New AI tools</h4>
+    <div>https://www.scworld.com/brief/detectify-launches-agentic-tooling-to-verify-ai-security-findings</div>
+    <div>https://agilebrandguide.com/yesterdays-marketing-technology-ai-news-november-16-2026/</div>
+    <h4>5 · GitHub &amp; X</h4>
+    <div>https://github.com/trending?since=daily</div>
+    <div>https://github.com/dream-num/univer</div>
+    <div>https://github.com/NVIDIA/SkillEvaluator</div>
+    <div>https://github.com/alibaba/open-code-review</div>
+    <div>https://news.ycombinator.com/front?day=2026-11-15</div>
+    <div>https://jakub.jankiewicz.org/blog/ai-code-open-source/</div>
+    <h4>6 · DevOps &amp; Kubernetes</h4>
+    <div>https://www.kubernetes.dev/resources/release/</div>
+    <div>https://kubernetes.io/releases/patch-releases/</div>
+    <div>https://docs.cloud.google.com/kubernetes-engine/docs/release-notes</div>
+    <div>https://www.mt.co.kr/en/tech/2026/11/12/2026111209091539262</div>
+    <h4>7 · Voice AI</h4>
+    <div>https://fortune.com/2026/11/16/ai-startup-numa-45-million-car-dealerships-paperwork/</div>
+    <div>https://docs.vapi.ai/whats-new</div>
+    <div>https://techcrunch.com/2026/11/13/elevenlabs-new-app-combines-meeting-note-taking-and-dictation-for-teams/</div>
+    <h4>8 · Video AI</h4>
+    <div>https://ohsem.me/2026/11/a2e-ai-launches-ai-video-generator-with-all-in-one-video-and-image-models</div>
+  </div>
+  <p class="note">Editor’s note: The window is 24 hours before 8:13 AM CT on Nov 16, 2026. Items published earlier were left out even when still circulating, including OpenAI’s robotics-team reorganization (Nov 13), ChatGPT Wallet coverage (Nov 15, before the window), DeepMind’s AlphaProof Code (Nov 15, before the window) and New York’s AI safety center (Nov 15, before the window). Benchmarks and cost claims are vendor-reported unless stated otherwise. Charts are drawn by AI Daily from the figures cited. All text is paraphrased.</p>
+</section>
+
+</body></html>
