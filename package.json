@@ -1,0 +1,11 @@
+{
+  "name": "ainews-daily",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "node scripts/build.mjs"
+  },
+  "dependencies": {
+    "node-html-parser": "^9.0.7"
+  }
+}
