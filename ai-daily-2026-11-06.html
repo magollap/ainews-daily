@@ -1,0 +1,98 @@
+<!doctype html><html><head><meta charset="utf-8"><title>AI Daily — Nov 6, 2026</title>
+<style>
+@page{size:Letter;margin:0.5in 0.55in}
+*{box-sizing:border-box}
+body{font-family:"Liberation Serif","Times New Roman",serif;color:#1a1a1a;font-size:9.6pt;line-height:1.38;margin:0}
+.mast{text-align:center;border-bottom:3px double #111;padding-bottom:6px;margin-bottom:6px}
+.mast h1{font-size:44pt;margin:0;letter-spacing:1px;font-weight:700;line-height:1}
+.mast h1 span{color:#c0392b}
+.edition{display:flex;justify-content:space-between;border-bottom:1px solid #111;padding:3px 0;font-family:"Liberation Sans",sans-serif;font-size:7.5pt;text-transform:uppercase;letter-spacing:.8px;margin-bottom:10px}
+h2.sec{font-family:"Liberation Sans",sans-serif;font-size:8.5pt;letter-spacing:2px;text-transform:uppercase;background:#111;color:#fff;padding:2px 7px;margin:12px 0 6px;break-after:avoid}
+.top{border-bottom:1px solid #999;padding-bottom:8px;margin-bottom:8px}
+.top .kick{font-family:"Liberation Sans",sans-serif;color:#c0392b;font-weight:700;font-size:8pt;letter-spacing:1.5px;text-transform:uppercase}
+.top h2{font-size:25pt;line-height:1.05;margin:3px 0 6px}
+.top p{font-size:10.5pt;margin:0 0 5px}
+.box{border:1.5px solid #111;background:#f6f1e4;padding:7px 10px;margin:8px 0}
+.box h3{margin:0 0 4px;font-family:"Liberation Sans",sans-serif;font-size:9pt;text-transform:uppercase;letter-spacing:1.5px}
+.box ul{margin:0;padding-left:15px}.box li{margin-bottom:2px}
+.cols{column-count:2;column-gap:20px;column-rule:1px solid #ccc}
+.story{break-inside:avoid;margin-bottom:9px}
+.story h3{font-size:12.5pt;line-height:1.1;margin:0 0 2px}
+.story p{margin:0 0 3px;text-align:justify;hyphens:auto}
+.why{font-family:"Liberation Sans",sans-serif;font-size:8pt;color:#333;border-left:3px solid #c0392b;padding-left:6px}
+.why b{text-transform:uppercase;letter-spacing:.5px;color:#c0392b}
+.note{font-style:italic;color:#555;margin:0 0 6px}
+.tag{font-family:"Liberation Sans",sans-serif;font-size:6.5pt;color:#888}
+.src{font-family:"Liberation Sans",sans-serif;font-size:6.8pt;word-break:break-all;line-height:1.3}
+.src h4{margin:5px 0 1px;font-size:7.5pt;text-transform:uppercase;letter-spacing:1px}
+.src a{color:#1a3a6b;text-decoration:none}
+.foot{text-align:center;font-size:7pt;color:#777;border-top:1px solid #999;margin-top:8px;padding-top:3px;font-family:"Liberation Sans",sans-serif}
+</style></head><body>
+<div class="mast"><h1><span>↓</span>: AI Daily</h1></div>
+<div class="edition"><span>Friday, November 6, 2026</span><span>Edition for Manohar · Last 24 hours</span><span>Window: Nov 5, 8am – Nov 6, 8am CT</span></div>
+
+<div class="top"><div class="kick">Top Story · Big AI</div>
+<h2>OpenAI Unveils GPT-6 Cyber, a Vulnerability-Hunting Model Kept Behind a Locked Door</h2>
+<p>OpenAI announced a cybersecurity-specialised model on Nov 5 (called GPT-6 Cyber by Fortune and "ChatGPT Cyber" by TechCrunch) and is limiting it to the top tier of its Daybreak Red program, which serves offensive security researchers. OpenAI says the same model scanned the Linux kernel and flagged 948 potential issues the day before, and turned up 81 novel vulnerabilities in Firefox.</p>
+<p>The launch comes with a $1 billion initiative for defenders protecting critical infrastructure such as grids and water systems. TechCrunch reports the Linux bug hunt alone cost about $1.2 million in compute, and researchers in the program complain that defenders are rationed while attackers can run uncensored open-weight models.</p>
+<p class="why"><b>Why it matters:</b> Frontier labs are now gating their strongest capabilities by use case and identity checks. Expect the same tiered-access pattern for any agent that can act on production systems, including voice agents with tool access.</p></div>
+
+<div class="box"><h3>Today in 60 seconds</h3><ul>
+<li><b>OpenAI</b> launches a restricted cyber model that found 948 Linux-kernel candidates and 81 new Firefox bugs, plus a $1B defender fund.</li>
+<li><b>Claude</b> gets read-only Personal Finance (US beta) and a new Enterprise security center with inference hooks.</li>
+<li><b>Google</b> ships Gemini Omni 1.2 Flash: 15-second video, 30% cheaper at $0.07/sec for 720p.</li>
+<li><b>Meta Muse</b> adds real-time voice mode and an animated avatar, US first.</li>
+<li><b>Markets:</b> Nasdaq fell ~5.5% as AI-infrastructure doubts and data-centre politics bite; Nvidia −9%, AMD −17%.</li>
+<li><b>Deals:</b> Shield AI to buy Echodyne for $5.3B; Google backs a $17B AI data centre; Zipline raises $1.5B.</li>
+<li><b>Kubernetes:</b> kpt reaches v1.0.0; v1.38 beta cycle underway ahead of KubeCon NA next week.</li></ul></div>
+
+<h2 class="sec">1 · New Claude features</h2>
+<div class="cols">
+<div class="story"><h3>Personal Finance arrives in Claude</h3><p>Anthropic began rolling out a beta that lets Pro, Max and Ultra users in the US link bank, card, loan and investment accounts (via Plaid) and ask questions about their own spending. Access is read-only, Claude cannot move money or give investment advice, and Anthropic says there are no ads or sponsored recommendations. It can categorise spending, flag duplicate charges and chart bills.</p><p class="why"><b>Why it matters:</b> A clear template for consented, read-only data connections in a consumer assistant, with trust and compliance baked in.</p></div>
+<div class="story"><h3>Enterprise gets a security center and inference hooks</h3><p>Claude's release notes for Nov 5 list new Enterprise security and admin controls: a security center, inference hooks, centralised management and extra access controls, several still in beta. This week's Platform notes also mention an org IP allowlist (beta) and an Admin API call to sign members out everywhere.</p><p class="why"><b>Why it matters:</b> Inference hooks are the kind of interception point teams need for logging, redaction and policy checks on agent traffic.</p></div>
+</div>
+<p class="note">No new Claude Code release or new model confirmed inside the window. Rumours of a "Mythos 5.5" remain unconfirmed by Anthropic.</p>
+
+<h2 class="sec">2 · New AI tools</h2>
+<p class="note">Nothing genuinely new and verifiable in the last 24 hours. Product Hunt activity this week leans toward agent approval gates and orchestration tools, but I could not date a specific launch inside the window.</p>
+
+<h2 class="sec">3 · LLM &amp; model updates</h2>
+<div class="cols">
+<div class="story"><h3>Gemini Omni 1.2 Flash goes GA with longer, cheaper video</h3><p>Google's updated video model is available in the Gemini API and for business, rolling out to Gemini app subscribers. Clips run up to 15 seconds (from 10), pricing falls 30% to $0.07 per second at 720p, and drafts can be upscaled to 1080p or 4K. Google cites better reference-following, steadier faces and packaging text, and cleaner lip-sync.</p><p class="why"><b>Why it matters:</b> Cheap draft-then-upscale makes iterating on avatar or ad video affordable inside a product.</p></div>
+<div class="story"><h3>OpenAI image models, same week</h3><p>Trackers list GPT Image 2.6 "Flare" and "Sunburst" from Nov 4, aimed at fast iteration and detailed edits respectively. This is a single-tracker report, so treat the names as unconfirmed.</p></div>
+</div>
+
+<h2 class="sec">4 · Big AI news</h2>
+<div class="cols">
+<div class="story"><h3>Nasdaq drops 5.5% on AI-infrastructure fears</h3><p>AP-sourced coverage says the Nasdaq closed near 24,315, about 12% below its high, with Nvidia down roughly 9% and AMD 17%. Investors are questioning data-centre spend after midterm results strengthened local opposition to large facilities. Microsoft is reportedly tightening oversight of specialised cloud providers such as Nscale, Nebius and IREN.</p><p class="why"><b>Why it matters:</b> GPU capacity and pricing may get choppier; keep multi-provider fallbacks.</p></div>
+<div class="story"><h3>Shield AI to buy Echodyne for $5.3B</h3><p>The defence-autonomy company plans to acquire the radar maker and raise $2.5B at a $28.8B valuation, with the round contingent on the deal closing.</p></div>
+<div class="story"><h3>Google commits $17B to an AI data centre; Zipline raises $1.5B</h3><p>Both were headline items in Nov 5 roundups, alongside a $100M Series C for data-infrastructure startup Ocient.</p></div>
+<div class="story"><h3>Platforms sue California over youth-safety law</h3><p>Google, Meta and TikTok filed suit against legislation aimed at addictive social features for children, while a separate negligence suit accuses Google's AI search of enabling a teen's self-harm planning. Google says it is reviewing.</p><p class="why"><b>Why it matters:</b> Child-safety liability is spreading to AI products; age-appropriate guardrails belong in design.</p></div>
+</div>
+
+<h2 class="sec">5 · GitHub &amp; X</h2>
+<p class="note">Weekly GitHub trending (unverified live) shows claude-mem gaining about 8.8K stars this week and pbakaus/impeccable about 11K, per third-party roundups with conflicting numbers. I could not confirm a specific viral X demo dated within 24 hours.</p>
+
+<h2 class="sec">6 · DevOps &amp; Kubernetes</h2>
+<div class="cols">
+<div class="story"><h3>kpt v1.0.0 declared ready</h3><p>The CNCF announced kpt, the configuration-as-data toolkit, has reached v1.0.0 (posted Nov 5), signalling readiness for broad adoption.</p><p class="why"><b>Why it matters:</b> Package-and-patch config management for fleets of clusters is stabilising.</p></div>
+<div class="story"><h3>Kubernetes 1.38 cycle and KubeCon ahead</h3><p>v1.38.0-beta.0 landed Nov 4; code freeze is Nov 16 and GA targets Dec 16. The monthly patch release is due Nov 10, and KubeCon NA opens in Salt Lake City Nov 9.</p></div>
+</div>
+
+<h2 class="sec">7 · Voice AI corner</h2>
+<div class="story"><h3>Meta Muse learns to talk back</h3><p>Muse now supports spoken conversation with interruptions, multiple voices and an expressive avatar, rolling out on mobile, web and Mac in the US first; glasses support is promised. It can work on tasks in the background while you chat.</p><p class="why"><b>Why it matters:</b> Barge-in plus background task execution is becoming table stakes for consumer voice agents. (ElevenLabs' Eleven Realtime launched Oct 20, outside the window.)</p></div>
+
+<h2 class="sec">8 · Video AI generation</h2>
+<p class="note">Gemini Omni 1.2 Flash (see section 3) is the one confirmed item. Kling 4.0, Seedance 2.5 and HeyGen Video had no new dated news in the window.</p>
+
+<h2 class="sec">Sources</h2>
+<div class="cols src">
+<h4>Claude</h4><a href="https://support.claude.com/en/articles/12138966-release-notes">support.claude.com/…/12138966-release-notes</a><br><a href="https://platform.claude.com/docs/en/release-notes/overview">platform.claude.com/docs/en/release-notes/overview</a><br><a href="https://www.etvbharat.com/en/technology/muse-voice-mode-muse-avatar-claude-personal-finance-gemini-omni-1-dot-2-flash-google-anthropic-meta-enn26110604197">etvbharat.com — Muse, Claude, Gemini Omni</a>
+<h4>Models / Top story</h4><a href="https://techcrunch.com/2026/11/05/openai-released-a-new-cybersecurity-model-is-that-enough/">techcrunch.com/2026/11/05/openai-released-a-new-cybersecurity-model…</a><br><a href="https://fortune.com/2026/11/05/openai-debuts-new-cybersecurity-focused-ai-model-amid-growing-alarm-about-ai-driven-cyber-attacks/">fortune.com/2026/11/05/openai-debuts-new-cybersecurity-focused-ai-model…</a><br><a href="https://note.com/apsis_loki/n/ncb923312de77">note.com/apsis_loki (GPT Image 2.6, unconfirmed)</a>
+<h4>Big AI</h4><a href="https://techstartups.com/2026/11/05/top-tech-news-roundup-for-today-november-5-2026-googles-17b-ai-data-center-nvidia-ziplines-1-5b-funding-and-nasdaqs-5-5-plunge">techstartups.com — Nov 5 roundup</a><br><a href="https://www.startuphub.ai/ai-news/startup-news/2026/shield-ai-echodyne-acquisition-adds-radar-to-autonomy-stack">startuphub.ai — Shield AI/Echodyne</a><br><a href="https://www.joburgetc.com/news/google-sued-over-teen-suicide-ai-chromebook/">joburgetc.com — Google teen suit</a>
+<h4>GitHub</h4><a href="https://github.com/trending?since=weekly">github.com/trending?since=weekly</a><br><a href="https://trendshift.io/weekly">trendshift.io/weekly</a>
+<h4>Kubernetes</h4><a href="https://www.kubernetes.dev/resources/release/">kubernetes.dev/resources/release</a><br><a href="https://www.cncf.io/blog/2026/11/05/kpt-v1-0-0-is-released/">cncf.io/blog/2026/11/05/kpt-v1-0-0-is-released</a>
+<h4>Voice / Video</h4><a href="https://www.startuphub.ai/ai-news/artificial-intelligence/2026/elevenlabs-packs-voice-stack-into-one-model">startuphub.ai — ElevenLabs (context)</a><br><a href="https://blog.mean.ceo/kling-news-november-2026/">blog.mean.ceo — Kling (context)</a>
+</div>
+<div class="foot">↓: AI Daily · Compiled automatically from public sources · Some figures come from secondary reports; verify before acting.</div>
+</body></html>
