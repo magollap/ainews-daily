@@ -1,0 +1,37 @@
+name: Auto-Merge Any New Branch to Main
+
+on:
+  create:
+    branches:
+      - '**' # Matches every newly created branch name
+
+permissions:
+  contents: write # Allows merging into main and deleting the branch
+
+jobs:
+  merge-to-main:
+    # Safety check: ensures the trigger was a branch (not a tag) and is not main itself
+    if: github.ref_type == 'branch' && github.ref_name != 'main'
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0 # Fetches full git history and all branches
+
+      - name: Configure Git bot identity
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@://github.com"
+
+      - name: Merge new branch into main
+        run: |
+          NEW_BRANCH="${{ github.ref_name }}"
+          git checkout main
+          git merge "origin/$NEW_BRANCH" --no-edit
+          git push origin main
+
+      - name: Delete merged branch
+        run: |
+          git push origin --delete "${{ github.ref_name }}"
